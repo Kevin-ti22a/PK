@@ -5,7 +5,21 @@
 "Date" : "13-11-2025",
 "Time" : "07:00 - 16:00",
 "Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
-"Folder_dokumentasi" : "Day 1"
+"Folder_dokumentasi" : "Day 1",
+"Foto": [
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114082801.jpg",
+        "https://example.com/photos/day1/02-peralatan-install.jpg",
+        "https://example.com/photos/day1/03-intel-nuc-sebelum.jpg",
+        "https://example.com/photos/day1/04-proses-install-windows.jpg",
+        "https://example.com/photos/day1/05-windows-license.jpg",
+        "https://example.com/photos/day1/06-proyektor-lama.jpg",
+        "https://example.com/photos/day1/07-pemasangan-kabel-proyektor.jpg",
+        "https://example.com/photos/day1/08-proyektor-berfungsi.jpg",
+        "https://example.com/photos/day1/09-install-ms-office.jpg",
+        "https://example.com/photos/day1/10-office-activated.jpg",
+        "https://example.com/photos/day1/11-windows-activated.jpg",
+        "https://example.com/photos/day1/12-setup-selesai.jpg"
+      ]
 },
 
 {
@@ -26,4 +40,5 @@
 
 ]
 }
+
 
