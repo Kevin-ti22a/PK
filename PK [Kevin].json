@@ -2,12 +2,25 @@
 "PK":[
 {
 "Day" :  "1", 
-"Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc"
+"Date" : "13-11-2025",
+"Time" : "07:00 - 16:00",
+"Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc",
+"Folder_dokumentasi" : "Day 1"
 },
 
 {
 "Day" :  "2", 
-"Activity": "-"
+"Date" : "14-11-2025",
+"Time" : "07:00 - 17:00",
+"Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]",
+"Folder_dokumentasi" : "Day 2"
+},
+
+{
+"Day" :  "3", 
+"Date" : "15-11-2025",
+"Activity": "Melanjutkan Install Ulang PC AIO HP dan hanya beberapa Driver yang saya Install, dan berhasil",
+"Folder_dokumentasi" : "Day 3"
 },
 
 ]
