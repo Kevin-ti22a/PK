@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Kevin Mubarak - Praktek Kerja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF',
+                        accent: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 70%;
+            width: 5px;
+            background-color: #3B82F6;
+            border-radius: 5px;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3B82F6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-primary">Kevin Mubarak</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="hover:text-primary transition">Home</a></li>
+                    <li><a href="#praktek-kerja" class="hover:text-primary transition">Praktek Kerja</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="mobileMenuButton" class="md:hidden text-primary">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-full bg-white z-20 p-6 md:hidden">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-xl font-bold text-primary">Menu</h2>
+                <button id="closeMobileMenu" class="text-primary">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <ul class="space-y-6">
+                <li><a href="#home" class="block text-lg hover:text-primary transition">Home</a></li>
+                <li><a href="#praktek-kerja" class="block text-lg hover:text-primary transition">Praktek Kerja</a></li>
+                <li><a href="#contact" class="block text-lg hover:text-primary transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold text-dark mb-4">Hi, I'm Kevin Mubarak</h2>
+                <p class="text-xl text-gray-600 mb-6">Informatics Engineering Student & Web Developer</p>
+                <div class="flex space-x-4">
+                    <a href="#praktek-kerja" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition">Lihat Praktek Kerja</a>
+                    <a href="#contact" class="border border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition">Contact Me</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 h-64 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                    <img src="https://kevin-mubarak-2022310003.netlify.app/Kevin_Mubarak_-_S1_Teknik_Informatika_(2)-min%20(1).jpg" 
+                         alt="Kevin Mubarak" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Praktek Kerja Section -->
+    <section id="praktek-kerja" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 section-title">PRAKTEK KERJA</h2>
+            
+            <div id="loading" class="loading-spinner mb-8"></div>
+            
+            <div id="pk-container" class="space-y-6">
+                <!-- Data akan diisi oleh JavaScript dari file JSON -->
+            </div>
+            
+            <div id="error-message" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                <p>Gagal memuat data Praktek Kerja. Silakan refresh halaman atau coba lagi nanti.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 section-title">CONTACT</h2>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-xl mb-6 text-center">Silakan hubungi saya melalui kontak di bawah ini:</p>
+                <div class="space-y-4 bg-white/10 p-8 rounded-xl">
+                    <div class="flex items-center">
+                        <div class="bg-white p-3 rounded-full mr-4">
+                            <i class="fas fa-phone text-primary text-xl"></i>
+                        </div>
+                        <a href="https://wa.me/+6281282012692" class="text-lg hover:underline">0812-8201-2692</a>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-white p-3 rounded-full mr-4">
+                            <i class="fas fa-envelope text-primary text-xl"></i>
+                        </div>
+                        <a href="mailto:kevinmubarok.rp13.2019@gmail.com" class="text-lg hover:underline">kevinmubarok.rp13.2019@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 Kevin Mubarak. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Load PK data from external JSON file
+        async function loadPKData() {
+            const container = document.getElementById('pk-container');
+            const loading = document.getElementById('loading');
+            const errorMessage = document.getElementById('error-message');
+            
+            try {
+                // Sembunyikan container dan error message, tampilkan loading
+                container.innerHTML = '';
+                errorMessage.classList.add('hidden');
+                loading.classList.remove('hidden');
+                
+                // Fetch data dari file JSON eksternal
+                const response = await fetch('PK[Kevin].json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Sembunyikan loading
+                loading.classList.add('hidden');
+                
+                // Render data
+                data.PK.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-gray-50 p-6 rounded-xl shadow-md project-card';
+                    
+                    card.innerHTML = `
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold text-primary">Hari ${item.Day}</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">${item.Date}</span>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700 font-medium">Waktu: ${item.Time}</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700">${item.Activity}</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">Folder Dokumentasi: ${item.Folder_dokumentasi}</p>
+                        </div>
+                    `;
+                    
+                    container.appendChild(card);
+                });
+                
+            } catch (error) {
+                console.error('Error loading PK data:', error);
+                
+                // Sembunyikan loading, tampilkan error message
+                loading.classList.add('hidden');
+                errorMessage.classList.remove('hidden');
+                
+                // Tampilkan data fallback jika fetch gagal
+                container.innerHTML = `
+                    <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded mb-4">
+                        <p>Menggunakan data fallback karena tidak dapat memuat file JSON.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold text-primary">Hari 1</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">13-11-2025</span>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700 font-medium">Waktu: 07:00 - 16:00</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700">Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">Folder Dokumentasi: Day 1</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold text-primary">Hari 2</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">14-11-2025</span>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700 font-medium">Waktu: 07:00 - 17:00</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700">Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">Folder Dokumentasi: Day 2</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold text-primary">Hari 3</h3>
+                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">15-11-2025</span>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700 font-medium">Waktu: Tidak disebutkan</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700">Melanjutkan Install Ulang PC AIO HP dan hanya beberapa Driver yang saya Install, dan berhasil</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">Folder Dokumentasi: Day 3</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPKData();
+        });
+    </script>
+</body>
+</html>
