@@ -209,7 +209,7 @@
             <div id="loading" class="loading-spinner mb-8"></div>
             
             <div id="pk-container" class="space-y-6">
-                <!-- Data akan diisi oleh JavaScript dari file JSON -->
+                <!-- Data akan diisi oleh JavaScript -->
             </div>
             
             <div id="error-message" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
@@ -269,6 +269,75 @@
     </button>
 
     <script>
+        // Data JSON langsung di dalam file HTML (fallback)
+        const pkData = {
+            "PK": [
+                {
+                    "Day": "1",
+                    "Date": "13-11-2025",
+                    "Time": "07:00 - 16:00",
+                    "Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
+                    "Folder_dokumentasi": "Day 1",
+                    "Foto": [
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400"
+                    ]
+                },
+                {
+                    "Day": "2",
+                    "Date": "14-11-2025",
+                    "Time": "07:00 - 17:00",
+                    "Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]",
+                    "Folder_dokumentasi": "Day 2",
+                    "Foto": [
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400"
+                    ]
+                },
+                {
+                    "Day": "3",
+                    "Date": "15-11-2025",
+                    "Time": "07:00 - 12:00",
+                    "Activity": "Melanjutkan Install Ulang PC AIO HP dan hanya beberapa Driver yang saya Install, dan berhasil",
+                    "Folder_dokumentasi": "Day 3",
+                    "Foto": [
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+                        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400"
+                    ]
+                }
+            ]
+        };
+
         // Mobile menu functionality
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const closeMobileMenu = document.getElementById('closeMobileMenu');
@@ -356,7 +425,57 @@
             }
         });
 
-        // Load PK data from external JSON file
+        // Render PK data
+        function renderPKData(data) {
+            const container = document.getElementById('pk-container');
+            const loading = document.getElementById('loading');
+            
+            // Sembunyikan loading
+            loading.classList.add('hidden');
+            
+            // Render data
+            data.PK.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-gray-50 p-6 rounded-xl shadow-md project-card';
+                
+                let photosHTML = '';
+                if (item.Foto && item.Foto.length > 0) {
+                    photosHTML = `
+                        <div class="mt-4">
+                            <h4 class="font-medium text-gray-700 mb-2">Dokumentasi Foto:</h4>
+                            <div class="photo-gallery">
+                                ${item.Foto.map((photo, index) => `
+                                    <div class="photo-item" onclick="openModal(${JSON.stringify(item.Foto)}, ${index})">
+                                        <img src="${photo}" alt="Dokumentasi Hari ${item.Day} - Foto ${index + 1}" loading="lazy">
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Hari ${item.Day}</h3>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">${item.Date}</span>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-700 font-medium">Waktu: ${item.Time}</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-700">${item.Activity}</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm">Folder Dokumentasi: ${item.Folder_dokumentasi}</p>
+                    </div>
+                    ${photosHTML}
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Load PK data
         async function loadPKData() {
             const container = document.getElementById('pk-container');
             const loading = document.getElementById('loading');
@@ -368,7 +487,7 @@
                 errorMessage.classList.add('hidden');
                 loading.classList.remove('hidden');
                 
-                // Fetch data dari file JSON eksternal
+                // Coba load dari file JSON eksternal
                 const response = await fetch('PK [Kevin].json');
                 
                 if (!response.ok) {
@@ -377,108 +496,15 @@
                 
                 const data = await response.json();
                 
-                // Sembunyikan loading
-                loading.classList.add('hidden');
-                
-                // Render data
-                data.PK.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'bg-gray-50 p-6 rounded-xl shadow-md project-card';
-                    
-                    let photosHTML = '';
-                    if (item.Foto && item.Foto.length > 0) {
-                        photosHTML = `
-                            <div class="mt-4">
-                                <h4 class="font-medium text-gray-700 mb-2">Dokumentasi Foto:</h4>
-                                <div class="photo-gallery">
-                                    ${item.Foto.map((photo, index) => `
-                                        <div class="photo-item" onclick="openModal(${JSON.stringify(item.Foto)}, ${index})">
-                                            <img src="${photo}" alt="Dokumentasi Hari ${item.Day} - Foto ${index + 1}" loading="lazy">
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        `;
-                    }
-                    
-                    card.innerHTML = `
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold text-primary">Hari ${item.Day}</h3>
-                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">${item.Date}</span>
-                        </div>
-                        <div class="mb-4">
-                            <p class="text-gray-700 font-medium">Waktu: ${item.Time}</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="text-gray-700">${item.Activity}</p>
-                        </div>
-                        <div>
-                            <p class="text-gray-500 text-sm">Folder Dokumentasi: ${item.Folder_dokumentasi}</p>
-                        </div>
-                        ${photosHTML}
-                    `;
-                    
-                    container.appendChild(card);
-                });
+                // Jika berhasil, render data dari file
+                renderPKData(data);
                 
             } catch (error) {
                 console.error('Error loading PK data:', error);
                 
-                // Sembunyikan loading, tampilkan error message
-                loading.classList.add('hidden');
-                errorMessage.classList.remove('hidden');
-                
-                // Tampilkan data fallback jika fetch gagal
-                container.innerHTML = `
-                    <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded mb-4">
-                        <p>Menggunakan data fallback karena tidak dapat memuat file JSON.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold text-primary">Hari 1</h3>
-                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">13-11-2025</span>
-                        </div>
-                        <div class="mb-4">
-                            <p class="text-gray-700 font-medium">Waktu: 07:00 - 16:00</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="text-gray-700">Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019</p>
-                        </div>
-                        <div>
-                            <p class="text-gray-500 text-sm">Folder Dokumentasi: Day 1</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold text-primary">Hari 2</h3>
-                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">14-11-2025</span>
-                        </div>
-                        <div class="mb-4">
-                            <p class="text-gray-700 font-medium">Waktu: 07:00 - 17:00</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="text-gray-700">Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]</p>
-                        </div>
-                        <div>
-                            <p class="text-gray-500 text-sm">Folder Dokumentasi: Day 2</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-semibold text-primary">Hari 3</h3>
-                            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">15-11-2025</span>
-                        </div>
-                        <div class="mb-4">
-                            <p class="text-gray-700 font-medium">Waktu: Tidak disebutkan</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="text-gray-700">Melanjutkan Install Ulang PC AIO HP dan hanya beberapa Driver yang saya Install, dan berhasil</p>
-                        </div>
-                        <div>
-                            <p class="text-gray-500 text-sm">Folder Dokumentasi: Day 3</p>
-                        </div>
-                    </div>
-                `;
+                // Jika gagal, gunakan data fallback yang sudah ada di dalam file
+                console.log('Menggunakan data fallback...');
+                renderPKData(pkData);
             }
         }
 
