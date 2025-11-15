@@ -124,6 +124,7 @@
             font-size: 40px;
             font-weight: bold;
             cursor: pointer;
+            z-index: 1001;
         }
         .modal-nav {
             position: absolute;
@@ -139,12 +140,20 @@
             align-items: center;
             border-radius: 50%;
             cursor: pointer;
+            z-index: 1001;
         }
         .modal-prev {
             left: 20px;
         }
         .modal-next {
             right: 20px;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -228,7 +237,7 @@
             <i class="fas fa-chevron-right"></i>
         </div>
         <div class="modal-content">
-            <img id="modalImage" src="" alt="">
+            <img id="modalImage" src="" alt="" class="fade-in">
         </div>
     </div>
 
@@ -272,52 +281,49 @@
         // Data JSON langsung di dalam file HTML (fallback)
         const pkData = {
             "PK":[
-{
-"Day" :  "1", 
-"Date" : "13-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
-"Folder_dokumentasi" : "Day 1",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499709.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499710.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499717.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499720.jpg"
-      ]
-},
-
-{
-"Day" :  "2", 
-"Date" : "14-11-2025",
-"Time" : "07:00 - 17:00",
-"Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]",
-"Folder_dokumentasi" : "Day 2",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114082801.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114082809.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114084834.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114110213.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114110222.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114110602.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114161550.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114161605.jpg"
-      ]
-},
-
-{
-"Day" :  "3", 
-"Date" : "15-11-2025",
-"Time" : "07:00 - 12:00",
-"Activity": "Melanjutkan Install Ulang PC AIO HP dan hanya beberapa Driver yang saya Install, dan berhasil",
-"Folder_dokumentasi" : "Day 3",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/3.jpg"
-      ]
-},
-
-]
+                {
+                    "Day" :  "1", 
+                    "Date" : "13-11-2025",
+                    "Time" : "07:00 - 16:00",
+                    "Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
+                    "Folder_dokumentasi" : "Day 1",
+                    "Foto": [
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499709.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499710.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499717.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499720.jpg"
+                    ]
+                },
+                {
+                    "Day" :  "2", 
+                    "Date" : "14-11-2025",
+                    "Time" : "07:00 - 17:00",
+                    "Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]",
+                    "Folder_dokumentasi" : "Day 2",
+                    "Foto": [
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114082801.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114082809.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114084834.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114110213.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114110222.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114110602.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114161550.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114161605.jpg"
+                    ]
+                },
+                {
+                    "Day" :  "3", 
+                    "Date" : "15-11-2025",
+                    "Time" : "07:00 - 12:00",
+                    "Activity": "Melanjutkan Install Ulang PC AIO HP dan hanya beberapa Driver yang saya Install, dan berhasil",
+                    "Folder_dokumentasi" : "Day 3",
+                    "Foto": [
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/1.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/2.jpg",
+                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/3.jpg"
+                    ]
+                }
+            ]
         };
 
         // Mobile menu functionality
@@ -382,11 +388,15 @@
         function showNextPhoto() {
             currentIndex = (currentIndex + 1) % currentPhotos.length;
             modalImage.src = currentPhotos[currentIndex];
+            modalImage.classList.add('fade-in');
+            setTimeout(() => modalImage.classList.remove('fade-in'), 500);
         }
         
         function showPrevPhoto() {
             currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
             modalImage.src = currentPhotos[currentIndex];
+            modalImage.classList.add('fade-in');
+            setTimeout(() => modalImage.classList.remove('fade-in'), 500);
         }
         
         modalClose.addEventListener('click', closeModal);
@@ -493,6 +503,18 @@
         // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
             loadPKData();
+            
+            // Tambahkan event listener untuk semua gambar di galeri
+            document.addEventListener('click', (e) => {
+                if (e.target.closest('.photo-item')) {
+                    const photoItem = e.target.closest('.photo-item');
+                    const gallery = photoItem.closest('.photo-gallery');
+                    const photos = Array.from(gallery.querySelectorAll('.photo-item img')).map(img => img.src);
+                    const index = Array.from(gallery.querySelectorAll('.photo-item')).indexOf(photoItem);
+                    
+                    openModal(photos, index);
+                }
+            });
         });
     </script>
 </body>
