@@ -35,19 +35,32 @@
 {
 "Day" :  "3", 
 "Date" : "15-11-2025",
-"Time" : "07:00 - 12:00",
+"Time" : "07:00 - 13:00",
 "Activity": "Melanjutkan Install Ulang PC AIO HP dan hanya beberapa Driver yang saya Install, dan berhasil",
 "Folder_dokumentasi" : "Day 3",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/1.jpg",
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/3.jpg"
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/3.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/4.jpg"
+      ]
+},
+
+
+{
+"Day" :  "4", 
+"Date" : "17-11-2025",
+"Time" : "07:00 - 16:00",
+"Activity": "-",
+"Folder_dokumentasi" : "Day 4",
+"Foto": [
+        "Link",
+        "Link"
       ]
 },
 
 ]
 }
-
 
 
 
