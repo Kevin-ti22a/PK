@@ -51,16 +51,17 @@
 "Day" :  "4", 
 "Date" : "17-11-2025",
 "Time" : "07:00 - 16:00",
-"Activity": "Instalasi CCTV",
+"Activity": "Instalasi CCTV UniFi AI 360",
 "Folder_dokumentasi" : "Day 4",
 "Foto": [
-        "Link",
-        "Link"
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 4/1.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 4/2.jpg"
       ]
 }
 
 ]
 }
+
 
 
 
