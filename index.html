@@ -278,50 +278,39 @@
     </button>
 
     <script>
-        // Data JSON langsung di dalam file HTML (fallback)
+        // Data fallback jika gagal load dari GitHub
         const pkData = {
-            "PK":[
+            "PK": [
                 {
-                    "Day" :  "1", 
-                    "Date" : "13-11-2025",
-                    "Time" : "07:00 - 16:00",
-                    "Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
-                    "Folder_dokumentasi" : "Day 1",
+                    "Day": 1,
+                    "Date": "2024-01-15",
+                    "Time": "08:00 - 16:00",
+                    "Activity": "Pengenalan lingkungan kerja dan briefing awal tentang perusahaan dan tim development",
+                    "Folder_dokumentasi": "Day1",
                     "Foto": [
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499709.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499710.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499717.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499720.jpg"
+                        "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                        "https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                     ]
                 },
                 {
-                    "Day" :  "2", 
-                    "Date" : "14-11-2025",
-                    "Time" : "07:00 - 17:00",
-                    "Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]",
-                    "Folder_dokumentasi" : "Day 2",
+                    "Day": 2,
+                    "Date": "2024-01-16",
+                    "Time": "08:00 - 17:00",
+                    "Activity": "Pelatihan tools development dan setup environment kerja. Mempelajari Git, VS Code, dan framework yang digunakan",
+                    "Folder_dokumentasi": "Day2",
                     "Foto": [
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114082801.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114082809.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114084834.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114110213.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114110222.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114110602.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114161550.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 2/IMG20251114161605.jpg"
+                        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                     ]
                 },
                 {
-                    "Day" :  "3", 
-                    "Date" : "15-11-2025",
-                    "Time" : "07:00 - 12:00",
-                    "Activity": "Melanjutkan Install Ulang PC AIO HP dan hanya beberapa Driver yang saya Install, dan berhasil",
-                    "Folder_dokumentasi" : "Day 3",
+                    "Day": 3,
+                    "Date": "2024-01-17",
+                    "Time": "09:00 - 16:30",
+                    "Activity": "Memulai project pertama: Membuat layout website company profile menggunakan HTML, CSS, dan JavaScript",
+                    "Folder_dokumentasi": "Day3",
                     "Foto": [
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/1.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/2.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/3.jpg",
-                        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/4.jpg"
+                        "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                     ]
                 }
             ]
@@ -422,9 +411,14 @@
         function renderPKData(data) {
             const container = document.getElementById('pk-container');
             const loading = document.getElementById('loading');
+            const errorMessage = document.getElementById('error-message');
             
-            // Sembunyikan loading
+            // Sembunyikan loading dan error message
             loading.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+            
+            // Kosongkan container
+            container.innerHTML = '';
             
             // Render data
             data.PK.forEach(item => {
@@ -438,7 +432,7 @@
                             <h4 class="font-medium text-gray-700 mb-2">Dokumentasi Foto:</h4>
                             <div class="photo-gallery">
                                 ${item.Foto.map((photo, index) => `
-                                    <div class="photo-item" onclick="openModal(${JSON.stringify(item.Foto)}, ${index})">
+                                    <div class="photo-item" onclick="openModal(${JSON.stringify(item.Foto).replace(/\"/g, '&quot;')}, ${index})">
                                         <img src="${photo}" alt="Dokumentasi Hari ${item.Day} - Foto ${index + 1}" loading="lazy">
                                     </div>
                                 `).join('')}
@@ -468,7 +462,7 @@
             });
         }
 
-        // Load PK data
+        // Load PK data dari GitHub
         async function loadPKData() {
             const container = document.getElementById('pk-container');
             const loading = document.getElementById('loading');
@@ -480,43 +474,87 @@
                 errorMessage.classList.add('hidden');
                 loading.classList.remove('hidden');
                 
-                // Coba load dari file JSON eksternal
-                const response = await fetch('PK [Kevin].json');
+                // URL GitHub RAW - ganti dengan URL Anda
+                const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/Kevin-ti22a/PK/refs/heads/main/PK%20%5BKevin%5D.json';
+                
+                // Coba load dari GitHub RAW
+                console.log('Mencoba load data dari:', GITHUB_RAW_URL);
+                const response = await fetch(GITHUB_RAW_URL);
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 
                 const data = await response.json();
+                console.log('Data berhasil di-load:', data);
                 
-                // Jika berhasil, render data dari file
+                // Jika berhasil, render data dari GitHub
                 renderPKData(data);
                 
             } catch (error) {
-                console.error('Error loading PK data:', error);
+                console.error('Error loading PK data dari GitHub:', error);
                 
-                // Jika gagal, gunakan data fallback yang sudah ada di dalam file
+                // Jika gagal, gunakan data fallback
                 console.log('Menggunakan data fallback...');
                 renderPKData(pkData);
+                
+                // Tampilkan pesan error
+                errorMessage.classList.remove('hidden');
+                errorMessage.innerHTML = `
+                    <strong>Gagal memuat data dari GitHub.</strong>
+                    <p class="mt-1">Menampilkan data contoh. Error: ${error.message}</p>
+                    <p class="text-sm mt-2">Pastikan URL GitHub RAW sudah benar dan file JSON tersedia.</p>
+                `;
+            }
+        }
+
+        // Solusi alternatif: Load dari file lokal
+        async function loadPKDataLocal() {
+            const container = document.getElementById('pk-container');
+            const loading = document.getElementById('loading');
+            const errorMessage = document.getElementById('error-message');
+            
+            try {
+                container.innerHTML = '';
+                errorMessage.classList.add('hidden');
+                loading.classList.remove('hidden');
+                
+                // Coba load dari file lokal
+                const response = await fetch('PK%5BKevin%5D.json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('Data berhasil di-load dari file lokal:', data);
+                renderPKData(data);
+                
+            } catch (error) {
+                console.error('Error loading PK data dari file lokal:', error);
+                console.log('Menggunakan data fallback...');
+                renderPKData(pkData);
+                
+                errorMessage.classList.remove('hidden');
+                errorMessage.innerHTML = `
+                    <strong>Gagal memuat data.</strong>
+                    <p class="mt-1">Menampilkan data contoh. Error: ${error.message}</p>
+                    <p class="text-sm mt-2">Pastikan file 'PK[Kevin].json' ada di direktori yang sama.</p>
+                `;
             }
         }
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
-            loadPKData();
-            
-            // Tambahkan event listener untuk semua gambar di galeri
-            document.addEventListener('click', (e) => {
-                if (e.target.closest('.photo-item')) {
-                    const photoItem = e.target.closest('.photo-item');
-                    const gallery = photoItem.closest('.photo-gallery');
-                    const photos = Array.from(gallery.querySelectorAll('.photo-item img')).map(img => img.src);
-                    const index = Array.from(gallery.querySelectorAll('.photo-item')).indexOf(photoItem);
-                    
-                    openModal(photos, index);
-                }
+            // Coba load dari GitHub dulu, jika gagal coba dari lokal
+            loadPKData().catch(() => {
+                console.log('Fallback ke load data lokal...');
+                loadPKDataLocal();
             });
         });
+
+        // Export fungsi openModal ke global scope
+        window.openModal = openModal;
     </script>
 </body>
 </html>
