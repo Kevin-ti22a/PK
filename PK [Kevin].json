@@ -36,7 +36,7 @@
 "Day" :  "3", 
 "Date" : "15-11-2025",
 "Time" : "07:00 - 13:00",
-"Activity": "Melanjutkan Install Ulang PC AIO HP dan hanya beberapa Driver yang saya Install, dan berhasil",
+"Activity": "Melanjutkan Install Ulang PC AIO HP hanya beberapa Driver yang bisa saya Install karena kurang kompatible, tapi Installasi berhasil",
 "Folder_dokumentasi" : "Day 3",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 3/1.jpg",
@@ -57,8 +57,21 @@
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 4/1.jpg",
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 4/2.jpg"
       ]
+},
+
+        {
+"Day" :  "5", 
+"Date" : "18-11-2025",
+"Time" : "07:00 - 16:00",
+"Activity": "Merapihkan Kabel CCTV di Ruang IT Support [belum di lanjutkan karena Alat yang diperlukan belum datang]",
+"Folder_dokumentasi" : "Day 5",
+"Foto": [
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 5/1.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 5/2.jpg"
+      ]
 }
 
 ]
 }
+
 
