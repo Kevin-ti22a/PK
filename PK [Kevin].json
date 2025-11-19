@@ -82,12 +82,14 @@
 "Day" :  "6", 
 "Date" : "19-11-2025",
 "Time" : "07:00 - 16:00",
-"Activity": "Instalasi CCTV pada Ruang 301",
+"Activity": "Instalasi CCTV pada Ruang 301, Mencoba Backup HDD 512 GB (Disk D, F, G) [terindikasi Corrupt Data] ke SSD Mini PC Intel Nuc (Disk E) [Tapi karena data windows sudah corrupt data maka proses backup batal]",
 "Folder_dokumentasi" : "Day 6",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 6/1.jpg",
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 6/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 6/3.jpg"
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 6/3.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 6/4.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 6/5.jpg"
         
       ]
 }
@@ -95,6 +97,7 @@
         
 ]
 }
+
 
 
 
