@@ -51,7 +51,7 @@
 "Day" :  "4", 
 "Date" : "17-11-2025",
 "Time" : "07:00 - 16:00",
-"Activity": "Instalasi CCTV UniFi AI 360",
+"Activity": "Instalasi CCTV UniFi AI 360 di ruang 220 - 227",
 "Folder_dokumentasi" : "Day 4",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 4/1.jpg",
@@ -66,7 +66,7 @@
 "Day" :  "5", 
 "Date" : "18-11-2025",
 "Time" : "07:00 - 16:00",
-"Activity": "Merapihkan Kabel CCTV di Ruang IT Support [belum di lanjutkan karena Alat yang diperlukan belum datang]",
+"Activity": "Merapihkan Kabel CCTV di Ruang IT Atas [belum di lanjutkan karena Alat yang diperlukan belum datang], memasang kabel LAN untuk CCTV pada ruang 301",
 "Folder_dokumentasi" : "Day 5",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 5/1.jpg",
@@ -74,10 +74,26 @@
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 5/3.jpg"
         
       ]
+},
+
+        {
+"Day" :  "6", 
+"Date" : "19-11-2025",
+"Time" : "07:00 - 16:00",
+"Activity": "Instalasi CCTV pada Ruang 301",
+"Folder_dokumentasi" : "Day 6",
+"Foto": [
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 6/1.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 6/2.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 6/3.jpg"
+        
+      ]
 }
 
+        
 ]
 }
+
 
 
 
