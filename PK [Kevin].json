@@ -5,7 +5,7 @@
 "Date" : "13-11-2025",
 "Time" : "07:00 - 16:00",
 "Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
-"Folder_dokumentasi" : "Day 1 [Kamis]",
+"Folder_dokumentasi" : "Day 1",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499709.jpg",
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 1/1000499710.jpg",
@@ -15,7 +15,7 @@
 },
 
 {
-"Day" :  "2", 
+"Day" :  "2 [Jum'at]", 
 "Date" : "14-11-2025",
 "Time" : "07:00 - 17:00",
 "Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]",
@@ -33,7 +33,7 @@
 },
 
 {
-"Day" :  "3", 
+"Day" :  "3 [Sabtu]", 
 "Date" : "15-11-2025",
 "Time" : "07:00 - 13:00",
 "Activity": "Melanjutkan Install Ulang PC AIO HP hanya beberapa Driver yang bisa saya Install karena kurang kompatible, tapi Installasi berhasil",
@@ -48,7 +48,7 @@
 
 
 {
-"Day" :  "4", 
+"Day" :  "4 [Senin]", 
 "Date" : "17-11-2025",
 "Time" : "07:00 - 16:00",
 "Activity": "Instalasi CCTV UniFi AI 360 di ruang 220 - 227",
@@ -63,7 +63,7 @@
 },
 
         {
-"Day" :  "5", 
+"Day" :  "5 [Selasa]", 
 "Date" : "18-11-2025",
 "Time" : "07:00 - 16:00",
 "Activity": "Merapihkan Kabel CCTV di Ruang IT Atas [belum di lanjutkan karena Alat yang diperlukan belum datang], memasang kabel LAN untuk CCTV pada ruang 301",
@@ -79,7 +79,7 @@
 },
 
         {
-"Day" :  "6", 
+"Day" :  "6 [Rabu]", 
 "Date" : "19-11-2025",
 "Time" : "07:00 - 16:00",
 "Activity": "Instalasi CCTV pada Ruang 301, Mencoba Backup HDD 512 GB (Disk D, F, G) [terindikasi Corrupt Data] ke SSD Mini PC Intel Nuc (Disk E) [Tapi karena data windows sudah corrupt data maka proses backup batal]",
@@ -95,7 +95,7 @@
 },
 
          {
-"Day" :  "7", 
+"Day" :  "7 [Kamis]", 
 "Date" : "20-11-2025",
 "Time" : "07:00 - 16:00",
 "Activity": "-",
@@ -113,6 +113,7 @@
         
 ]
 }
+
 
 
 
