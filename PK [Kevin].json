@@ -103,11 +103,22 @@
 "Activity": "Memeriksa Dokumen dan Nota Pengeluaran Divisi IT [karena Datanya sangat penting jadi tidak bisa saya dokumentasi]",
 "Folder_dokumentasi" : "Day 7",
 "Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 7/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 7/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 7/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 7/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 7/5.jpg"
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 7/1.jpg"
+        
+      ]
+},
+         {
+"Day" :  "8 [Jum'at]", 
+"Date" : "21-11-2025",
+"Time" : "07:00 - 16:00",
+"Activity": "Membantu mencarikan Platform untuk menampilkan widget Sosial Media [https://elfsight.com] untuk Website SMK Taruna Bangsa",
+"Folder_dokumentasi" : "Day 8",
+"Foto": [
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 8/1.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 8/2.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 8/3.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 8/4.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 8/5.jpg"
         
       ]
 }
@@ -115,6 +126,7 @@
         
 ]
 }
+
 
 
 
