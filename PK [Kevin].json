@@ -111,7 +111,8 @@
 "Day" :  "8 [Jum'at]", 
 "Date" : "21-11-2025",
 "Time" : "07:00 - 16:00",
-"Activity": "Membantu mencarikan Platform untuk menampilkan widget Sosial Media [https://elfsight.com] untuk Website SMK Taruna Bangsa",
+"Activity": ["Membantu mencarikan Platform untuk menampilkan widget Sosial Media [https://elfsight.com] untuk Website SMK Taruna Bangsa", 
+        "membantu mengisi content untuk website SMK Taruna Bangsa [Halaman Profile, Halaman Ekstrakurikuler, Halaman Vacational Program, Halaman Facilities dan Halaman Contact]"],
 "Folder_dokumentasi" : "Day 8",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 8/1.jpg",
@@ -127,6 +128,7 @@
         
 ]
 }
+
 
 
 
