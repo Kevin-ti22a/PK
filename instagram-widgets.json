@@ -4,28 +4,28 @@
     {
       "id": "widget_1",
       "name": "Instagram Widget 1",
-      "url": "https://apps.elfsight.com/panel/applications/YOUR_INSTAGRAM_WIDGET_1/",
+      "share_url": "https://apps.elfsight.com/panel/applications/YOUR_INSTAGRAM_WIDGET_1/",
       "active": true,
       "views_this_month": 45
     },
     {
       "id": "widget_2", 
       "name": "Instagram Widget 2",
-      "url": "https://499aef6bdc5d4e5ab5902af490b51e97.elf.site",
+      "share_url": "https://499aef6bdc5d4e5ab5902af490b51e97.elf.site",
       "active": true,
       "views_this_month": 32
     },
     {
       "id": "widget_3",
       "name": "Instagram Widget 3", 
-      "url": "https://apps.elfsight.com/panel/applications/YOUR_INSTAGRAM_WIDGET_3/",
+      "share_url": "https://apps.elfsight.com/panel/applications/YOUR_INSTAGRAM_WIDGET_3/",
       "active": true,
       "views_this_month": 28
     },
     {
       "id": "widget_4",
       "name": "Instagram Widget 4",
-      "url": "https://apps.elfsight.com/panel/applications/YOUR_INSTAGRAM_WIDGET_4/",
+      "share_url": "https://apps.elfsight.com/panel/applications/YOUR_INSTAGRAM_WIDGET_4/",
       "active": true,
       "views_this_month": 19
     }
