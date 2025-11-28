@@ -191,7 +191,7 @@
 "Day" :  "13 [Kamis]", 
 "Date" : "27-11-2025",
 "Time" : "07:00 - 16:00",
-"Activity": ["membuat Widget Statik untuk web SMK Taruna Bangsa"],
+"Activity": ["membuat Widget Dinamis Youtube untuk web SMK Taruna Bangsa [Karena masih belum selesai maka saya lanjutkan di hari selanjutnya]"],
 "Folder_dokumentasi" : "Day 13",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 13/1.jpg",
@@ -202,11 +202,29 @@
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 13/5.jpg"
         
       ]
+},
+
+        {
+"Day" :  "14 [Jum'at]", 
+"Date" : "28-11-2025",
+"Time" : "07:00 - 16:00",
+"Activity": ["Melanjutkan membuat Widget Dinamis Youtube untuk web SMK Taruna Bangsa"],
+"Folder_dokumentasi" : "Day 14",
+"Foto": [
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 14/1.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 14/2.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 14/3.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 14/4.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 14/6.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 14/5.jpg"
+        
+      ]
 }
 
         
 ]
 }
+
 
 
 
