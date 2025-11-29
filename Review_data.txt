@@ -1,0 +1,527 @@
+[
+  {
+    "username_review": "Muhammad Zaqi",
+    "rating_review": "★★★★★",
+    "message_review": "Bangga Jadi Alumni SMK Taruna Bangsa! Sebagai alumni, aku bisa bilang SMK Taruna Bangsa ini keren banget! Dulu aku sekolah di sini dan ngerasa banget gimana mereka nagak cuma kasih teori, tapi juga praktik yang kuat sesuai jurusanku. Guru-gurunya profesional dan super suportif, bener-bener ngebimbing kita biar siap kerja atau lanjutin kuliah. Disiplin di sekolah ini juga positif, itu yang bikin kita punya mental juara. Fasilitasnya lumayan lengkap buat belajar dan praktik. Pokoknya, aku bangga banget jadi bagian dari SMK Taruna Bangsa. Rekomendasi buat yang cari sekolah kejuruan dengan bekal mumpuni!",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Joe Zivalka",
+    "rating_review": "★★★★★",
+    "message_review": "Daftar anak (Zivalka Putra Raharjo) sekolah disini jurusan RPL. Sangat megah & bagus sekolahnya. Dg fasilitas2 yg cukup baik.jg. Bismillah bisa terdaftar melalui jalur beasiswa tahfidz disini. Jaya selalu SMK Taruna Bangsa Bekasi.",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Hurriyah Mumtahanah (Tanti)",
+    "rating_review": "★★★★★",
+    "message_review": "Awal searching gegara lihat akreditasi dan jumlah siswa yg banyak..lalu menyimak ig.nya dll..tertib,terjangkau, support di akademis bahkan agama anak2..akhirnya milih jd sekolah buat putra sy memperdalam skilinya sebelum nnt dilanjutkan kuliah...",
+    "reply_smk_taruna_bangsa": "Terima kasih bunda semoga sama sama kota dapat mengantarkan pitra putrinya kedepan lebih baik lagi. Terimakasih atas kepercayaanya",
+    "like_review": null
+  },
+  {
+    "username_review": "Anita Azis (nitnot)",
+    "rating_review": "★★★★★",
+    "message_review": "Pertama kali jemput anak di ruang tunggu, kaqet karena banyak siswa yang menyalami. Ternyata aturan di sekolah ini, semua wajib menyalami orang tua, meski bukan orang tuanya sendiri. Salut euy",
+    "reply_smk_taruna_bangsa": "Terima Kasih",
+    "like_review": null
+  },
+  {
+    "username_review": "Yeva Purnama",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolah dengan beragam fasilitasi sekolah yang nyaman, disiplin, favorit, keren abisss",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Rendy Prasetya",
+    "rating_review": "★★★★★",
+    "message_review": "Maaf mau nanya kemaren yang PKL bulan 2 di kantor pos Bekasi timur siapa aja ya namanya siswanya",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "giri priyo",
+    "rating_review": "★★★★★",
+    "message_review": "Alhamdullilah belajarnya menyenangkan",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "rpl3_2026",
+    "rating_review": "★★★★★",
+    "message_review": "Bangga jadi bagian keluarga besar SMK TARUNA BANGSA",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Muhammad Hafidz",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolah yg menurut saya terbaik dalam pembelajaran dan ketaatannya dalam aturan sekolah, sekolah yg membuat siswa/nya menjadi teladan dan terdidik akan pendidikan yg diberikan oleh bapak/bu gurunya ... Maju dan tinggi lah terus SMK TARUNA BANGSA KOTA BEKASI... SMK TARUNA BANGSA (MANDIRI, CERDAS, dan BERINTEGRITAS) ...",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 3
+  },
+  {
+    "username_review": "Cz Mayy",
+    "rating_review": "★★★★★",
+    "message_review": "SEKOLAH DI SANA SANGAT KEREEN DAH EVENT KADANG KADANG KEREN",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Abdur Rofiq",
+    "rating_review": "★★★★★",
+    "message_review": "Alhamdullilah bangga pernah jadi alumni sini",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "medi yanda",
+    "rating_review": "★★★★★",
+    "message_review": "sekolah yg mendidik murid menjadi disiplin",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Faris haikal Baldan",
+    "rating_review": "★★★★★",
+    "message_review": "bener bener 3 tahun yang asik",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Anwar Black",
+    "rating_review": "★★★★★",
+    "message_review": "Angkatan 2005 mna nih, jadi kangen liat ni sekolah. Wlpun dilu juara 2 tapi seneng bgt sudah mewakili antar sekolah di kota Bekasi. Salam hangat utk ade² kelas ku n para guru2 terbaik dsna.. Anwar Yasin",
+    "reply_smk_taruna_bangsa": "Wah luar biasa kak... Semoga terjadijadan kenangan terindah dan sukses selalu",
+    "like_review": 5
+  },
+  {
+    "username_review": "AZKA GMG",
+    "rating_review": "★★★★★",
+    "message_review": "Selain menerpkan disiplin yg ketat, SMK TARUNA BANGSA jg sellu melengkapi alat dan bahan praktik sesuai dg kamajuan tekhnologi.",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 5
+  },
+  {
+    "username_review": "Dewi aprilianti Aprilianti",
+    "rating_review": "★★★★★",
+    "message_review": "Ibu maaf mau nanya sekolahan SMK taruna jaya ada GK untuk jurusan Pai?",
+    "reply_smk_taruna_bangsa": "Mohon maaf mkadnya SMK Taruna Bangsa kah?",
+    "like_review": null
+  },
+  {
+    "username_review": "Iman Haqiqi",
+    "rating_review": "★★★★★",
+    "message_review": "Disiplin, tertib, mendidik sepenuh hati.",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Heru Santoso",
+    "rating_review": "★★★★★",
+    "message_review": "Alhamdulillah lingkungannya nyaman, bebas asap rokok.. Lapangan luas dan Fasilitasnya Alhamdulillah lengkap.. Masjid, kantin, parkiran.. dll.",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 2
+  },
+  {
+    "username_review": "Close Up 21",
+    "rating_review": "★★★★★",
+    "message_review": "Anak sekolah disini, jadi lebih baik dan menjadi pribadi yang rajin.. Jaya selalu SMK Taruna Bangsall! Jaya jaya jaya!!",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Oppie Riztya",
+    "rating_review": "★★★★★",
+    "message_review": "Tadinya anak saya ga mau sekolah dari karena katarya disiplin bgt kaya sekolah militer;tp stih masuk dia senang bgt & sangat bangga sekolah di SMK Taruna Bangsa",
+    "reply_smk_taruna_bangsa": "Ok terimkasih... SMK Taruna Bangsa asik looh...",
+    "like_review": 4
+  },
+  {
+    "username_review": "MT Hidayatul Mubtadilen Media",
+    "rating_review": "★★★★★",
+    "message_review": "Alhamdullilah saya sudah pernah pkl pelajaran PAI salam buat Ustadz Edi dan Ustadz Bahar dan bu Siti Nurhayati",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 4
+  },
+  {
+    "username_review": "Muhammad Izzulhaq",
+    "rating_review": "★★★★★",
+    "message_review": "Siswanya disiplin",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Ahmad Irhamma",
+    "rating_review": "★★★★★",
+    "message_review": "Schoolsick (kangen sekolah), mungkin g trlalu banyak cerita. Tpi dri sini lah saya menimba ilmu,kangen sama temen2 seangkatan MO 2007-2008. Rizal Hamadi",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 6
+  },
+  {
+    "username_review": "Wibi Sono",
+    "rating_review": "★★★★★",
+    "message_review": "Taruna bangsa sekolah yang bagus, fasilitas nya juga udah lumayan ruang praktek nya bagus, dan guru guru nya juga asik asik #TARUNA BANGSA SELALU DI HATI",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 5
+  },
+  {
+    "username_review": "rumondang armin Pane",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolah dengan rasa kekeluargaan yang kental dan terus berusaha lebih baik lagi. Inovasi tiada henti.",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 2
+  },
+  {
+    "username_review": "Anita Sulemah",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolah luar biasa, Alhamdulillah dapat kerja dari sekolah ini. di didik dan di bina sampai Lulus...... thanks Taruna Bangsa",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 4
+  },
+  {
+    "username_review": "Raza Gilang Ramadhan",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolah swasta dengan ciri khas kedisipilnan yang tinggi sehingga menciptakan murid yang mandiri, cerdas dan berintegritas untuk menghadapi tantangan dimasa depan.",
+    "reply_smk_taruna_bangsa": "Terima Kasih ulasannya... semoga selalu menjaga kualitas",
+    "like_review": 6
+  },
+  {
+    "username_review": "Muhammad Nurdiansyah",
+    "rating_review": "★★★★★",
+    "message_review": "Sayang bola sama futsal nya udah ga santer lagi nama nya",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Naomi Suka Suka",
+    "rating_review": "★★★★★",
+    "message_review": "Generasi ke 4 Taruna Bangsa. Bangga Pernah Bersekolah di sini Salam anak MO Salam BrotherHood",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Ahmad Sulthoni Bowo",
+    "rating_review": "★★★★★",
+    "message_review": "Semoga yang sudah moderen. Digitalisasi disetiap aktivitas. Selalu uptodate terhadap perubahan zaman. Keren",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Bang Jarab",
+    "rating_review": "★★★★★",
+    "message_review": "Pilihan tepat untuk membentuk karakter dan kompetensi yg baik karna di dukung dengan pasilitas belajar berbasis industri",
+    "reply_smk_taruna_bangsa": "Siap. Terimkash...",
+    "like_review": 3
+  },
+  {
+    "username_review": "opcoded",
+    "rating_review": "★★★★★",
+    "message_review": "Bagus dan disiplin",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "RANDY RADITYA",
+    "rating_review": "★★★★★",
+    "message_review": "Luar biasa.. sangat bagus. Gedung sarana pembelajaran yg lengkap. Akreditas A",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 1
+  },
+  {
+    "username_review": "Baexhaq",
+    "rating_review": "★★★★★",
+    "message_review": "Temptanta bagus dan rapi walau masih dapat ditemukan Sampah di lingkungan dan para pengajarnya sangat ramah",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 1
+  },
+  {
+    "username_review": "Edi Junaedi",
+    "rating_review": "★★★★★",
+    "message_review": "Alhamdulillah Wasyukurillah bisa menjadi bagian dari SMK Taruna Bangsa sekolah yg sangat \"Luar Biasa\".",
+    "reply_smk_taruna_bangsa": "Terima Kasih memberikan ulasan yang positif, Semoga semakin jaya selalu....",
+    "like_review": 4
+  },
+  {
+    "username_review": "Hutama Akbar",
+    "rating_review": "★★★★★",
+    "message_review": "Fasilitas lengkap, lingkungan sekolahnya bersih, guru2nya ramah dan baik2.",
+    "reply_smk_taruna_bangsa": "Terima kasih kak bintang dan ulasannya. Salam sukses",
+    "like_review": 1
+  },
+  {
+    "username_review": "Hutama Akbar",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolah yang bagus, lingkungannya bersih, dan murid2nya sangat disiplin",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Satriya bintang",
+    "rating_review": "★★★★★",
+    "message_review": "SEKOLAH KEREN BAGUS DAN MANTAPP",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Chescka 9C",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolah nya bagus banget 😊 ...",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Indra Iswahyudi",
+    "rating_review": "★★★★★",
+    "message_review": "Rapi ...NyaMaN ..TeRTiB... AMaN..., 😊 ...",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Wendra Satria",
+    "rating_review": "★★★★★",
+    "message_review": "Saya suka dengan smk tarunabangsa, karena sekolahnya disiplinnya kuat dan guru\"nya baik\" semua.",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 7
+  },
+  {
+    "username_review": "Bambang Purnama",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolahannya bagus, dan untuk tenaga pengajar nya sangat ramah.",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 5
+  },
+  {
+    "username_review": "Illy my oshi",
+    "rating_review": "★★★★★",
+    "message_review": "bagus",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Muktalipan \"Belo\" Ipan",
+    "rating_review": "★★★★★",
+    "message_review": "Terima Pak Iman sudah boleh neduh saat turun hujan deras",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 2
+  },
+  {
+    "username_review": "firman susilo",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolah yg bagus dan tertib, parkir nya luas",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Reva Diandra",
+    "rating_review": "★★★★★",
+    "message_review": "ok bgs",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Dede Yusuf",
+    "rating_review": "★★★★★",
+    "message_review": "Nyaman, bersih, adem. Skrg banyak pendopo",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Cahyana Wiyana",
+    "rating_review": "★★★★★",
+    "message_review": "Lokasi ok",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 6
+  },
+  {
+    "username_review": "Harv Tgl",
+    "rating_review": "★★★★★",
+    "message_review": "Boleh minta Brosur untuk masuk th ajaran baru 2022/2023",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Sahabat Service",
+    "rating_review": "★★★★★",
+    "message_review": "Perkembanganıya luar biasa, sukses terus taruna bangsa",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Imas Febriyansyah",
+    "rating_review": "★★★★★",
+    "message_review": "Temptinya bersih, nyaman, dan menjunjung tinggi kedisiplinan",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "KUS MANTO",
+    "rating_review": "★★★★★",
+    "message_review": "Tempt yang sangat bermakna bagi kehidupan keluarga saya",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Muhamad Saepuloh",
+    "rating_review": "★★★★★",
+    "message_review": "3 Tahun yang sangat berharga terjadi disini",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Bagus Faïq",
+    "rating_review": "★★★★★",
+    "message_review": "Disiplin",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "irwan G.",
+    "rating_review": "★★★★★",
+    "message_review": "Good school...sing bahagia jadi angkatan pertama 😊",
+    "reply_smk_taruna_bangsa": "Hatur nuhun... semoga sukses selalu kk...",
+    "like_review": 3
+  },
+  {
+    "username_review": "Sri Rahayuningsih",
+    "rating_review": "★★★★★",
+    "message_review": "Always selalu. TKR 1",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "eko sulistic",
+    "rating_review": "★★★★★",
+    "message_review": "Generasi 1 SMK Taruna Bangsa Hadir. . .",
+    "reply_smk_taruna_bangsa": "Mantab",
+    "like_review": null
+  },
+  {
+    "username_review": "Widiyatmoko",
+    "rating_review": "★★★★★",
+    "message_review": "Mantap Betul SMK Taruna Bangsa...Cerdas, Mandiri, Berintegritas.... ▲ ▲ ...",
+    "reply_smk_taruna_bangsa": "Terima Kasih",
+    "like_review": 1
+  },
+  {
+    "username_review": "Fachri Taufikurrachman",
+    "rating_review": "★★★★★",
+    "message_review": "Mantap bangga bisa menimba ilmu di sekolah ini",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 3
+  },
+  {
+    "username_review": "Ferdy ZackStar",
+    "rating_review": "★★★★★",
+    "message_review": "SMK Terfavorit pokoknyaaa!",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Mira Mariyah",
+    "rating_review": "★★★★★",
+    "message_review": "Masya Alloh.. Berkah pokonya",
+    "reply_smk_taruna_bangsa": "Terimakasih",
+    "like_review": 1
+  },
+  {
+    "username_review": "Saiful Bahri Ifuel",
+    "rating_review": "★★★★★",
+    "message_review": "SMK TARUNA BANGSA top banget dah...... ...",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Indra Iswahyudi",
+    "rating_review": "★★★★★",
+    "message_review": "BaGuS uNTuK Disipl.iNnYa SeRTa PeNgaJaR Yg PROFeSioNaL...... ...",
+    "reply_smk_taruna_bangsa": "Terima kasih telah memberikan ulasan.. Kami akan selalu melakukan yang terbaik untuk pendidikan yang berkualitas.",
+    "like_review": null
+  },
+  {
+    "username_review": "Nicolas Nico",
+    "rating_review": "★★★★★",
+    "message_review": "sekolah yang luar biasa dalam semua hall ...",
+    "reply_smk_taruna_bangsa": "Terima Kasih memberikan ulasan yang positif",
+    "like_review": 1
+  },
+  {
+    "username_review": "Mas Poer",
+    "rating_review": "★★★★★",
+    "message_review": "Oke",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "GB Maedy Bks",
+    "rating_review": "★★★★★",
+    "message_review": "SMK yg terletak di kawasan lingkar utara, bekasi utara",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 3
+  },
+  {
+    "username_review": "Ryan Sulistyo",
+    "rating_review": "★★★★★",
+    "message_review": "Salah satu SMK Terbaik di Bekasi Utara! ... Nasabrotherhood~ ...",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 3
+  },
+  {
+    "username_review": "Pramudita Wahyu Rahmadani",
+    "rating_review": "★★★★★",
+    "message_review": "sekolah yang sangat disiplin dan taat peraturan",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 2
+  },
+  {
+    "username_review": "Rozi Darwansyah",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolah yang banyak mendukung kegiatan ekstrakurikuler",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 2
+  },
+  {
+    "username_review": "Muhammad Fatkhurrozaq",
+    "rating_review": "★★★★★",
+    "message_review": "Semoga Smk Taruna Bangsa selalu jaya",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Ahmad Zikrillah",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolahnya Bagus . Disiplin nya Bagus .",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 2
+  },
+  {
+    "username_review": "Widi Yatmoko",
+    "rating_review": "★★★★★",
+    "message_review": "SMK Taruna Bangsa Best of the best pokoke... ...",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 1
+  },
+  {
+    "username_review": "RIE DESAIN RANCANG BANGUN",
+    "rating_review": "★★★★★",
+    "message_review": "Fasilitas lengkap dan disiplin.",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": null
+  },
+  {
+    "username_review": "Fath Rdt",
+    "rating_review": "★★★★★",
+    "message_review": "TITL 2 INI BOSS",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 3
+  },
+  {
+    "username_review": "Ulu Muhidin",
+    "rating_review": "★★★★★",
+    "message_review": "Sekolahnya bagus, keren, mantap",
+    "reply_smk_taruna_bangsa": null,
+    "like_review": 2
+  }
+]
