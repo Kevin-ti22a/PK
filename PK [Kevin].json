@@ -237,8 +237,8 @@
 {
 "Day" :  "16 [Senin]", 
 "Date" : "1-12-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["Melakukan setup Lab Umum untuk Ujian Siswa SMK Taruna Bangsa"],
+"Time" : "07:00 - 16:30",
+"Activity": ["Melakukan setup Lab Umum untuk Ujian Siswa Hari ke 1 SMK Taruna Bangsa"],
 "Folder_dokumentasi" : "Day 16",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 16/1.jpg",
@@ -247,6 +247,22 @@
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 16/4.jpg",
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 16/5.jpg",
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 16/6.jpg"
+        
+      ]
+},
+        {
+"Day" :  "17 [Selasa]", 
+"Date" : "2-12-2025",
+"Time" : "07:00 - 16:30",
+"Activity": ["Melakukan setup Lab Umum untuk Ujian Siswa Hari ke 2 SMK Taruna Bangsa"],
+"Folder_dokumentasi" : "Day 17",
+"Foto": [
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 17/1.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 17/2.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 17/3.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 17/4.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 17/5.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/Day 17/6.jpg"
         
       ]
 }
