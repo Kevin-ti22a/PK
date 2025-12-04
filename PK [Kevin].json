@@ -293,8 +293,8 @@
         {
 "Day" :  "19 [Kamis]", 
 "Date" : "4-12-2025",
-"Time" : "07:00 - 16:30",
-"Activity": ["-"],
+"Time" : "07:00 - 16:00",
+"Activity": ["Melakukan Quality Check"],
 "Folder_dokumentasi" : "Day 19",
 "Foto": [
         "https://pk-kevin-mubarak-2022310003.netlify.app/Day 19/1.jpg",
@@ -310,6 +310,7 @@
         
 ]
 }
+
 
 
 
