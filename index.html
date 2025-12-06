@@ -26,6 +26,10 @@
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         .section-title {
             position: relative;
@@ -69,29 +73,47 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        .photo-gallery {
+        .media-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 10px;
             margin-top: 15px;
         }
-        .photo-item {
+        .media-item {
             position: relative;
             overflow: hidden;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease;
+            height: 120px;
         }
-        .photo-item:hover {
+        .media-item:hover {
             transform: scale(1.05);
         }
-        .photo-item img {
+        .media-item img, .media-item video {
             width: 100%;
-            height: 120px;
+            height: 100%;
             object-fit: cover;
             display: block;
+            pointer-events: none;
         }
-        .photo-modal {
+        .media-item .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            z-index: 2;
+        }
+        .media-modal {
             display: none;
             position: fixed;
             top: 0;
@@ -103,18 +125,34 @@
             justify-content: center;
             align-items: center;
         }
-        .photo-modal.active {
+        .media-modal.active {
             display: flex;
         }
         .modal-content {
             max-width: 90%;
             max-height: 90%;
+            position: relative;
         }
-        .modal-content img {
+        .modal-content img, .modal-content video {
             width: 100%;
             height: auto;
             max-height: 80vh;
             object-fit: contain;
+            pointer-events: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+        }
+        .modal-content .protected-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            cursor: default;
         }
         .modal-close {
             position: absolute;
@@ -155,9 +193,340 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        .file-type-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            z-index: 3;
+        }
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .video-controls button {
+            background: #3B82F6;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.3s;
+        }
+        .video-controls button:hover {
+            background: #2563EB;
+        }
+        .copyright-notice {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            z-index: 3;
+            text-align: center;
+        }
+        .no-right-click {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .protected-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .watermark {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .watermark-corner {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 80px;
+            height: 80px;
+            opacity: 0.5;
+        }
+        .modal-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background-image: url('dokumentasi/WM.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .loading-watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .watermark-preview {
+            width: 150px;
+            height: 150px;
+            background-image: url('dokumentasi/WM.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.7;
+        }
+        .note-section {
+            background: #FFF3CD;
+            border-left: 4px solid #FFC107;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .note-section h4 {
+            color: #856404;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .note-content {
+            color: #856404;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .note-content ul {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        .note-content li {
+            margin-bottom: 3px;
+        }
+        .links-section {
+            background: #D1ECF1;
+            border-left: 4px solid #0DCAF0;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .links-section h4 {
+            color: #0C5460;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #B6E0F3;
+        }
+        .link-item:last-child {
+            margin-bottom: 0;
+        }
+        .link-icon {
+            color: #0DCAF0;
+            font-size: 18px;
+        }
+        .link-text {
+            flex: 1;
+            color: #0C5460;
+            font-size: 14px;
+            word-break: break-all;
+        }
+        .link-button {
+            background: #0DCAF0;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        .link-button:hover {
+            background: #0BB5D9;
+        }
+        .day-status {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            z-index: 2;
+        }
+        .status-completed {
+            background: #28A745;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+        .status-working {
+            background: #FFC107;
+            color: #856404;
+            animation: pulse 1s infinite;
+        }
+        .status-upcoming {
+            background: #6C757D;
+            color: white;
+        }
+        .status-pending {
+            background: #DC3545;
+            color: white;
+        }
+        .status-inprogress {
+            background: #17A2B8;
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+        .autoplay-toggle {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .time-info {
+            background: #E8F4FD;
+            border-left: 4px solid #3B82F6;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .time-info div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: #1E40AF;
+        }
+        .real-time-status {
+            background: #FFEAA7;
+            border-left: 4px solid #FDCB6E;
+            padding: 8px 12px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 13px;
+            color: #856404;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: fadeIn 1s ease;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .current-time-display {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: #3B82F6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .current-time-display .time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .progress-bar {
+            height: 4px;
+            background: #E5E7EB;
+            border-radius: 2px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #10B981;
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 no-right-click">
+    
+    <!-- Loading dengan Watermark -->
+    <div id="loadingWatermark" class="loading-watermark">
+        <div class="watermark-preview"></div>
+        <div class="loading-spinner"></div>
+        <p class="text-lg text-gray-700 font-medium">Memuat halaman...</p>
+    </div>
+
+    <!-- Current Time Display -->
+    <div id="currentTimeDisplay" class="current-time-display">
+        <i class="fas fa-clock"></i>
+        <span class="time" id="currentTime">Loading...</span>
+    </div>
+
     <!-- Header & Navigation -->
     <header class="bg-white shadow-md fixed w-full z-10">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -202,9 +571,14 @@
                 </div>
             </div>
             <div class="md:w-1/2 flex justify-center">
-                <div class="w-64 h-64 rounded-full overflow-hidden shadow-xl border-4 border-white">
-                    <img src="https://kevin-mubarak-2022310003.netlify.app/Kevin_Mubarak_-_S1_Teknik_Informatika_(2)-min%20(1).jpg" 
-                         alt="Kevin Mubarak" class="w-full h-full object-cover">
+                <div class="w-64 h-64 rounded-full overflow-hidden shadow-xl border-4 border-white relative">
+                    <div class="protected-image w-full h-full" 
+                         style="background-image: url('https://kevin-mubarak-2022310003.netlify.app/Kevin_Mubarak_-_S1_Teknik_Informatika_(2)-min%20(1).jpg')">
+                    </div>
+                    <!-- Watermark untuk foto profil -->
+                    <div class="watermark watermark-corner" 
+                         style="background-image: url('dokumentasi/WM.png')"></div>
+                    <div class="protected-overlay absolute inset-0"></div>
                 </div>
             </div>
         </div>
@@ -214,6 +588,28 @@
     <section id="praktek-kerja" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8 section-title">PRAKTEK KERJA</h2>
+            
+            <!-- Panduan Status -->
+            <div class="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <h3 class="text-lg font-semibold text-blue-800 mb-2">📋 Panduan Status Pekerjaan</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div><span class="status-completed px-2 py-1 rounded text-xs">Selesai</span> - Pekerjaan sudah selesai</div>
+                    <div><span class="status-working px-2 py-1 rounded text-xs">Sedang Bekerja</span> - Sedang dalam jam kerja</div>
+                    <div><span class="status-upcoming px-2 py-1 rounded text-xs">Akan Datang</span> - Belum tiba waktunya</div>
+                    <div><span class="status-inprogress px-2 py-1 rounded text-xs">Dalam Proses</span> - Masih dikerjakan (manual)</div>
+                    <div><span class="status-pending px-2 py-1 rounded text-xs">Belum Selesai</span> - Ditunda/menunggu (manual)</div>
+                </div>
+            </div>
+            
+            <!-- Filter Status -->
+            <div class="mb-6 flex flex-wrap gap-2">
+                <button class="filter-btn active px-4 py-2 rounded-lg bg-primary text-white" data-filter="all">Semua</button>
+                <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300" data-filter="completed">Selesai</button>
+                <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300" data-filter="working">Sedang Bekerja</button>
+                <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300" data-filter="upcoming">Akan Datang</button>
+                <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300" data-filter="inprogress">Dalam Proses</button>
+                <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300" data-filter="pending">Belum Selesai</button>
+            </div>
             
             <div id="loading" class="loading-spinner mb-8"></div>
             
@@ -227,8 +623,8 @@
         </div>
     </section>
 
-    <!-- Photo Modal -->
-    <div id="photoModal" class="photo-modal">
+    <!-- Media Modal -->
+    <div id="mediaModal" class="media-modal">
         <span class="modal-close">&times;</span>
         <div class="modal-nav modal-prev">
             <i class="fas fa-chevron-left"></i>
@@ -236,27 +632,38 @@
         <div class="modal-nav modal-next">
             <i class="fas fa-chevron-right"></i>
         </div>
-        <div class="modal-content">
-            <img id="modalImage" src="" alt="" class="fade-in">
+        <div id="autoplayToggle" class="autoplay-toggle">
+            <i class="fas fa-play"></i> Autoplay: ON
         </div>
-       </div>
-
-
-     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-8 md:mb-0">
-                <h2 class="text-4xl md:text-5xl font-bold text-dark mb-4">Software</h2>
-                <p class="text-xl text-gray-600 mb-6">Link Download</p>
+        <div class="modal-content">
+            <div id="mediaContainer" class="fade-in relative">
+                <!-- Konten media akan dimuat di sini -->
             </div>
-            <div class="md:w-1/2 flex justify-center">
-               
-                   <div class="flex space-x-4">
-                    <a href="https://mega.nz/folder/eUsXgZIT#ZrlWnENmzozXRoRhtH6Huw" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition">Install APP</a>
-                    <a href="https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/en-US/ProPlus2019Retail.img" class="border border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition">Link MS Office 2019</a>
-                    <a href="App/qr.html" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition">QR Generator</a>
+            <!-- Watermark di modal -->
+            <div class="modal-watermark"></div>
+            <div class="protected-overlay"></div>
+            <div class="copyright-notice">© Kevin Mubarak - Dilindungi Hak Cipta</div>
+        </div>
+    </div>
+
+    <!-- Software Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-4xl md:text-5xl font-bold text-dark mb-4">Software</h2>
+                    <p class="text-xl text-gray-600 mb-6">Link Download</p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://mega.nz/folder/eUsXgZIT#ZrlWnENmzozXRoRhtH6Huw" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition">Install APP</a>
+                        <a href="https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/en-US/ProPlus2019Retail.img" class="border border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition">Link MS Office 2019</a>
+                        <a href="App/qr.html" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition">QR Generator</a>
+                    </div>
                 </div>
             </div>
         </div>
-
+    </section>
     
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
@@ -281,14 +688,12 @@
             </div>
         </div>
     </section>
-
-
-
     
     <!-- Footer -->
     <footer class="bg-dark text-white py-8">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2025 Kevin Mubarak. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Dilindungi oleh watermark anti-download</p>
         </div>
     </footer>
 
@@ -298,45 +703,155 @@
     </button>
 
     <script>
-        // Data fallback jika gagal load dari GitHub
-        const pkData = {
-            "PK": [
-                {
-                    "Day": 1,
-                    "Date": "2024-01-15",
-                    "Time": "08:00 - 16:00",
-                    "Activity": "Pengenalan lingkungan kerja dan briefing awal tentang perusahaan dan tim development",
-                    "Folder_dokumentasi": "Day1",
-                    "Foto": [
-                        "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                        "https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                    ]
-                },
-                {
-                    "Day": 2,
-                    "Date": "2024-01-16",
-                    "Time": "08:00 - 17:00",
-                    "Activity": "Pelatihan tools development dan setup environment kerja. Mempelajari Git, VS Code, dan framework yang digunakan",
-                    "Folder_dokumentasi": "Day2",
-                    "Foto": [
-                        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                        "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                    ]
-                },
-                {
-                    "Day": 3,
-                    "Date": "2024-01-17",
-                    "Time": "09:00 - 16:30",
-                    "Activity": "Memulai project pertama: Membuat layout website company profile menggunakan HTML, CSS, dan JavaScript",
-                    "Folder_dokumentasi": "Day3",
-                    "Foto": [
-                        "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                    ]
-                }
-            ]
-        };
-
-        // Mobile menu functionality
+        // ==================== FUNGSI WAKTU & STATUS ====================
+        
+        function getCurrentTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            return `${hours}:${minutes}`;
+        }
+        
+        function getCurrentDate() {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            return `${day}-${month}-${year}`;
+        }
+        
+        function timeToMinutes(timeStr) {
+            const [hours, minutes] = timeStr.split(':').map(Number);
+            return hours * 60 + minutes;
+        }
+        
+        function compareDates(date1, date2) {
+            const [d1, m1, y1] = date1.split('-').map(Number);
+            const [d2, m2, y2] = date2.split('-').map(Number);
+            
+            const dateObj1 = new Date(y1, m1 - 1, d1);
+            const dateObj2 = new Date(y2, m2 - 1, d2);
+            
+            return dateObj1.getTime() - dateObj2.getTime();
+        }
+        
+        function calculateWorkProgress(startTime, endTime) {
+            const currentTime = getCurrentTime();
+            const currentMinutes = timeToMinutes(currentTime);
+            const startMinutes = timeToMinutes(startTime);
+            const endMinutes = timeToMinutes(endTime);
+            
+            if (currentMinutes < startMinutes) {
+                return {
+                    progress: 0,
+                    status: 'upcoming',
+                    message: 'Belum dimulai'
+                };
+            }
+            
+            if (currentMinutes >= endMinutes) {
+                return {
+                    progress: 100,
+                    status: 'completed',
+                    message: 'Selesai'
+                };
+            }
+            
+            const totalDuration = endMinutes - startMinutes;
+            const elapsedDuration = currentMinutes - startMinutes;
+            const progress = Math.round((elapsedDuration / totalDuration) * 100);
+            
+            return {
+                progress: Math.min(progress, 100),
+                status: 'working',
+                message: 'Sedang bekerja'
+            };
+        }
+        
+        function determineStatus(item) {
+            const currentDate = getCurrentDate();
+            const currentTime = getCurrentTime();
+            
+            const timeParts = item.Time.split(' - ');
+            const startTime = timeParts[0];
+            const endTime = timeParts[1];
+            
+            const dateComparison = compareDates(currentDate, item.Date);
+            
+            if (dateComparison < 0) {
+                return {
+                    status: 'upcoming',
+                    statusText: 'Akan Datang',
+                    statusClass: 'status-upcoming',
+                    icon: 'fa-calendar',
+                    realTimeStatus: 'Belum tiba waktunya'
+                };
+            }
+            
+            if (dateComparison > 0) {
+                return {
+                    status: 'completed',
+                    statusText: 'Selesai',
+                    statusClass: 'status-completed',
+                    icon: 'fa-check-circle',
+                    realTimeStatus: 'Sudah selesai'
+                };
+            }
+            
+            const progress = calculateWorkProgress(startTime, endTime);
+            
+            if (progress.status === 'completed') {
+                return {
+                    status: 'completed',
+                    statusText: 'Selesai',
+                    statusClass: 'status-completed',
+                    icon: 'fa-check-circle',
+                    realTimeStatus: 'Sudah selesai hari ini',
+                    progress: progress.progress
+                };
+            } else if (progress.status === 'working') {
+                return {
+                    status: 'working',
+                    statusText: 'Sedang Bekerja',
+                    statusClass: 'status-working',
+                    icon: 'fa-user-tie',
+                    realTimeStatus: `Sedang bekerja (${progress.progress}%)`,
+                    progress: progress.progress
+                };
+            } else {
+                return {
+                    status: 'upcoming',
+                    statusText: 'Akan Datang',
+                    statusClass: 'status-upcoming',
+                    icon: 'fa-clock',
+                    realTimeStatus: 'Akan dimulai',
+                    progress: progress.progress
+                };
+            }
+        }
+        
+        function updateCurrentTimeDisplay() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('id-ID', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            const dateString = now.toLocaleDateString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            document.getElementById('currentTime').textContent = 
+                `${timeString} - ${dateString}`;
+        }
+        
+        // ==================== WATERMARK FUNCTIONS ====================
+        const watermarkURL = 'dokumentasi/WM.png';
+        
+        // ==================== FUNGSI UTAMA ====================
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const closeMobileMenu = document.getElementById('closeMobileMenu');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -349,7 +864,6 @@
             mobileMenu.classList.remove('active');
         });
         
-        // Close mobile menu when clicking on a link
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -372,114 +886,478 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Photo Modal functionality
-        const photoModal = document.getElementById('photoModal');
-        const modalImage = document.getElementById('modalImage');
+        // Media Modal functionality
+        const mediaModal = document.getElementById('mediaModal');
+        const mediaContainer = document.getElementById('mediaContainer');
         const modalClose = document.querySelector('.modal-close');
         const modalPrev = document.querySelector('.modal-prev');
         const modalNext = document.querySelector('.modal-next');
+        const autoplayToggle = document.getElementById('autoplayToggle');
+        const loadingWatermark = document.getElementById('loadingWatermark');
         
-        let currentPhotos = [];
+        let currentMedia = [];
         let currentIndex = 0;
+        window.currentVideo = null;
+        let autoplayEnabled = true;
         
-        function openModal(photos, index) {
-            currentPhotos = photos;
+        function getFileType(url) {
+            const extension = url.split('.').pop().toLowerCase();
+            if (['mp4', 'webm', 'ogg', 'avi', 'mov'].includes(extension)) {
+                return 'video';
+            } else if (['png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp'].includes(extension)) {
+                return 'image';
+            }
+            return 'unknown';
+        }
+        
+        function openModal(mediaItems, index) {
+            currentMedia = mediaItems;
             currentIndex = index;
-            modalImage.src = photos[index];
-            photoModal.classList.add('active');
+            renderMediaInModal();
+            mediaModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
         
         function closeModal() {
-            photoModal.classList.remove('active');
+            if (window.currentVideo) {
+                window.currentVideo.pause();
+                window.currentVideo = null;
+            }
+            mediaModal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
         
-        function showNextPhoto() {
-            currentIndex = (currentIndex + 1) % currentPhotos.length;
-            modalImage.src = currentPhotos[currentIndex];
-            modalImage.classList.add('fade-in');
-            setTimeout(() => modalImage.classList.remove('fade-in'), 500);
+        function showNextMedia() {
+            currentIndex = (currentIndex + 1) % currentMedia.length;
+            if (window.currentVideo) {
+                window.currentVideo.pause();
+                window.currentVideo = null;
+            }
+            renderMediaInModal();
         }
         
-        function showPrevPhoto() {
-            currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
-            modalImage.src = currentPhotos[currentIndex];
-            modalImage.classList.add('fade-in');
-            setTimeout(() => modalImage.classList.remove('fade-in'), 500);
+        function showPrevMedia() {
+            currentIndex = (currentIndex - 1 + currentMedia.length) % currentMedia.length;
+            if (window.currentVideo) {
+                window.currentVideo.pause();
+                window.currentVideo = null;
+            }
+            renderMediaInModal();
         }
+        
+        function renderMediaInModal() {
+            const media = currentMedia[currentIndex];
+            const fileType = media.type || getFileType(media.url);
+            mediaContainer.innerHTML = '';
+            
+            if (fileType === 'video') {
+                const videoContainer = document.createElement('div');
+                videoContainer.className = 'relative w-full';
+                videoContainer.style.height = '70vh';
+                videoContainer.style.minHeight = '400px';
+                
+                const videoElement = document.createElement('video');
+                videoElement.src = media.url;
+                videoElement.controls = true;
+                videoElement.className = 'w-full h-full object-contain';
+                videoElement.setAttribute('controlsList', 'nodownload');
+                videoElement.setAttribute('disablepictureinpicture', 'true');
+                videoElement.setAttribute('oncontextmenu', 'return false;');
+                videoElement.style.pointerEvents = 'auto';
+                
+                if (autoplayEnabled && media.autoplay !== false) {
+                    const playPromise = videoElement.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            console.log('Autoplay prevented:', error);
+                            const playButton = document.createElement('button');
+                            playButton.innerHTML = '<i class="fas fa-play"></i> Klik untuk Memutar';
+                            playButton.className = 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-6 py-3 rounded-lg z-10';
+                            playButton.onclick = function() {
+                                videoElement.play();
+                                playButton.remove();
+                            };
+                            videoContainer.appendChild(playButton);
+                        });
+                    }
+                }
+                
+                const watermarkOverlay = document.createElement('div');
+                watermarkOverlay.className = 'absolute inset-0 pointer-events-none';
+                watermarkOverlay.style.backgroundImage = `url(${watermarkURL})`;
+                watermarkOverlay.style.backgroundRepeat = 'repeat';
+                watermarkOverlay.style.backgroundSize = '200px';
+                watermarkOverlay.style.opacity = '0.1';
+                
+                videoContainer.appendChild(videoElement);
+                videoContainer.appendChild(watermarkOverlay);
+                mediaContainer.appendChild(videoContainer);
+                
+                window.currentVideo = videoElement;
+                
+                const videoControls = document.createElement('div');
+                videoControls.className = 'video-controls';
+                videoControls.innerHTML = `
+                    <button onclick="playPauseVideo()">
+                        <i class="fas fa-play"></i> Putar/Jeda
+                    </button>
+                    <button onclick="toggleMuteVideo()">
+                        <i class="fas fa-volume-up"></i> Suara
+                    </button>
+                    <button onclick="toggleFullscreen()">
+                        <i class="fas fa-expand"></i> Layar Penuh
+                    </button>
+                    <button onclick="restartVideo()">
+                        <i class="fas fa-redo"></i> Ulangi
+                    </button>
+                    <button onclick="toggleAutoplay()">
+                        <i class="fas fa-sync"></i> Autoplay: ${autoplayEnabled ? 'ON' : 'OFF'}
+                    </button>
+                `;
+                mediaContainer.appendChild(videoControls);
+                
+            } else {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'relative w-full';
+                imgContainer.style.height = '70vh';
+                imgContainer.style.minHeight = '400px';
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = media.url;
+                imgElement.className = 'w-full h-full object-contain';
+                imgElement.oncontextmenu = function() { return false; };
+                imgElement.style.pointerEvents = 'auto';
+                
+                const watermarkOverlay = document.createElement('div');
+                watermarkOverlay.className = 'absolute inset-0 pointer-events-none';
+                watermarkOverlay.style.backgroundImage = `url(${watermarkURL})`;
+                watermarkOverlay.style.backgroundRepeat = 'no-repeat';
+                watermarkOverlay.style.backgroundPosition = 'center';
+                watermarkOverlay.style.backgroundSize = '300px';
+                watermarkOverlay.style.opacity = '0.2';
+                
+                imgContainer.appendChild(imgElement);
+                imgContainer.appendChild(watermarkOverlay);
+                mediaContainer.appendChild(imgContainer);
+            }
+        }
+        
+        function playPauseVideo() {
+            if (window.currentVideo) {
+                if (window.currentVideo.paused) {
+                    window.currentVideo.play().catch(error => {
+                        console.log('Play failed:', error);
+                    });
+                } else {
+                    window.currentVideo.pause();
+                }
+            }
+        }
+        
+        function toggleMuteVideo() {
+            if (window.currentVideo) {
+                window.currentVideo.muted = !window.currentVideo.muted;
+            }
+        }
+        
+        function toggleFullscreen() {
+            const container = mediaModal.querySelector('.modal-content');
+            if (!document.fullscreenElement) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
+        
+        function restartVideo() {
+            if (window.currentVideo) {
+                window.currentVideo.currentTime = 0;
+                window.currentVideo.play().catch(error => {
+                    console.log('Restart failed:', error);
+                });
+            }
+        }
+        
+        function toggleAutoplay() {
+            autoplayEnabled = !autoplayEnabled;
+            autoplayToggle.innerHTML = `<i class="fas fa-${autoplayEnabled ? 'play' : 'pause'}"></i> Autoplay: ${autoplayEnabled ? 'ON' : 'OFF'}`;
+            
+            const autoplayBtn = document.querySelector('button[onclick="toggleAutoplay()"]');
+            if (autoplayBtn) {
+                autoplayBtn.innerHTML = `<i class="fas fa-sync"></i> Autoplay: ${autoplayEnabled ? 'ON' : 'OFF'}`;
+            }
+        }
+        
+        autoplayToggle.addEventListener('click', toggleAutoplay);
         
         modalClose.addEventListener('click', closeModal);
-        modalNext.addEventListener('click', showNextPhoto);
-        modalPrev.addEventListener('click', showPrevPhoto);
+        modalNext.addEventListener('click', showNextMedia);
+        modalPrev.addEventListener('click', showPrevMedia);
         
-        photoModal.addEventListener('click', (e) => {
-            if (e.target === photoModal) {
+        mediaModal.addEventListener('click', (e) => {
+            if (e.target === mediaModal || e.target.classList.contains('protected-overlay')) {
                 closeModal();
             }
         });
         
         document.addEventListener('keydown', (e) => {
-            if (photoModal.classList.contains('active')) {
+            if (mediaModal.classList.contains('active')) {
                 if (e.key === 'Escape') closeModal();
-                if (e.key === 'ArrowRight') showNextPhoto();
-                if (e.key === 'ArrowLeft') showPrevPhoto();
+                if (e.key === 'ArrowRight') showNextMedia();
+                if (e.key === 'ArrowLeft') showPrevMedia();
+                if (e.key === ' ') {
+                    e.preventDefault();
+                    playPauseVideo();
+                }
             }
         });
 
-        // Render PK data
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active', 'bg-primary', 'text-white');
+                    btn.classList.add('bg-gray-200');
+                });
+                this.classList.add('active', 'bg-primary', 'text-white');
+                this.classList.remove('bg-gray-200');
+                
+                const filter = this.dataset.filter;
+                filterCards(filter);
+            });
+        });
+        
+        function filterCards(filter) {
+            const cards = document.querySelectorAll('#pk-container > div');
+            cards.forEach(card => {
+                const status = card.dataset.status;
+                if (filter === 'all' || status === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Render PK data yang DIPERBAIKI
         function renderPKData(data) {
             const container = document.getElementById('pk-container');
             const loading = document.getElementById('loading');
             const errorMessage = document.getElementById('error-message');
             
-            // Sembunyikan loading dan error message
             loading.classList.add('hidden');
             errorMessage.classList.add('hidden');
-            
-            // Kosongkan container
             container.innerHTML = '';
             
-            // Render data
+            if (!data.PK || !Array.isArray(data.PK)) {
+                console.error('Data PK tidak valid:', data);
+                errorMessage.classList.remove('hidden');
+                errorMessage.innerHTML = '<p>Format data tidak valid. Silakan periksa file JSON.</p>';
+                return;
+            }
+            
             data.PK.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'bg-gray-50 p-6 rounded-xl shadow-md project-card';
+                console.log('Processing item:', item.Day);
+                console.log('- Note:', item.Note);
+                console.log('- Links:', item.Links);
+                console.log('- Media:', item.Media);
                 
-                let photosHTML = '';
-                if (item.Foto && item.Foto.length > 0) {
-                    photosHTML = `
-                        <div class="mt-4">
-                            <h4 class="font-medium text-gray-700 mb-2">Dokumentasi Foto:</h4>
-                            <div class="photo-gallery">
-                                ${item.Foto.map((photo, index) => `
-                                    <div class="photo-item" onclick="openModal(${JSON.stringify(item.Foto).replace(/\"/g, '&quot;')}, ${index})">
-                                        <img src="${photo}" alt="Dokumentasi Hari ${item.Day} - Foto ${index + 1}" loading="lazy">
+                // Tentukan status otomatis berdasarkan waktu
+                const statusInfo = determineStatus(item);
+                const manualStatus = item.Status || 'completed';
+                
+                // Gabungkan status otomatis dengan status manual
+                let finalStatus = statusInfo.status;
+                let finalStatusClass = statusInfo.statusClass;
+                let finalStatusText = statusInfo.statusText;
+                let finalIcon = statusInfo.icon;
+                
+                if (manualStatus === 'inprogress' || manualStatus === 'pending') {
+                    if (manualStatus === 'inprogress') {
+                        finalStatus = 'inprogress';
+                        finalStatusClass = 'status-inprogress';
+                        finalStatusText = 'Dalam Proses';
+                        finalIcon = 'fa-spinner fa-spin';
+                    } else if (manualStatus === 'pending') {
+                        finalStatus = 'pending';
+                        finalStatusClass = 'status-pending';
+                        finalStatusText = 'Belum Selesai';
+                        finalIcon = 'fa-clock';
+                    }
+                }
+                
+                const card = document.createElement('div');
+                card.className = 'bg-gray-50 p-6 rounded-xl shadow-md project-card relative';
+                card.dataset.status = finalStatus;
+                
+                const timeParts = item.Time.split(' - ');
+                const startTime = timeParts[0];
+                const endTime = timeParts[1];
+                
+                // Note section - DIPERBAIKI: Menggunakan item.Note
+                let noteHTML = '';
+                if (item.Note && item.Note.trim() !== '' && item.Note !== 'undefined') {
+                    noteHTML = `
+                        <div class="note-section">
+                            <h4><i class="fas fa-sticky-note"></i> Catatan</h4>
+                            <div class="note-content">${item.Note}</div>
+                        </div>
+                    `;
+                }
+                
+                // Links section - DIPERBAIKI: Menggunakan item.Links
+                let linksHTML = '';
+                if (item.Links && Array.isArray(item.Links) && item.Links.length > 0) {
+                    const linksItems = item.Links.map(link => {
+                        if (!link || !link.url) return '';
+                        
+                        const linkUrl = link.url || '#';
+                        const linkTitle = link.title || 'Link';
+                        
+                        // Validasi URL
+                        let validUrl = linkUrl;
+                        if (linkUrl !== '#' && !linkUrl.startsWith('http://') && !linkUrl.startsWith('https://')) {
+                            validUrl = 'https://' + linkUrl;
+                        }
+                        
+                        return `
+                            <div class="link-item">
+                                <div class="link-icon">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </div>
+                                <div class="link-text">${linkTitle}</div>
+                                <a href="${validUrl}" target="_blank" class="link-button">
+                                    Buka
+                                </a>
+                            </div>
+                        `;
+                    }).filter(item => item !== '').join('');
+                    
+                    if (linksItems) {
+                        linksHTML = `
+                            <div class="links-section">
+                                <h4><i class="fas fa-link"></i> Link Terkait</h4>
+                                ${linksItems}
+                            </div>
+                        `;
+                    }
+                }
+                
+                // Media gallery - DIPERBAIKI: Memperbaiki onclick
+                let mediaHTML = '';
+                if (item.Media && Array.isArray(item.Media) && item.Media.length > 0) {
+                    const mediaItems = item.Media.map((media, index) => {
+                        const fileType = media.type || getFileType(media.url);
+                        const thumbnail = media.thumbnail || media.url;
+                        
+                        // Escape string untuk onclick
+                        const mediaJson = JSON.stringify(item.Media);
+                        const safeMediaJson = mediaJson.replace(/"/g, '&quot;').replace(/'/g, "\\'");
+                        
+                        return `
+                            <div class="media-item relative" onclick="openModal(${safeMediaJson}, ${index})">
+                                <div class="protected-image w-full h-full" 
+                                     style="background-image: url('${thumbnail}')">
+                                </div>
+                                <span class="file-type-badge">${fileType === 'video' ? 'VIDEO' : 'IMG'}</span>
+                                ${fileType === 'video' ? `
+                                    <div class="play-icon">
+                                        <i class="fas fa-play"></i>
                                     </div>
-                                `).join('')}
+                                ` : ''}
+                                <div class="protected-overlay absolute inset-0"></div>
+                            </div>
+                        `;
+                    }).join('');
+                    
+                    mediaHTML = `
+                        <div class="mt-4">
+                            <h4 class="font-medium text-gray-700 mb-2">Dokumentasi:</h4>
+                            <div class="media-gallery">
+                                ${mediaItems}
                             </div>
                         </div>
                     `;
                 }
                 
+                // Progress bar jika sedang bekerja
+                let progressBarHTML = '';
+                if (statusInfo.progress !== undefined && finalStatus === 'working') {
+                    progressBarHTML = `
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${statusInfo.progress}%"></div>
+                        </div>
+                    `;
+                }
+                
+                // SUSUNAN ELEMEN YANG BENAR
                 card.innerHTML = `
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-xl font-semibold text-primary">Hari ${item.Day}</h3>
+                    <div class="day-status ${finalStatusClass}">
+                        <i class="fas ${finalIcon}"></i>
+                        ${finalStatusText}
+                    </div>
+                    
+                    <div class="flex justify-between items-start mb-4 pt-6">
+                        <h3 class="text-xl font-semibold text-primary">${item.Day}</h3>
                         <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">${item.Date}</span>
                     </div>
-                    <div class="mb-4">
-                        <p class="text-gray-700 font-medium">Waktu: ${item.Time}</p>
+                    
+                    <div class="time-info">
+                        <div>
+                            <i class="fas fa-clock"></i>
+                            <span>Mulai: ${startTime}</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-flag-checkered"></i>
+                            <span>Selesai: ${endTime}</span>
+                        </div>
                     </div>
+                    
+                    ${progressBarHTML}
+                    
+                    <div class="real-time-status">
+                        <i class="fas fa-info-circle"></i>
+                        <span>${statusInfo.realTimeStatus}</span>
+                    </div>
+                    
                     <div class="mb-4">
                         <p class="text-gray-700">${item.Activity}</p>
                     </div>
-                    <div>
+                    
+                    ${noteHTML}
+                    ${linksHTML}
+                    
+                    <div class="mt-4">
                         <p class="text-gray-500 text-sm">Folder Dokumentasi: ${item.Folder_dokumentasi}</p>
                     </div>
-                    ${photosHTML}
+                    
+                    ${mediaHTML}
                 `;
                 
                 container.appendChild(card);
             });
+            
+            // Sembunyikan loading watermark setelah render selesai
+            setTimeout(() => {
+                if (loadingWatermark) {
+                    loadingWatermark.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingWatermark.style.display = 'none';
+                    }, 300);
+                }
+            }, 500);
         }
 
         // Load PK data dari GitHub
@@ -489,15 +1367,12 @@
             const errorMessage = document.getElementById('error-message');
             
             try {
-                // Sembunyikan container dan error message, tampilkan loading
                 container.innerHTML = '';
                 errorMessage.classList.add('hidden');
                 loading.classList.remove('hidden');
                 
-                // URL GitHub RAW - ganti dengan URL Anda
                 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/Kevin-ti22a/PK/refs/heads/main/PK%20%5BKevin%5D.json';
                 
-                // Coba load dari GitHub RAW
                 console.log('Mencoba load data dari:', GITHUB_RAW_URL);
                 const response = await fetch(GITHUB_RAW_URL);
                 
@@ -506,75 +1381,215 @@
                 }
                 
                 const data = await response.json();
-                console.log('Data berhasil di-load:', data);
+                console.log('Data berhasil di-load dari GitHub:', data);
                 
-                // Jika berhasil, render data dari GitHub
-                renderPKData(data);
+                // Konversi format lama ke baru
+                const convertedData = convertOldFormat(data);
+                renderPKData(convertedData);
                 
             } catch (error) {
                 console.error('Error loading PK data dari GitHub:', error);
                 
-                // Jika gagal, gunakan data fallback
-                console.log('Menggunakan data fallback...');
-                renderPKData(pkData);
+                // Gunakan data contoh dengan format yang benar
+                const sampleData = getSampleData();
+                renderPKData(sampleData);
                 
-                // Tampilkan pesan error
                 errorMessage.classList.remove('hidden');
                 errorMessage.innerHTML = `
                     <strong>Gagal memuat data dari GitHub.</strong>
                     <p class="mt-1">Menampilkan data contoh. Error: ${error.message}</p>
-                    <p class="text-sm mt-2">Pastikan URL GitHub RAW sudah benar dan file JSON tersedia.</p>
                 `;
             }
         }
-
-        // Solusi alternatif: Load dari file lokal
-        async function loadPKDataLocal() {
-            const container = document.getElementById('pk-container');
-            const loading = document.getElementById('loading');
-            const errorMessage = document.getElementById('error-message');
+        
+        // Fungsi untuk membuat data contoh
+        function getSampleData() {
+            return {
+                "PK": [
+                    {
+                        "Day": "8 [Jum'at]",
+                        "Date": "21-11-2025",
+                        "Time": "07:00 - 16:00",
+                        "Activity": "Membantu mencarikan Platform untuk menampilkan widget Sosial Media [https://elfsight.com] untuk Website SMK Taruna Bangsa, membantu mengisi content untuk website SMK Taruna Bangsa [Halaman Profile, Halaman Ekstrakurikuler, Halaman Vacational Program, Halaman Facilities dan Halaman Contact]",
+                        "Folder_dokumentasi": "Day 8",
+                        "Status": "completed",
+                        "Note": "Platform Elfsight ditemukan untuk widget sosial media. Content website sudah diupdate untuk beberapa halaman.",
+                        "Links": [
+                            {
+                                "title": "Platform Widget Sosial Media",
+                                "url": "https://elfsight.com"
+                            },
+                            {
+                                "title": "Website SMK Taruna Bangsa",
+                                "url": "https://smktarunabangsa.sch.id"
+                            }
+                        ],
+                        "Media": [
+                            {
+                                "type": "image",
+                                "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/1.jpg",
+                                "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/1.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        "Day": "1 [Kamis]",
+                        "Date": "13-11-2025",
+                        "Time": "07:00 - 16:00",
+                        "Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
+                        "Folder_dokumentasi": "Day 1",
+                        "Status": "completed",
+                        "Note": "Instalasi berjalan lancar. Windows 11 dan MS Office 2019 berhasil diinstall pada Intel Nuc.",
+                        "Links": [
+                            {
+                                "title": "Download Dokumentasi ZIP",
+                                "url": "https://github.com/Kevin-ti22a/PK/raw/main/Day%201.zip"
+                            },
+                            {
+                                "title": "Download Dokumentasi RAR",
+                                "url": "https://github.com/Kevin-ti22a/PK/raw/main/Day%201.rar"
+                            }
+                        ],
+                        "Media": [
+                            {
+                                "type": "image",
+                                "url": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                                "thumbnail": "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            }
+                        ]
+                    },
+                    {
+                        "Day": "2 [Jum'at]",
+                        "Date": "14-11-2025",
+                        "Time": "07:00 - 17:00",
+                        "Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab",
+                        "Folder_dokumentasi": "Day 2",
+                        "Status": "completed",
+                        "Note": "Semua kabel VGA sudah diganti ke HDMI di ruang lab.",
+                        "Links": [
+                            {
+                                "title": "Website Vendor Kabel",
+                                "url": "https://example-vendor.com"
+                            }
+                        ],
+                        "Media": [
+                            {
+                                "type": "image",
+                                "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                                "thumbnail": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            }
+                        ]
+                    }
+                ]
+            };
+        }
+        
+        // Fungsi untuk konversi format data lama ke baru
+        function convertOldFormat(data) {
+            if (!data.PK) return data;
             
-            try {
-                container.innerHTML = '';
-                errorMessage.classList.add('hidden');
-                loading.classList.remove('hidden');
+            const converted = { PK: [] };
+            
+            data.PK.forEach(item => {
+                const convertedItem = { ...item };
                 
-                // Coba load dari file lokal
-                const response = await fetch('PK%5BKevin%5D.json');
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                // Tambah status default jika tidak ada
+                if (!convertedItem.Status) {
+                    convertedItem.Status = 'completed';
                 }
                 
-                const data = await response.json();
-                console.log('Data berhasil di-load dari file lokal:', data);
-                renderPKData(data);
+                // Konversi Foto ke Media
+                if (item.Foto && Array.isArray(item.Foto)) {
+                    convertedItem.Media = item.Foto.map(url => ({
+                        type: getFileType(url),
+                        url: url,
+                        thumbnail: url
+                    }));
+                    delete convertedItem.Foto;
+                }
                 
-            } catch (error) {
-                console.error('Error loading PK data dari file lokal:', error);
-                console.log('Menggunakan data fallback...');
-                renderPKData(pkData);
+                if (!convertedItem.Media) {
+                    convertedItem.Media = [];
+                }
                 
-                errorMessage.classList.remove('hidden');
-                errorMessage.innerHTML = `
-                    <strong>Gagal memuat data.</strong>
-                    <p class="mt-1">Menampilkan data contoh. Error: ${error.message}</p>
-                    <p class="text-sm mt-2">Pastikan file 'PK[Kevin].json' ada di direktori yang sama.</p>
-                `;
-            }
+                // Konversi Catatan ke Note jika ada
+                if (item.Catatan && !convertedItem.Note) {
+                    convertedItem.Note = item.Catatan;
+                    delete convertedItem.Catatan;
+                }
+                
+                // Inisialisasi Links array jika belum ada
+                if (!convertedItem.Links) {
+                    convertedItem.Links = [];
+                }
+                
+                // Konversi Download_ZIP dan Download_RAR ke Links
+                if (item.Download_ZIP) {
+                    convertedItem.Links.push({
+                        "title": "Download Dokumentasi ZIP",
+                        "url": item.Download_ZIP
+                    });
+                    delete convertedItem.Download_ZIP;
+                }
+                
+                if (item.Download_RAR) {
+                    convertedItem.Links.push({
+                        "title": "Download Dokumentasi RAR",
+                        "url": item.Download_RAR
+                    });
+                    delete convertedItem.Download_RAR;
+                }
+                
+                // Konversi Link lama ke Links jika ada
+                if (item.Link && !convertedItem.Links.length) {
+                    if (Array.isArray(item.Link)) {
+                        convertedItem.Links.push(...item.Link.map(link => {
+                            if (typeof link === 'string') {
+                                return {
+                                    title: link.includes('.zip') ? 'Download ZIP' : 
+                                           link.includes('.rar') ? 'Download RAR' : 'Link',
+                                    url: link
+                                };
+                            }
+                            return link;
+                        }));
+                    } else if (typeof item.Link === 'string') {
+                        convertedItem.Links.push({
+                            title: item.Link.includes('.zip') ? 'Download ZIP' : 
+                                   item.Link.includes('.rar') ? 'Download RAR' : 'Link',
+                            url: item.Link
+                        });
+                    }
+                    delete convertedItem.Link;
+                }
+                
+                converted.PK.push(convertedItem);
+            });
+            
+            return converted;
         }
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', () => {
-            // Coba load dari GitHub dulu, jika gagal coba dari lokal
-            loadPKData().catch(() => {
-                console.log('Fallback ke load data lokal...');
-                loadPKDataLocal();
-            });
+            // Mulai update waktu setiap detik
+            updateCurrentTimeDisplay();
+            setInterval(updateCurrentTimeDisplay, 1000);
+            
+            // Preload watermark image
+            const watermarkImg = new Image();
+            watermarkImg.src = watermarkURL;
+            
+            // Load data
+            loadPKData();
         });
 
-        // Export fungsi openModal ke global scope
+        // Export fungsi ke global scope
         window.openModal = openModal;
+        window.playPauseVideo = playPauseVideo;
+        window.toggleMuteVideo = toggleMuteVideo;
+        window.toggleFullscreen = toggleFullscreen;
+        window.restartVideo = restartVideo;
+        window.toggleAutoplay = toggleAutoplay;
     </script>
 </body>
 </html>

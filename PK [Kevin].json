@@ -1,349 +1,880 @@
 {
-"PK":[
-{
-"Day" :  "1 [Kamis]", 
-"Date" : "13-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
-"Folder_dokumentasi" : "Day 1",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499709.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499710.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499717.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499720.jpg"
+  "PK": [
+    {
+      "Day": "1 [Kamis]",
+      "Date": "13-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
+      "Folder_dokumentasi": "Day 1 - lagi test",
+      "Status": "completed",
+      "Note": "Instalasi berjalan lancar. Windows 11 dan MS Office 2019 berhasil diinstall pada Intel Nuc.",
+      "Links": [
+        {
+          "title": "Download Dokumentasi ZIP",
+          "url": "https://github.com/Kevin-ti22a/PK/raw/main/Day 1.zip"
+        },
+        {
+          "title": "Download Dokumentasi RAR",
+          "url": "https://github.com/Kevin-ti22a/PK/raw/main/Day 1.rar"
+        }
       ],
-"Download_ZIP": "https://github.com/Kevin-ti22a/PK/raw/main/Day 1.zip",
-"Download_RAR": "https://github.com/Kevin-ti22a/PK/raw/main/Day 1.rar"
-},
-
-{
-"Day" :  "2 [Jum'at]", 
-"Date" : "14-11-2025",
-"Time" : "07:00 - 17:00",
-"Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]",
-"Folder_dokumentasi" : "Day 2",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114082801.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114082809.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114084834.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114110213.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114110222.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114110602.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114161550.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114161605.jpg"
-      ]
-},
-
-{
-"Day" :  "3 [Sabtu]", 
-"Date" : "15-11-2025",
-"Time" : "07:00 - 13:00",
-"Activity": "Melanjutkan Install Ulang PC AIO HP hanya beberapa Driver yang bisa saya Install karena kurang kompatible, tapi Installasi berhasil",
-"Folder_dokumentasi" : "Day 3",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/4.jpg"
-      ]
-},
-
-
-{
-"Day" :  "4 [Senin]", 
-"Date" : "17-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": "Instalasi CCTV UniFi AI 360 di ruang 220 - 227",
-"Folder_dokumentasi" : "Day 4",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/5.jpg"
-      ]
-},
-
+      "Media": [
         {
-"Day" :  "5 [Selasa]", 
-"Date" : "18-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": "Merapihkan Kabel CCTV di Ruang IT Atas [belum di lanjutkan karena Alat yang diperlukan belum datang], memasang kabel LAN untuk CCTV pada ruang 301",
-"Folder_dokumentasi" : "Day 5",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/5.jpg"
-        
-      ]
-},
-
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499709.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499709.jpg"
+        },
         {
-"Day" :  "6 [Rabu]", 
-"Date" : "19-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": "Instalasi CCTV pada Ruang 301, Mencoba Backup HDD 512 GB (Disk D, F, G) [terindikasi Corrupt Data] ke SSD Mini PC Intel Nuc (Disk E) [Tapi karena data windows sudah corrupt data maka proses backup batal]",
-"Folder_dokumentasi" : "Day 6",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/5.jpg"
-        
-      ]
-},
-
-         {
-"Day" :  "7 [Kamis]", 
-"Date" : "20-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": "Memeriksa Dokumen dan Nota Pengeluaran Divisi IT [karena Datanya sangat penting jadi tidak bisa saya dokumentasi]",
-"Folder_dokumentasi" : "Day 7",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 7/1.jpg"
-        
-      ]
-},
-         {
-"Day" :  "8 [Jum'at]", 
-"Date" : "21-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["Membantu mencarikan Platform untuk menampilkan widget Sosial Media [https://elfsight.com] untuk Website SMK Taruna Bangsa, membantu mengisi content untuk website SMK Taruna Bangsa [Halaman Profile, Halaman Ekstrakurikuler, Halaman Vacational Program, Halaman Facilities dan Halaman Contact]"],
-"Folder_dokumentasi" : "Day 8",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/6.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/5.jpg"
-        
-      ]
-},
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499710.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499710.jpg"
+        },
         {
-"Day" :  "9 [Sabtu]", 
-"Date" : "22-11-2025",
-"Time" : "07:00 - 12:00",
-"Activity": ["Melanjutkan pemrograman Website untuk SMK Taruna Bangsa, merapihkan desain pada website"],
-"Folder_dokumentasi" : "Day 9",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/4.jpg"
-        
-      ]
-},
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499717.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499717.jpg"
+        },
         {
-"Day" :  "10 [Senin]", 
-"Date" : "24-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["Melanjutkan perubahan Button Media Social pada Website SMK Taruna Bangsa [https://smktarunabangsa.sch.id] - Melaporkan Masalah Widget Youtube, Tiktok dan Gogle Review - Merapihkan Rak Penyimpanan Alat IT"],
-"Folder_dokumentasi" : "Day 10",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/6.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/5.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/7.jpg"
-        
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499720.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 1/1000499720.jpg"
+        }
       ]
-},
-                {
-"Day" :  "11 [Selasa]", 
-"Date" : "25-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["Sedang ada acara Hari Guru di SMK Taruna Bangsa jadi saya hanya bisa mengambil Dokumentasi"],
-"Folder_dokumentasi" : "Day 11",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/6.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/5.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/1.mp4"
-        
-      ]
-},
-
-             {
-"Day" :  "12 [Rabu]", 
-"Date" : "26-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["Sedang Mengubah Kode Program CBT untuk UAS Nanti - dan membantu menyiapkan alat rekaman suara untuk Soal Ujian Bahasa Inggris"],
-"Folder_dokumentasi" : "Day 12",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 12/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 12/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 12/3.jpg"
-        
-      ]
-},
-
-         {
-"Day" :  "13 [Kamis]", 
-"Date" : "27-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["membuat Widget Dinamis Youtube untuk web SMK Taruna Bangsa [Karena masih belum selesai maka saya lanjutkan di hari selanjutnya]"],
-"Folder_dokumentasi" : "Day 13",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/4.jpg"
-        
-      ]
-},
-
+    },
+    {
+      "Day": "2 [Jum'at]",
+      "Date": "14-11-2025",
+      "Time": "07:00 - 17:00",
+      "Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]",
+      "Folder_dokumentasi": "Day 2",
+      "Status": "completed",
+      "Note": "Kabel VGA berhasil diganti ke HDMI. Instalasi PC AIO HP mengalami kendala driver, dilanjutkan besok.",
+      "Links": [],
+      "Media": [
         {
-"Day" :  "14 [Jum'at]", 
-"Date" : "28-11-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["Melanjutkan membuat Widget Dinamis Youtube untuk web SMK Taruna Bangsa - Persiapan dan Testing Jaringan Lab Umum untuk Ujian Nantinya"],
-"Folder_dokumentasi" : "Day 14",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/5.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/6.jpg"
-        
-      ]
-},
-
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114082801.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114082801.jpg"
+        },
         {
-"Day" :  "15 [Sabtu]", 
-"Date" : "29-11-2025",
-"Time" : "07:00 - 12:00",
-"Activity": ["Membuat Widget Dinamis Google Review untuk web SMK Taruna Bangsa"],
-"Folder_dokumentasi" : "Day 15",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/5.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/6.jpg"
-        
-      ]
-},
-
-{
-"Day" :  "16 [Senin]", 
-"Date" : "1-12-2025",
-"Time" : "07:00 - 16:30",
-"Activity": ["Melakukan setup Lab Umum 2 untuk Ujian Siswa Hari ke 1 SMK Taruna Bangsa"],
-"Folder_dokumentasi" : "Day 16",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/5.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/6.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/7.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/8.jpg"
-        
-      ]
-},
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114082809.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114082809.jpg"
+        },
         {
-"Day" :  "17 [Selasa]", 
-"Date" : "2-12-2025",
-"Time" : "07:00 - 16:30",
-"Activity": ["Melakukan setup Lab Umum 2 untuk Ujian Siswa Hari ke 2 SMK Taruna Bangsa"],
-"Folder_dokumentasi" : "Day 17",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/5.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/6.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/7.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/8.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/9.jpg"
-        
-      ]
-},
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114084834.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114084834.jpg"
+        },
         {
-"Day" :  "18 [Rabu]", 
-"Date" : "3-12-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["Melakukan setup Lab Umum 1 untuk Ujian Siswa Hari ke 3 SMK Taruna Bangsa"],
-"Folder_dokumentasi" : "Day 18",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/5.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/6.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/7.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/8.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/9.jpg"
-        
-      ]
-},
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114110213.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114110213.jpg"
+        },
         {
-"Day" :  "19 [Kamis]", 
-"Date" : "4-12-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["Melakukan Quality Check kalender 2026 SMK Taruna Bangsa"],
-"Folder_dokumentasi" : "Day 19",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 19/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 19/2.jpg"
-        
-      ]
-},
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114110222.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114110222.jpg"
+        },
         {
-"Day" :  "20 [Jum'at]", 
-"Date" : "5-12-2025",
-"Time" : "07:00 - 16:00",
-"Activity": ["menyiapkan Kabel HDMI dan Kabel Roll, Mengecharge Peralatan untuk acara Osis [HT]"],
-"Folder_dokumentasi" : "Day 20",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/5.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/6.jpg"
-        
-      ]
-},
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114110602.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114110602.jpg"
+        },
         {
-"Day" :  "21 [Sabtu]", 
-"Date" : "6-12-2025",
-"Time" : "07:45 - 12:00",
-"Activity": ["Menyiapkan Peralatan untuk acara Osis [HT, Kabel HDMI dan Kabel Roll]"],
-"Folder_dokumentasi" : "Day 21",
-"Foto": [
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/1.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/2.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/3.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/4.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/5.jpg",
-        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/6.jpg"
-        
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114161550.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114161550.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114161605.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 2/IMG20251114161605.jpg"
+        }
       ]
+    },
+    {
+      "Day": "3 [Sabtu]",
+      "Date": "15-11-2025",
+      "Time": "07:00 - 13:00",
+      "Activity": "Melanjutkan Install Ulang PC AIO HP hanya beberapa Driver yang bisa saya Install karena kurang kompatible, tapi Installasi berhasil",
+      "Folder_dokumentasi": "Day 3",
+      "Status": "completed",
+      "Note": "PC AIO HP berhasil diinstall meski beberapa driver tidak kompatibel. Sistem tetap berjalan normal.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 3/4.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "4 [Senin]",
+      "Date": "17-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Instalasi CCTV UniFi AI 360 di ruang 220 - 227",
+      "Folder_dokumentasi": "Day 4",
+      "Status": "completed",
+      "Note": "CCTV UniFi AI 360 berhasil dipasang di ruang 220-227. Sudah terhubung dengan sistem monitoring.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 4/5.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "5 [Selasa]",
+      "Date": "18-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Merapihkan Kabel CCTV di Ruang IT Atas [belum di lanjutkan karena Alat yang diperlukan belum datang], memasang kabel LAN untuk CCTV pada ruang 301",
+      "Folder_dokumentasi": "Day 5",
+      "Status": "inprogress",
+      "Note": "Kabel CCTV di ruang IT atas belum selesai karena menunggu alat. Kabel LAN ruang 301 sudah terpasang.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 5/5.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "6 [Rabu]",
+      "Date": "19-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Instalasi CCTV pada Ruang 301, Mencoba Backup HDD 512 GB (Disk D, F, G) [terindikasi Corrupt Data] ke SSD Mini PC Intel Nuc (Disk E) [Tapi karena data windows sudah corrupt data maka proses backup batal]",
+      "Folder_dokumentasi": "Day 6",
+      "Status": "pending",
+      "Note": "Backup HDD gagal karena data corrupt. CCTV ruang 301 berhasil dipasang. Perlu perbaikan HDD terlebih dahulu.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 6/5.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "7 [Kamis]",
+      "Date": "20-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Memeriksa Dokumen dan Nota Pengeluaran Divisi IT [karena Datanya sangat penting jadi tidak bisa saya dokumentasi]",
+      "Folder_dokumentasi": "Day 7",
+      "Status": "completed",
+      "Note": "Dokumen dan nota sudah diverifikasi. Tidak ada dokumentasi foto karena sifat data yang confidential.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 7/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 7/1.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "8 [Jum'at]",
+      "Date": "21-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Membantu mencarikan Platform untuk menampilkan widget Sosial Media [https://elfsight.com] untuk Website SMK Taruna Bangsa, membantu mengisi content untuk website SMK Taruna Bangsa [Halaman Profile, Halaman Ekstrakurikuler, Halaman Vacational Program, Halaman Facilities dan Halaman Contact]",
+      "Folder_dokumentasi": "Day 8",
+      "Status": "completed",
+      "Note": "Platform Elfsight ditemukan untuk widget sosial media. Content website sudah diupdate untuk beberapa halaman.",
+      "Links": [
+        {
+          "title": "Platform Widget Sosial Media",
+          "url": "https://elfsight.com"
+        },
+        {
+          "title": "Website SMK Taruna Bangsa",
+          "url": "https://smktarunabangsa.sch.id"
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 8/6.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "9 [Sabtu]",
+      "Date": "22-11-2025",
+      "Time": "07:00 - 12:00",
+      "Activity": "Melanjutkan pemrograman Website untuk SMK Taruna Bangsa, merapihkan desain pada website",
+      "Folder_dokumentasi": "Day 9",
+      "Status": "completed",
+      "Note": "Pemrograman website dilanjutkan, desain dirapihkan untuk konsistensi UI/UX.",
+      "Links": [
+        {
+          "title": "Website SMK Taruna Bangsa",
+          "url": "https://smktarunabangsa.sch.id"
+        },
+        {
+          "title": "Website SMK Taruna Bangsa",
+          "url": "https://smktarunabangsa.sch.id"
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 9/4.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "10 [Senin]",
+      "Date": "24-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Melanjutkan perubahan Button Media Social pada Website SMK Taruna Bangsa [https://smktarunabangsa.sch.id] - Melaporkan Masalah Widget Youtube, Tiktok dan Gogle Review - Merapihkan Rak Penyimpanan Alat IT",
+      "Folder_dokumentasi": "Day 10",
+      "Status": "completed",
+      "Note": "Button media sosial sudah diupdate. Widget YouTube, TikTok, dan Google Review dilaporkan masalahnya. Rak alat IT sudah dirapihkan.",
+      "Links": [
+        {
+          "title": "Website SMK Taruna Bangsa",
+          "url": "https://smktarunabangsa.sch.id"
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/6.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/7.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 10/7.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "11 [Selasa]",
+      "Date": "25-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Sedang ada acara Hari Guru di SMK Taruna Bangsa jadi saya hanya bisa mengambil Dokumentasi",
+      "Folder_dokumentasi": "Day 11",
+      "Status": "completed",
+      "Note": "Dokumentasi acara Hari Guru berhasil diambil. Acara berjalan lancar.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/4.jpg"
+        },
+        {
+          "type": "video",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/2.mp4",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/2.mp4",
+          "autoplay": true
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/5.jpg"
+        },
+        {
+          "type": "video",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/1.mp4",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 11/1.mp4",
+          "autoplay": true
+        }
+      ]
+    },
+    {
+      "Day": "12 [Rabu]",
+      "Date": "26-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Sedang Mengubah Kode Program CBT untuk UAS Nanti - dan membantu menyiapkan alat rekaman suara untuk Soal Ujian Bahasa Inggris",
+      "Folder_dokumentasi": "Day 12",
+      "Status": "completed",
+      "Note": "Kode program CBT sudah diubah. Alat rekaman suara untuk ujian Bahasa Inggris sudah disiapkan.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 12/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 12/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 12/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 12/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 12/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 12/3.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "13 [Kamis]",
+      "Date": "27-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "membuat Widget Dinamis Youtube untuk web SMK Taruna Bangsa [Karena masih belum selesai maka saya lanjutkan di hari selanjutnya]",
+      "Folder_dokumentasi": "Day 13",
+      "Status": "inprogress",
+      "Note": "Widget YouTube dinamis masih dalam pengerjaan. Akan dilanjutkan besok untuk penyempurnaan.",
+      "Links": [
+        {
+          "title": "Website SMK Taruna Bangsa",
+          "url": "https://smktarunabangsa.sch.id"
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 13/4.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "14 [Jum'at]",
+      "Date": "28-11-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Melanjutkan membuat Widget Dinamis Youtube untuk web SMK Taruna Bangsa - Persiapan dan Testing Jaringan Lab Umum untuk Ujian Nantinya",
+      "Folder_dokumentasi": "Day 14",
+      "Status": "completed",
+      "Note": "Widget YouTube dinamis sudah selesai. Jaringan lab umum sudah dites untuk persiapan ujian.",
+      "Links": [
+        {
+          "title": "Website SMK Taruna Bangsa",
+          "url": "https://smktarunabangsa.sch.id"
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 14/6.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "15 [Sabtu]",
+      "Date": "29-11-2025",
+      "Time": "07:00 - 12:00",
+      "Activity": "Membuat Widget Dinamis Google Review untuk web SMK Taruna Bangsa",
+      "Folder_dokumentasi": "Day 15",
+      "Status": "completed",
+      "Note": "Widget Google Review dinamis berhasil dibuat dan diintegrasikan ke website.",
+      "Links": [
+        {
+          "title": "Website SMK Taruna Bangsa",
+          "url": "https://smktarunabangsa.sch.id"
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 15/6.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "16 [Senin]",
+      "Date": "1-12-2025",
+      "Time": "07:00 - 16:30",
+      "Activity": "Melakukan setup Lab Umum 2 untuk Ujian Siswa Hari ke 1 SMK Taruna Bangsa",
+      "Folder_dokumentasi": "Day 16",
+      "Status": "completed",
+      "Note": "Lab Umum 2 sudah disetup untuk ujian hari pertama. Semua komputer siap digunakan.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/6.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/7.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/7.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/8.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 16/8.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "17 [Selasa]",
+      "Date": "2-12-2025",
+      "Time": "07:00 - 16:30",
+      "Activity": "Melakukan setup Lab Umum 2 untuk Ujian Siswa Hari ke 2 SMK Taruna Bangsa",
+      "Folder_dokumentasi": "Day 17",
+      "Status": "completed",
+      "Note": "Lab Umum 2 sudah disetup untuk ujian hari kedua. Tidak ada kendala teknis.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/6.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/7.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/7.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/8.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/8.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/9.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 17/9.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "18 [Rabu]",
+      "Date": "3-12-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Melakukan setup Lab Umum 1 untuk Ujian Siswa Hari ke 3 SMK Taruna Bangsa",
+      "Folder_dokumentasi": "Day 18",
+      "Status": "completed",
+      "Note": "Lab Umum 1 sudah disetup untuk ujian hari ketiga. Semua berjalan sesuai rencana.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/6.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/7.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/7.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/8.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/8.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/9.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 18/9.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "19 [Kamis]",
+      "Date": "4-12-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "Melakukan Quality Check kalender 2026 SMK Taruna Bangsa",
+      "Folder_dokumentasi": "Day 19",
+      "Status": "completed",
+      "Note": "Quality check kalender 2026 sudah dilakukan. Tidak ditemukan error.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 19/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 19/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 19/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 19/2.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "20 [Jum'at]",
+      "Date": "5-12-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "menyiapkan Kabel HDMI dan Kabel Roll, Mengecharge Peralatan untuk acara Osis [HT]",
+      "Folder_dokumentasi": "Day 20",
+      "Status": "completed",
+      "Note": "Kabel HDMI, kabel roll, dan peralatan HT sudah disiapkan untuk acara OSIS besok.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/6.jpg"
+        }
+      ]
+    },
+    {
+      "Day": "21 [Sabtu]",
+      "Date": "6-12-2025",
+      "Time": "07:45 - 12:00",
+      "Activity": "Menyiapkan Peralatan untuk acara Osis [HT, Kabel HDMI dan Kabel Roll]",
+      "Folder_dokumentasi": "Day 21",
+      "Status": "completed",
+      "Note": "Peralatan acara OSIS sudah disiapkan. Semua perangkat siap digunakan.",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/6.jpg"
+        }
+      ]
+    }
+  ]
 }
-
-        
-]
-}
-
-
-
-
-
-
-
-
