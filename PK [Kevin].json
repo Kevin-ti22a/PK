@@ -838,7 +838,7 @@
       "Day": "21 [Sabtu]",
       "Date": "6-12-2025",
       "Time": "07:45 - 12:00",
-      "Activity": "Menyiapkan Peralatan untuk acara Osis [HT, Kabel HDMI dan Kabel Roll] & menambah Fitur di Web Praktek Kerja Kevin Mubarak",
+      "Activity": "Menyiapkan Peralatan untuk acara Osis [HT, Kabel HDMI dan Kabel Roll] dan menambah Fitur di Web Praktek Kerja Kevin Mubarak",
       "Folder_dokumentasi": "Day 21",
       "Status": "completed",
       "Note": "Peralatan acara OSIS sudah disiapkan. Semua perangkat siap digunakan.",
@@ -877,4 +877,5 @@
       ]
     }
   ]
+
 }
