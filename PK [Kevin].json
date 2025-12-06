@@ -306,6 +306,22 @@
 "Day" :  "20 [Jum'at]", 
 "Date" : "5-12-2025",
 "Time" : "07:00 - 16:00",
+"Activity": ["Mengecharge Peralatan untuk acara Osis [HT]"],
+"Folder_dokumentasi" : "Day 20",
+"Foto": [
+        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/1.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/2.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/3.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/4.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/5.jpg",
+        "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 20/6.jpg"
+        
+      ]
+},
+        {
+"Day" :  "21 [Sabtu]", 
+"Date" : "6-12-2025",
+"Time" : "07:45 - 12:00",
 "Activity": ["Menyiapkan Peralatan untuk acara Osis [HT, Kabel HDMI dan Kabel Roll]"],
 "Folder_dokumentasi" : "Day 20",
 "Foto": [
