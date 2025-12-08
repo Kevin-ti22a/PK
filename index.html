@@ -919,7 +919,7 @@
         
         function getFileType(url) {
             const extension = url.split('.').pop().toLowerCase();
-            if (['mp4', 'webm', 'ogg', 'avi', 'mov'].includes(extension)) {
+            if (['mp4', 'webm', 'ogg', 'mkv', 'avi', 'mov'].includes(extension)) {
                 return 'video';
             } else if (['png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp'].includes(extension)) {
                 return 'image';
