@@ -168,7 +168,7 @@
       "Time": "07:00 - 16:00",
       "Activity": "Merapihkan Kabel CCTV di Ruang IT Atas [belum di lanjutkan karena Alat yang diperlukan belum datang], memasang kabel LAN untuk CCTV pada ruang 301",
       "Folder_dokumentasi": "Day 5",
-      "Status": "inprogress",
+      "Status": "completed",
       "Note": "Kabel CCTV di ruang IT atas belum selesai karena menunggu alat. Kabel LAN ruang 301 sudah terpasang.",
       "Links": [],
       "Media": [
@@ -205,7 +205,7 @@
       "Time": "07:00 - 16:00",
       "Activity": "Instalasi CCTV pada Ruang 301, Mencoba Backup HDD 512 GB (Disk D, F, G) [terindikasi Corrupt Data] ke SSD Mini PC Intel Nuc (Disk E) [Tapi karena data windows sudah corrupt data maka proses backup batal]",
       "Folder_dokumentasi": "Day 6",
-      "Status": "pending",
+      "Status": "completed",
       "Note": "Backup HDD gagal karena data corrupt. CCTV ruang 301 berhasil dipasang. Perlu perbaikan HDD terlebih dahulu.",
       "Links": [],
       "Media": [
@@ -479,7 +479,7 @@
       "Time": "07:00 - 16:00",
       "Activity": "membuat Widget Dinamis Youtube untuk web SMK Taruna Bangsa [Karena masih belum selesai maka saya lanjutkan di hari selanjutnya]",
       "Folder_dokumentasi": "Day 13",
-      "Status": "inprogress",
+      "Status": "completed",
       "Note": "Widget YouTube dinamis masih dalam pengerjaan. Akan dilanjutkan besok untuk penyempurnaan.",
       "Links": [
         {
@@ -875,6 +875,53 @@
           "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/6.jpg"
         }
       ]
+    },
+    {
+      "Day": "22 [Senin]",
+      "Date": "8-12-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "-",
+      "Folder_dokumentasi": "Day 21",
+      "Status": "completed",
+      "Note": "-",
+      "Links": [],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 21/6.jpg"
+        }
+      ]
     }
+
+
+
   ]
 }
+
+
