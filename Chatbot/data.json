@@ -1,0 +1,67 @@
+{
+  "sekolah_info": {
+    "nama": "SMK Taruna Bangsa",
+    "telepon": "(021) 12345678",
+    "email": "info@smktarunabangsa.sch.id",
+    "alamat": "Jl. Pendidikan No. 123, Jakarta",
+    "jam_operasional": "Senin-Jumat, 08:00-16:00"
+  },
+  
+  "faq": [
+    {
+      "id": "jurusan",
+      "pertanyaan": "Apa saja jurusan yang tersedia di SMK Taruna Bangsa?",
+      "jawaban": "SMK Taruna Bangsa memiliki 5 jurusan:\n1. Teknik Komputer dan Jaringan (TKJ)\n2. Rekayasa Perangkat Lunak (RPL)\n3. Akuntansi\n4. Administrasi Perkantoran\n5. Pemasaran",
+      "keyword": ["jurusan", "program", "keahlian", "bidang", "konsentrasi"],
+      "kategori": "akademik"
+    },
+    {
+      "id": "pendaftaran",
+      "pertanyaan": "Bagaimana cara mendaftar sebagai siswa baru?",
+      "jawaban": "Cara mendaftar sebagai siswa baru:\n1. Kunjungi website smktarunabangsa.sch.id\n2. Isi formulir pendaftaran online\n3. Upload dokumen yang diperlukan\n4. Ikuti tes seleksi\n5. Konfirmasi kelulusan dan daftar ulang",
+      "keyword": ["daftar", "pendaftaran", "siswa baru", "registrasi", "cara daftar", "masuk"],
+      "kategori": "pendaftaran"
+    },
+    {
+      "id": "kontak",
+      "pertanyaan": "Siapa yang bisa saya hubungi untuk informasi lebih lanjut?",
+      "jawaban": "Untuk informasi lebih lanjut, hubungi:\n- Telepon: (021) 12345678\n- Email: info@smktarunabangsa.sch.id\n- Alamat: Jl. Pendidikan No. 123, Jakarta\n- Jam Operasional: Senin-Jumat, 08:00-16:00",
+      "keyword": ["kontak", "hubungi", "telepon", "alamat", "email", "info lanjut", "kontak person"],
+      "kategori": "kontak"
+    },
+    {
+      "id": "biaya",
+      "pertanyaan": "Berapa biaya pendidikan di SMK Taruna Bangsa?",
+      "jawaban": "Biaya pendidikan di SMK Taruna Bangsa terdiri dari:\n- Uang Pangkal: Rp 3.000.000\n- SPP Bulanan: Rp 500.000\n- Dana Praktik: Rp 1.500.000 (per tahun)\n\n*Biaya dapat dicicil\n*Tersedia beasiswa untuk siswa berprestasi",
+      "keyword": ["biaya", "uang", "spp", "pangkal", "dana", "bayar", "harga"],
+      "kategori": "keuangan"
+    },
+    {
+      "id": "fasilitas",
+      "pertanyaan": "Apa saja fasilitas yang tersedia di sekolah?",
+      "jawaban": "Fasilitas SMK Taruna Bangsa:\n1. Laboratorium Komputer\n2. Perpustakaan Digital\n3. Ruang Praktek Jurusan\n4. Lapangan Olahraga\n5. Kantin Sehat\n6. WiFi di seluruh area\n7. Laboratorium Bahasa",
+      "keyword": ["fasilitas", "sarana", "prasarana", "laboratorium", "ruang", "gedung"],
+      "kategori": "fasilitas"
+    }
+  ],
+  
+  "sambutan": [
+    "Halo! Selamat datang di SMK Taruna Bangsa",
+    "Ada yang bisa saya bantu?",
+    "Silakan tanyakan tentang sekolah kami"
+  ],
+  
+  "default_responses": {
+    "tidak_mengerti": "Maaf, saya belum memahami pertanyaan Anda. Coba tanyakan tentang: jurusan, pendaftaran, biaya, fasilitas, atau kontak sekolah.",
+    "terimakasih": "Sama-sama! Jika ada pertanyaan lain, jangan ragu untuk bertanya.",
+    "salam": "Halo! Selamat datang di AI Agen Taruna Bangsa. Saya siap membantu Anda."
+  },
+  
+  "quick_questions": [
+    "jurusan",
+    "pendaftaran",
+    "kontak",
+    "biaya",
+    "fasilitas"
+  ]
+}
