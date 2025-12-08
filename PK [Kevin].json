@@ -885,11 +885,16 @@
       "Day": "22 [Senin]",
       "Date": "8-12-2025",
       "Time": "07:00 - 16:00",
-      "Activity": "-",
+      "Activity": "Merapihkan website SMK Taruna Bangsa",
       "Folder_dokumentasi": "Day 22",
       "Status": "completed",
       "Note": "-",
-      "Links": [],
+      "Links": [ 
+        {
+          "title": "Website SMK Taruna Bangsa",
+          "url": "https://smktarunabangsa.sch.id"
+        }
+      ],
       "Media": [
         {
           "type": "image",
