@@ -842,7 +842,12 @@
       "Folder_dokumentasi": "Day 21",
       "Status": "completed",
       "Note": "Peralatan acara OSIS sudah disiapkan. Semua perangkat siap digunakan.",
-      "Links": [],
+      "Links": [ 
+        {
+          "title": "Website Praktek Kerja Kevin Mubarak",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app"
+        }
+      ],
       "Media": [
         {
           "type": "image",
