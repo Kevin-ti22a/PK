@@ -933,10 +933,10 @@
       "Day": "23 [Selasa]",
       "Date": "9-12-2025",
       "Time": "07:00 - 16:00",
-      "Activity": "-",
+      "Activity": "Merapihkan program Review yang kemarin di commit pada SMK Taruna Bangsa",
       "Folder_dokumentasi": "Day 23",
       "Status": "completed",
-      "Note": "-",
+      "Note": "karena ada error pada saat geser slider di versi Android",
       "Links": [ 
         {
           "title": "Website SMK Taruna Bangsa",
@@ -947,7 +947,7 @@
         {
           "type": "image",
           "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/1.jpg",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/1.jpg"
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/1.png"
         },
         {
           "type": "image",
