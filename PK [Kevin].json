@@ -927,7 +927,56 @@
           "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 22/6.jpg"
         }
       ]
+    },
+
+{
+      "Day": "23 [Selasa]",
+      "Date": "9-12-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "-",
+      "Folder_dokumentasi": "Day 23",
+      "Status": "completed",
+      "Note": "-",
+      "Links": [ 
+        {
+          "title": "Website SMK Taruna Bangsa",
+          "url": "https://smktarunabangsa.sch.id"
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/6.jpg"
+        }
+      ]
     }
+
 
 
 
