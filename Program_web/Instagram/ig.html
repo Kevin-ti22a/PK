@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multi-Link Iframe Fallback</title>
+
+<!-- iframe-resizer -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
+
+<style>
+    body { margin: 0; padding: 0; }
+    iframe { width: 100%; border: none; }
+</style>
+</head>
+<body>
+
+<iframe id="dynamicFrame" style="width:100%; border:none;" onload="iFrameResize({checkOrigin:false}, '#dynamicFrame')"></iframe>
+
+<script>
+// ============================
+// JSON link list
+// ============================
+const iframeLinks = [
+    "https://link-pertama.com/share", 
+    "https://499aef6bdc5d4e5ab5902af490b51e97.elf.site",
+    "https://link-ketiga.com/share"
+];
+
+// ============================
+// Auto switch handler
+// ============================
+let currentIndex = 0;
+const iframe = document.getElementById("dynamicFrame");
+
+function loadIframe(url) {
+    console.log("Mencoba memuat:", url);
+    iframe.src = url;
+
+    // Timeout 5 detik → jika iframe tidak load, ganti link berikutnya
+    const timeout = 5000;
+    let loaded = false;
+
+    // Saat iframe mulai load
+    iframe.onload = () => {
+        loaded = true;
+        console.log("Berhasil memuat:", url);
+    };
+
+    // Jika setelah timeout belum load → ganti link
+    setTimeout(() => {
+        if (!loaded) {
+            console.log("Gagal memuat:", url, "→ mencoba link berikutnya");
+            tryNextLink();
+        }
+    }, timeout);
+}
+
+function tryNextLink() {
+    currentIndex++;
+    if (currentIndex < iframeLinks.length) {
+        loadIframe(iframeLinks[currentIndex]);
+    } else {
+        console.log("Semua link gagal dimuat.");
+        iframe.srcdoc = "<h2 style='text-align:center;color:red'>Semua link tidak tersedia</h2>";
+    }
+}
+
+// Mulai dari link pertama
+loadIframe(iframeLinks[0]);
+</script>
+
+
+
+</body>
+</html>

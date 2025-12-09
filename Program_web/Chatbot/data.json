@@ -1,0 +1,102 @@
+{
+  "sekolah_info": {
+    "nama": "SMK Taruna Bangsa",
+    "telepon": "(021) 12345678",
+    "email": "info@smktarunabangsa.sch.id",
+    "alamat": "Jl. Pendidikan No. 123, Jakarta",
+    "jam_operasional": "Senin-Jumat, 08:00-16:00"
+  },
+
+  "faq": [
+    {
+      "id": "jurusan",
+      "pertanyaan": "Apa saja jurusan yang tersedia di SMK Taruna Bangsa?",
+      "jawaban": "SMK Taruna Bangsa memiliki 4 jurusan:\n1. Teknik Kendaraan Ringan (TKR)\n2. Rekayasa Perangkat Lunak (RPL)\n3. Teknik Audio Video (TAV)\n4. Teknik Instalasi Tenaga Listrik (TITL)",
+      "keyword": ["jurusan", "program", "keahlian", "bidang", "konsentrasi"],
+      "kategori": "akademik"
+    },
+
+    {
+      "id": "pendaftaran",
+      "pertanyaan": "Bagaimana cara mendaftar sebagai siswa baru?",
+      "jawaban": "Cara mendaftar sebagai siswa baru:\n1. Kunjungi website resmi: smktarunabangsa.sch.id\n2. Isi formulir pendaftaran online\n3. Upload dokumen yang dibutuhkan\n4. Ikuti tes seleksi\n5. Konfirmasi kelulusan dan lakukan daftar ulang",
+      "keyword": ["daftar", "pendaftaran", "siswa baru", "registrasi", "cara daftar", "masuk"],
+      "kategori": "pendaftaran"
+    },
+
+    {
+      "id": "kontak",
+      "pertanyaan": "Siapa yang bisa saya hubungi untuk informasi lebih lanjut?",
+      "jawaban": "Untuk informasi lebih lanjut, Anda dapat menghubungi:\n- Telepon: (021) 12345678\n- Email: info@smktarunabangsa.sch.id\n- Alamat: Jl. Pendidikan No. 123, Jakarta\n- Jam Operasional: Senin-Jumat, 08:00-16:00",
+      "keyword": ["kontak", "hubungi", "telepon", "alamat", "email", "info lanjut", "kontak person"],
+      "kategori": "kontak"
+    },
+
+    {
+      "id": "biaya",
+      "pertanyaan": "Berapa biaya pendidikan di SMK Taruna Bangsa?",
+      "jawaban": "Biaya pendidikan di SMK Taruna Bangsa terdiri dari:\n- Uang Pangkal: Rp 3.000.000\n- SPP Bulanan: Rp 500.000\n- Dana Praktik: Rp 1.500.000 per tahun\n\n*Biaya dapat dicicil\n*Tersedia beasiswa untuk siswa berprestasi",
+      "keyword": ["biaya sekolah", "spp", "uang pangkal", "pembayaran", "uang gedung", "spp bulanan", "dana praktik", "rincian biaya", "harga biaya"],
+      "kategori": "keuangan"
+    },
+
+    {
+      "id": "fasilitas",
+      "pertanyaan": "Apa saja fasilitas yang tersedia di sekolah?",
+      "jawaban": "Fasilitas SMK Taruna Bangsa:\n1. Ruang Praktik Teknik Ketenagalistrikan (TITL)\n2. Ruang Praktik Teknik Otomotif (TKR)\n3. Lab Komputer Teknik Komputer & Informatika (RPL)\n4. Lab Komputer Umum\n5. Ruang Kelas Full AC dengan Proyektor\n6. Mushola\n7. Lapangan Olahraga\n8. Akses Internet untuk Kegiatan Praktik\n9. Area Parkir Siswa dan Guru\n10. Perpustakaan\n11. Ruang Musik\n12. Ruang Fitness\n13. Mobil Operasional Sekolah\n14. Klinik Sekolah\n15. Kantin Sekolah",
+      "keyword": ["fasilitas", "sarana", "prasarana", "laboratorium", "ruang", "gedung"],
+      "kategori": "fasilitas"
+    },
+
+    {
+      "id": "jam_operasional",
+      "pertanyaan": "Jam Berapa aja Sekolah SMK Taruna Bangsa ini Buka?",
+      "jawaban": "Jam Operasional SMK Taruna Bangsa:\n\nSenin\t\t07.00–16.00\nSelasa\t\t07.00–16.00\nRabu\t\t07.00–16.00\nKamis\t\t07.00–16.00\nJumat\t\t07.00–16.00\nSabtu\t\t07.00–13.30\nMinggu\t\tTutup",
+      "keyword": ["jam", "buka", "operasional", "waktu", "hari", "senin", "selasa", "rabu", "kamis", "jumat", "sabtu", "minggu"],
+      "kategori": "informasi"
+    },
+
+    {
+      "id": "ppdb",
+      "pertanyaan": "Informasi lengkap PPDB SMK Taruna Bangsa?",
+      "jawaban": "PPDB SMK Taruna Bangsa dibuka mulai 7 Oktober 2025.\n\nTersedia Jalur Beasiswa dengan biaya Rp 0 hingga lulus.\n\nJalur Beasiswa:\n1. Jalur Akademik (Ranking 1–3)\n2. Jalur Hafidz Qur'an (Minimal 2 juz)\n3. Jalur Olahraga (Futsal & Sepakbola)\n\n*Informasi lengkap: ppdb.smktarunabangsa.sch.id\n*Pendaftaran online 24 jam\n*Gratis biaya pendaftaran",
+      "keyword": ["ppdb", "beasiswa", "pendaftaran siswa baru", "jalur", "akademik", "hafidz", "qur'an", "olahraga", "futsal", "sepakbola", "gratis", "biaya 0"],
+      "kategori": "pendaftaran"
+    },
+
+    {
+      "id": "event",
+      "pertanyaan": "Apakah ada event yang menjadi keunggulan sekolah?",
+      "jawaban": "NASA Cup adalah turnamen futsal pelajar yang rutin diadakan setiap tahun oleh SMK Taruna Bangsa Bekasi dan telah mencapai Season 12 pada tahun 2025.",
+      "keyword": ["event", "acara", "kegiatan", "nasa cup", "turnamen", "futsal", "prestasi", "kompetisi"],
+      "kategori": "event"
+    },
+
+    {
+      "id": "unggulan",
+      "pertanyaan": "Apa yang mengungguli sekolah ini dengan sekolah lainnya?",
+      "jawaban": "SMK Taruna Bangsa memiliki dua keunggulan utama: event besar NASA CUP yang telah mencapai Season 12 pada tahun 2025, serta adanya Kelas Axioo — kelas khusus bagi siswa dengan kemampuan terbaik di bidang perakitan komputer dan laptop, yang dipilih langsung oleh guru.",
+      "keyword": ["unggulan", "keunggulan", "kelebihan", "lebih baik", "lebih unggul", "bagusnya", "kualitas", "kenapa pilih sekolah ini", "perbedaan sekolah", "axioo", "kelas axioo", "nasa cup", "event unggulan", "keistimewaan"],
+      "kategori": "informasi"
+    }
+  ],
+
+  "sambutan": [
+    "Halo! Selamat datang di SMK Taruna Bangsa",
+    "Ada yang bisa saya bantu?",
+    "Silakan tanyakan tentang sekolah kami"
+  ],
+
+  "default_responses": {
+    "tidak_mengerti": "Maaf, saya belum memahami pertanyaan Anda. Coba tanyakan tentang jurusan, pendaftaran, biaya, fasilitas, atau kontak sekolah.",
+    "terimakasih": "Sama-sama! Jika ada pertanyaan lain, jangan ragu untuk bertanya.",
+    "salam": "Halo! Selamat datang di AI Agen Taruna Bangsa. Saya siap membantu Anda."
+  },
+
+  "quick_questions": [
+    "jurusan",
+    "pendaftaran",
+    "kontak",
+    "fasilitas"
+  ]
+}
