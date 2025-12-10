@@ -972,6 +972,44 @@
           "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/4.png"
         }
       ]
+    },
+
+{
+      "Day": "25 [Kamis]",
+      "Date": "11-12-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "-",
+      "Folder_dokumentasi": "Day 24",
+      "Status": "completed",
+      "Note": "-",
+      "Links": [ 
+        {
+          "title": "-",
+          "url": "#"
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/1.jpeg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/1.jpeg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/3.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/3.png"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/4.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/4.png"
+        }
+      ]
     }
 
 
