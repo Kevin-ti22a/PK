@@ -975,7 +975,7 @@
       "Day": "24 [Rabu]",
       "Date": "10-12-2025",
       "Time": "07:00 - 16:00",
-      "Activity": "Melanjutkan perbaikan tampilan google review pada website SMK Taruna Bangsa",
+      "Activity": "Melanjutkan perbaikan tampilan google review dan menambahkan informasi PPDB pada website SMK Taruna Bangsa",
       "Folder_dokumentasi": "Day 24",
       "Status": "completed",
       "Note": "perbaikan kemarin ternyata masih ada sedikit bug saat layar android di geser yang dimana tampilan navigasi mentutpi konten",
@@ -993,8 +993,8 @@
         },
         {
           "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/2.png",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/2.png"
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/2.jpg"
         },
         {
           "type": "image",
