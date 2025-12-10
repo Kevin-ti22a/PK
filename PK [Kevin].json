@@ -930,13 +930,13 @@
     },
 
 {
-      "Day": "23 [Selasa]",
-      "Date": "9-12-2025",
+      "Day": "24 [Rabu]",
+      "Date": "10-12-2025",
       "Time": "07:00 - 16:00",
-      "Activity": "Merapihkan program Review yang kemarin di commit pada SMK Taruna Bangsa",
-      "Folder_dokumentasi": "Day 23",
+      "Activity": "-",
+      "Folder_dokumentasi": "Day 24",
       "Status": "completed",
-      "Note": "karena ada error pada saat geser slider di versi Android",
+      "Note": "-",
       "Links": [ 
         {
           "title": "Website SMK Taruna Bangsa",
@@ -946,28 +946,28 @@
       "Media": [
         {
           "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/1.png",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/1.png"
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/1.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/1.png"
         },
         {
           "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/2.png",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/2.png"
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/2.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/2.png"
         },
         {
           "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/3.png",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/3.png"
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/3.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/3.png"
         },
         {
           "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/4.png",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/4.png"
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/4.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/4.png"
         },
         {
           "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/5.png",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 23/5.png"
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/5.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 24/5.png"
         }
       ]
     }
