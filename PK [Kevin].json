@@ -1005,6 +1005,39 @@
           "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/3.jpg"
         }
       ]
+    },
+
+    {
+      "Day": "26 [Jum'at]",
+      "Date": "12-12-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "-",
+      "Folder_dokumentasi": "Day 24",
+      "Status": "completed",
+      "Note": "pada minggu ini pada staff IT di SMK Taruna Bangsa sedang melakukan input nilai siswa/siswi jadi tidak terlalu banyak kegiatan",
+      "Links": [ 
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 25/3.jpg"
+        }
+      ]
     }
 
 
