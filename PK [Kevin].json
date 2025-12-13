@@ -1011,10 +1011,10 @@
       "Day": "26 [Jum'at]",
       "Date": "12-12-2025",
       "Time": "07:00 - 16:00",
-      "Activity": "-",
+      "Activity": "Service Printer di luar sekloah",
       "Folder_dokumentasi": "Day 26",
       "Status": "completed",
-      "Note": "pada minggu ini pada staff IT di SMK Taruna Bangsa sedang melakukan input nilai siswa/siswi jadi tidak terlalu banyak kegiatan",
+      "Note": "tinta printernya macet karena tidak dipakai berbulan bulan",
       "Links": [ 
         {
           "title": "",
@@ -1036,6 +1036,39 @@
           "type": "image",
           "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 26/3.jpg",
           "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 26/.3pg"
+        }
+      ]
+    },
+
+        {
+      "Day": "27 [Sabtu]",
+      "Date": "13-12-2025",
+      "Time": "07:00 - 16:00",
+      "Activity": "-",
+      "Folder_dokumentasi": "Day 27",
+      "Status": "completed",
+      "Note": "-",
+      "Links": [ 
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 27/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 27/1.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 27/2.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 27/2.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 27/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 27/.3pg"
         }
       ]
     }
