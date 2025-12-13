@@ -1,896 +1,1273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Review SMK Taruna Bangsa</title>
-<style>
-    :root{
-        --gap: 20px;
-        --primary-color: #3b82f6;
-        --secondary-color: #e0e0e0;
-    }
-    * {
-        box-sizing: border-box;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
-        margin: 0;
-        padding: 20px;
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Review SMK Taruna Bangsa</title>
+    <style>
+        :root {
+            --gap: 20px;
+            --primary-color: #3b82f6;
+            --secondary-color: #e0e0e0;
+        }
 
-    h2 {
-        text-align: center;
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: #333;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    /* Container */
-    .slider-container {
-        max-width: 1300px;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    .slider-wrapper {
-        overflow: hidden;
-        position: relative;
-    }
-
-    /* Slider (desktop behavior) */
-    .slider {
-        display: flex;
-        gap: var(--gap);
-        transition: transform 0.4s ease;
-        will-change: transform;
-    }
-
-    .card {
-        background: white;
-        padding: 20px;
-        border-radius: 15px;
-        width: 300px;
-        min-width: 300px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-        position: relative;
-        flex-shrink: 0;
-    }
-
-    .card h3 {
-        margin: 0 0 8px 0;
-        font-size: 18px;
-        color: #333;
-        font-weight: 600;
-    }
-
-    .stars {
-        color: #ffb400;
-        font-size: 18px;
-        margin: 8px 0;
-        line-height: 1.2;
-    }
-
-    .message {
-        margin-top: 12px;
-        font-size: 15px;
-        color: #333;
-        line-height: 1.5;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .message.collapsed {
-        max-height: 90px;
-    }
-
-    .read-more {
-        background: linear-gradient(transparent, white);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 25px 0 8px 0;
-        text-align: center;
-    }
-
-    .read-more-btn {
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        padding: 6px 14px;
-        border-radius: 12px;
-        font-size: 12px;
-        cursor: pointer;
-        transition: background 0.2s;
-        font-weight: 500;
-    }
-
-    .read-more-btn:hover {
-        background: #2563eb;
-    }
-
-    .reply {
-        margin-top: 15px;
-        padding: 12px;
-        background: #eef7ff;
-        border-left: 4px solid var(--primary-color);
-        border-radius: 8px;
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    /* Navigation buttons (desktop) */
-    .btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255,255,255,0.8);
-        border: none;
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 999;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #333;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.25s ease, transform 0.15s ease;
-    }
-
-    .btn:hover {
-        transform: translateY(-50%) scale(1.08);
-        background: white;
-    }
-
-    .btn.left { left: 8px; }
-    .btn.right { right: 8px; }
-
-    .btn.show {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    /* Slidebar (Progress Bar) - HIDDEN ON MOBILE */
-    .slidebar-container {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .slidebar {
-        width: 90%;
-        max-width: 400px;
-        height: 6px;
-        background: var(--secondary-color);
-        border-radius: 3px;
-        position: relative;
-        cursor: pointer;
-        overflow: visible;
-    }
-
-    .slidebar-progress {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        background: var(--primary-color);
-        border-radius: 3px;
-        transition: width 0.3s ease;
-    }
-
-    .slidebar-handle {
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-        background: var(--primary-color);
-        border-radius: 50%;
-        cursor: grab;
-        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
-        transition: all 0.2s ease;
-        z-index: 10;
-    }
-
-    .slidebar-handle:active {
-        cursor: grabbing;
-        transform: translate(-50%, -50%) scale(1.2);
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.6);
-    }
-
-    /* Modal */
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        padding: 20px;
-    }
-
-    .modal.show {
-        display: flex;
-        opacity: 1;
-    }
-
-    .modal-content {
-        background: white;
-        padding: 25px;
-        border-radius: 15px;
-        max-width: 500px;
-        width: 100%;
-        max-height: 85vh;
-        overflow-y: auto;
-        position: relative;
-        transform: translateY(20px);
-        transition: transform 0.3s ease;
-    }
-
-    .modal.show .modal-content {
-        transform: translateY(0);
-    }
-
-    .modal-close {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        color: #666;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: background 0.2s;
-        z-index: 1001;
-    }
-
-    .modal-close:hover {
-        background: #f0f0f0;
-    }
-
-    .modal-header {
-        margin-bottom: 15px;
-        padding-right: 40px;
-    }
-
-    .modal-header h3 {
-        margin: 0 0 8px 0;
-        font-size: 20px;
-        color: #333;
-        font-weight: 600;
-    }
-
-    .modal-stars {
-        color: #ffb400;
-        font-size: 18px;
-        margin: 8px 0;
-    }
-
-    .modal-message {
-        font-size: 16px;
-        line-height: 1.6;
-        color: #333;
-        margin-bottom: 15px;
-        white-space: pre-line;
-    }
-
-    .modal-reply {
-        padding: 15px;
-        background: #eef7ff;
-        border-left: 4px solid var(--primary-color);
-        border-radius: 8px;
-        font-size: 14px;
-        white-space: pre-line;
-        line-height: 1.5;
-    }
-
-    /* MOBILE STYLES - FIXED VERSION */
-    @media (max-width: 768px) {
         body {
-            padding: 15px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
         }
 
         h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
         }
 
+        /* Container */
         .slider-container {
-            width: 100%;
-            overflow: visible;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
         }
 
         .slider-wrapper {
-            overflow-x: auto;
-            display: block;
-            padding-bottom: 15px;
-            -webkit-overflow-scrolling: touch;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            margin: 0;
-            padding-left: 0;
-            padding-right: 0;
-        }
-        
-        .slider-wrapper::-webkit-scrollbar { 
-            display: none; 
+            overflow: hidden;
+            position: relative;
         }
 
+        /* Slider (desktop behavior) */
         .slider {
             display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 5px;
-            padding-left: 15px;
-            padding-right: 15px;
+            gap: var(--gap);
+            transition: transform 0.4s ease;
+            will-change: transform;
         }
 
         .card {
-            flex: 0 0 calc(85% - 15px);
-            min-width: calc(85% - 15px);
-            max-width: calc(85% - 15px);
-            scroll-snap-align: start;
-            padding: 18px;
-            width: auto;
-        }
-
-        /* Last card should have extra right padding */
-        .slider .card:last-child {
-            margin-right: 15px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            min-width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            position: relative;
+            flex-shrink: 0;
         }
 
         .card h3 {
-            font-size: 17px;
-            margin-bottom: 6px;
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
         }
 
         .stars {
-            font-size: 16px;
-            margin: 6px 0;
+            color: #ffb400;
+            font-size: 18px;
+            margin: 8px 0;
+            line-height: 1.2;
         }
 
         .message {
-            font-size: 14px;
-            margin-top: 10px;
+            margin-top: 12px;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.5;
+            position: relative;
+            overflow: hidden;
         }
 
         .message.collapsed {
-            max-height: 80px;
+            max-height: 90px;
         }
 
         .read-more {
-            padding: 20px 0 6px 0;
+            background: linear-gradient(transparent, white);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px 0 8px 0;
+            text-align: center;
         }
 
         .read-more-btn {
-            padding: 5px 12px;
-            font-size: 11px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 12px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+
+        .read-more-btn:hover {
+            background: #2563eb;
         }
 
         .reply {
-            padding: 10px;
-            font-size: 13px;
-            margin-top: 12px;
+            margin-top: 15px;
+            padding: 12px;
+            background: #eef7ff;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.4;
         }
 
-        /* hide nav buttons on mobile */
-        .btn { 
-            display: none !important; 
+        /* Navigation buttons (desktop) */
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.15s ease;
         }
 
-        /* HIDE SLIDEBAR ON MOBILE */
-        .slidebar-container {
-            display: none !important;
+        .btn:hover {
+            transform: translateY(-50%) scale(1.08);
+            background: white;
         }
 
-        /* Modal mobile adjustments */
+        .btn.left {
+            left: 8px;
+        }
+
+        .btn.right {
+            right: 8px;
+        }
+
+        .btn.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Modal */
         .modal {
-            padding: 10px;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
         }
 
         .modal-content {
-            padding: 20px;
-            max-height: 90vh;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+            z-index: 1001;
+        }
+
+        .modal-close:hover {
+            background: #f0f0f0;
+        }
+
+        .modal-header {
+            margin-bottom: 15px;
+            padding-right: 40px;
         }
 
         .modal-header h3 {
-            font-size: 18px;
+            margin: 0 0 8px 0;
+            font-size: 20px;
+            color: #333;
+            font-weight: 600;
         }
 
         .modal-stars {
-            font-size: 16px;
+            color: #ffb400;
+            font-size: 18px;
+            margin: 8px 0;
         }
 
         .modal-message {
-            font-size: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+            white-space: pre-line;
         }
 
         .modal-reply {
-            font-size: 13px;
-            padding: 12px;
-        }
-    }
-
-    /* Very small mobile devices */
-    @media (max-width: 360px) {
-        .card {
-            flex: 0 0 calc(90% - 12px);
-            min-width: calc(90% - 12px);
-            max-width: calc(90% - 12px);
             padding: 15px;
-        }
-        
-        .slider {
-            gap: 12px;
-            padding-left: 12px;
-            padding-right: 12px;
+            background: #eef7ff;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            font-size: 14px;
+            white-space: pre-line;
+            line-height: 1.5;
         }
 
-        .slider .card:last-child {
-            margin-right: 12px;
+        /* MOBILE STYLES - FIXED VERSION */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+                overflow-x: hidden;
+            }
+
+            h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .slider-container {
+                width: 100%;
+                overflow: visible;
+                position: relative;
+                padding: 0 5px; /* Reduced padding to give more space for content */
+            }
+
+            .slider-wrapper {
+                overflow-x: auto;
+                display: block;
+                padding-bottom: 15px;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+                margin: 0;
+                padding: 0 10px; /* Reduced padding */
+                position: relative;
+                width: 100%;
+                scroll-snap-type: x mandatory;
+            }
+
+            .slider-wrapper::-webkit-scrollbar {
+                display: none;
+            }
+
+            .slider {
+                display: flex;
+                gap: 15px;
+                padding: 0;
+                margin: 0;
+                width: max-content;
+                box-sizing: border-box;
+                /* Adjust padding to properly center cards without being covered by arrows */
+                padding-left: calc(50vw - (85vw - 30px) / 2 - 25px);
+                padding-right: calc(50vw - (85vw - 30px) / 2 - 25px);
+            }
+
+            .card {
+                flex: 0 0 auto;
+                width: calc(85vw - 30px);
+                min-width: calc(85vw - 30px);
+                max-width: calc(85vw - 30px);
+                scroll-snap-align: center;
+                padding: 18px;
+                box-sizing: border-box;
+                position: relative;
+                display: block;
+                margin: 0;
+                /* Ensure content is not covered by arrows */
+                z-index: 1;
+            }
+
+            .card h3 {
+                font-size: 17px;
+                margin-bottom: 6px;
+                word-wrap: break-word;
+            }
+
+            .stars {
+                font-size: 16px;
+                margin: 6px 0;
+            }
+
+            .message {
+                font-size: 14px;
+                margin-top: 10px;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                width: 100%;
+            }
+
+            .message.collapsed {
+                max-height: 80px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .read-more {
+                background: linear-gradient(transparent, white);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 20px 0 6px 0;
+                text-align: center;
+            }
+
+            .read-more-btn {
+                padding: 5px 12px;
+                font-size: 11px;
+                display: inline-block;
+                z-index: 10;
+                position: relative;
+            }
+
+            .reply {
+                padding: 10px;
+                font-size: 13px;
+                margin-top: 12px;
+                word-wrap: break-word;
+            }
+
+            /* MOBILE ARROW NAVIGATION - FIXED POSITIONING */
+            .mobile-arrows {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                pointer-events: none;
+                z-index: 50;
+            }
+
+            .mobile-arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                color: #3b82f6;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                pointer-events: auto;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                opacity: 0.9;
+                /* Position arrows outside the card content area */
+                z-index: 60;
+            }
+
+            .mobile-arrow:hover {
+                opacity: 1;
+                transform: translateY(-50%) scale(1.05);
+            }
+
+            .mobile-arrow.left {
+                left: -15px; /* Position outside the card */
+            }
+
+            .mobile-arrow.right {
+                right: -15px; /* Position outside the card */
+            }
+
+            /* TOMBOL NAVIGASI DESKTOP - Hanya sembunyikan di mobile */
+            .slider-container .btn {
+                display: none !important;
+            }
+
+            /* Dots indicator untuk mobile */
+            .dots-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                gap: 8px;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #ccc;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .dot.active {
+                background: #3b82f6;
+                transform: scale(1.2);
+            }
+
+            /* Modal mobile adjustments */
+            .modal {
+                padding: 10px;
+            }
+
+            .modal-content {
+                padding: 20px;
+                max-height: 90vh;
+            }
+
+            .modal-header h3 {
+                font-size: 18px;
+            }
+
+            .modal-stars {
+                font-size: 16px;
+            }
+
+            .modal-message {
+                font-size: 15px;
+            }
+
+            .modal-reply {
+                font-size: 13px;
+                padding: 12px;
+            }
         }
-    }
-</style>
+
+        /* Very small mobile devices */
+        @media (max-width: 360px) {
+            .slider-container {
+                padding: 0;
+            }
+            
+            .slider-wrapper {
+                padding: 0 5px;
+            }
+            
+            .slider {
+                padding-left: calc(50vw - (90vw - 24px) / 2 - 20px);
+                padding-right: calc(50vw - (90vw - 24px) / 2 - 20px);
+            }
+
+            .card {
+                width: calc(90vw - 24px);
+                min-width: calc(90vw - 24px);
+                max-width: calc(90vw - 24px);
+                padding: 15px;
+            }
+
+            .slider {
+                gap: 12px;
+            }
+            
+            .mobile-arrow {
+                width: 32px;
+                height: 32px;
+                font-size: 18px;
+            }
+            
+            .mobile-arrow.left {
+                left: -10px;
+            }
+            
+            .mobile-arrow.right {
+                right: -10px;
+            }
+        }
+        
+        /* Extra small devices */
+        @media (max-width: 320px) {
+            .slider {
+                padding-left: calc(50vw - (95vw - 20px) / 2 - 15px);
+                padding-right: calc(50vw - (95vw - 20px) / 2 - 15px);
+            }
+
+            .card {
+                width: calc(95vw - 20px);
+                min-width: calc(95vw - 20px);
+                max-width: calc(95vw - 20px);
+                padding: 12px;
+            }
+            
+            .mobile-arrow {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <style>
+        .container-rating {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-bottom: 25px;
+        }
 
-<h2>What our customers say</h2>
+        .rating-wrapper {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
 
-<div class="slider-container">
-    <button class="btn left" aria-label="prev" id="btnPrev">&#8249;</button>
+        .rating-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 4px;
+        }
 
-    <div class="slider-wrapper" id="sliderWrapper">
-        <div id="slider" class="slider" role="list"></div>
+        .stars {
+            color: #f4b400;
+            font-size: 22px;
+            margin-right: 6px;
+        }
+
+        .rating-count {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .info-icon {
+            margin-left: 6px;
+            font-size: 16px;
+            color: #777;
+            cursor: pointer;
+        }
+
+        .review-button {
+            display: inline-block;
+            margin-top: 6px;
+            margin-left: 10px;
+            padding: 8px 14px;
+            background-color: rgb(22, 173, 54);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .review-button:hover {
+            background-color: #3367D6;
+        }
+    </style>
+    <h2><b>What Our Customers Say</b></h2>
+    <div class="container-rating">
+        <div class="rating-wrapper">
+            <span class="rating-number">4,7</span>
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(272 ulasan)</span>
+            <span class="info-icon">&#9432;</span>
+        </div>
+
+        <a class="review-button" href="https://g.page/r/CRYY32XXaO4dEAE/review" target="_blank">
+            Beri Kami Ulasan di Google
+        </a>
+
     </div>
 
-    <button class="btn right" aria-label="next" id="btnNext">&#8250;</button>
-    
-    <!-- Slidebar Navigation - HIDDEN ON MOBILE -->
-    <div class="slidebar-container" id="slidebarContainer">
-        <div class="slidebar" id="slidebar">
-            <div class="slidebar-progress" id="slidebarProgress"></div>
-            <div class="slidebar-handle" id="slidebarHandle"></div>
+    <div class="slider-container">
+        <!-- Mobile arrows container -->
+        <div class="mobile-arrows" id="mobileArrows">
+            <div class="mobile-arrow left" id="mobilePrev">‹</div>
+            <div class="mobile-arrow right" id="mobileNext">›</div>
+        </div>
+
+        <button class="btn left" aria-label="prev" id="btnPrev">&#8249;</button>
+
+        <div class="slider-wrapper" id="sliderWrapper">
+            <div id="slider" class="slider" role="list"></div>
+        </div>
+
+        <button class="btn right" aria-label="next" id="btnNext">&#8250;</button>
+
+        <!-- Dots indicator for mobile -->
+        <div class="dots-container" id="dotsContainer"></div>
+    </div>
+
+    <!-- Modal untuk Lihat Selengkapnya -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <h3 id="modalUsername">Anonymous</h3>
+                <div class="modal-stars" id="modalStars"></div>
+            </div>
+            <div class="modal-message" id="modalMessage"></div>
+            <div class="modal-reply" id="modalReply"></div>
         </div>
     </div>
-</div>
 
-<!-- Modal untuk Lihat Selengkapnya -->
-<div class="modal" id="modal">
-    <div class="modal-content">
-        <button class="modal-close" id="modalClose">&times;</button>
-        <div class="modal-header">
-            <h3 id="modalUsername">Anonymous</h3>
-            <div class="modal-stars" id="modalStars"></div>
-        </div>
-        <div class="modal-message" id="modalMessage"></div>
-        <div class="modal-reply" id="modalReply"></div>
-    </div>
-</div>
+    <script>
+        const url = "https://raw.githubusercontent.com/Kevin-ti22a/PK/refs/heads/main/Review_data.json";
 
-<script>
-const url = "https://raw.githubusercontent.com/Kevin-ti22a/PK/refs/heads/main/Review_data.json";
+        let reviews = [];
+        let sliderIndex = 0;
+        let isMobile = window.innerWidth <= 768;
+        let isScrolling = false;
+        let scrollTimeout;
+        const slider = document.getElementById("slider");
+        const sliderWrapper = document.getElementById("sliderWrapper");
+        const btnPrev = document.getElementById("btnPrev");
+        const btnNext = document.getElementById("btnNext");
+        const mobilePrev = document.getElementById("mobilePrev");
+        const mobileNext = document.getElementById("mobileNext");
+        const mobileArrows = document.getElementById("mobileArrows");
+        const dotsContainer = document.getElementById("dotsContainer");
+        const modal = document.getElementById("modal");
+        const modalClose = document.getElementById("modalClose");
+        const modalUsername = document.getElementById("modalUsername");
+        const modalStars = document.getElementById("modalStars");
+        const modalMessage = document.getElementById("modalMessage");
+        const modalReply = document.getElementById("modalReply");
 
-let reviews = [];
-let sliderIndex = 0;
-let isDragging = false;
-let isUpdatingFromSlidebar = false;
-const slider = document.getElementById("slider");
-const sliderWrapper = document.getElementById("sliderWrapper");
-const btnPrev = document.getElementById("btnPrev");
-const btnNext = document.getElementById("btnNext");
-const slidebarContainer = document.getElementById("slidebarContainer");
-const slidebar = document.getElementById("slidebar");
-const slidebarProgress = document.getElementById("slidebarProgress");
-const slidebarHandle = document.getElementById("slidebarHandle");
-const modal = document.getElementById("modal");
-const modalClose = document.getElementById("modalClose");
-const modalUsername = document.getElementById("modalUsername");
-const modalStars = document.getElementById("modalStars");
-const modalMessage = document.getElementById("modalMessage");
-const modalReply = document.getElementById("modalReply");
+        // Load reviews from JSON and render cards
+        async function loadReviews() {
+            try {
+                const res = await fetch(url);
+                reviews = await res.json();
+            } catch (err) {
+                console.error("Gagal memuat JSON:", err);
+                reviews = [];
+            }
 
-// Load reviews from JSON and render cards
-async function loadReviews(){
-    try {
-        const res = await fetch(url);
-        reviews = await res.json();
-    } catch (err) {
-        console.error("Gagal memuat JSON:", err);
-        reviews = [];
-    }
+            slider.innerHTML = "";
+            reviews.forEach((r, index) => {
+                const card = document.createElement("div");
+                card.className = "card";
 
-    slider.innerHTML = "";
-    reviews.forEach((r, index) => {
-        const card = document.createElement("div");
-        card.className = "card";
-        
-        // Check if message needs "read more"
-        const message = r.message_review || "";
-        const needsReadMore = message.length > 120 || (message.match(/\n/g) || []).length > 2;
-        
-        card.innerHTML = `
+                // Check if message needs "read more"
+                const message = r.message_review || "";
+                const needsReadMore = message.length > 120 || (message.match(/\n/g) || []).length > 2;
+
+                card.innerHTML = `
             <h3>${escapeHtml(r.username_review || "Anonymous")}</h3>
             <div class="stars">${escapeHtml(r.rating_review || "")}</div>
             <div class="message ${needsReadMore ? 'collapsed' : ''}">
                 ${escapeHtml(message)}
                 ${needsReadMore ? `
-                    <div class="read-more">
-                        <button class="read-more-btn" onclick="showFullReview(${index})">Lihat Selengkapnya</button>
-                    </div>
-                ` : ''}
+                        <div class="read-more">
+                            <button class="read-more-btn" onclick="showFullReview(${index})">Lihat Selengkapnya</button>
+                        </div>
+                    ` : ''}
             </div>
             ${r.reply_smk_taruna_bangsa ? `<div class="reply"><strong>Balasan:</strong><br>${escapeHtml(r.reply_smk_taruna_bangsa)}</div>` : ""}
         `;
-        slider.appendChild(card);
-    });
+                slider.appendChild(card);
+            });
 
-    // reset transform
-    slider.style.transform = "translateX(0px)";
-    sliderIndex = 0;
-    
-    // update slidebar hanya di desktop
-    if (window.innerWidth > 768) {
-        updateSlidebar();
-    }
+            // reset transform
+            slider.style.transform = "translateX(0px)";
+            sliderIndex = 0;
 
-    // Initialize mobile scroll behavior
-    initMobileScroll();
-}
+            // Initialize mobile behavior and dots
+            initMobileBehavior();
+            createDots();
 
-// Initialize mobile scroll behavior
-function initMobileScroll() {
-    if (window.innerWidth <= 768) {
-        // Reset any transforms for mobile
-        slider.style.transform = 'none';
-        
-        // Ensure proper scroll behavior
-        sliderWrapper.scrollLeft = 0;
-    }
-}
+            // Tampilkan tombol navigasi di desktop
+            showNavButtonsOnDesktop();
 
-// Show full review in modal
-function showFullReview(index) {
-    const review = reviews[index];
-    
-    modalUsername.textContent = review.username_review || "Anonymous";
-    modalStars.innerHTML = escapeHtml(review.rating_review || "");
-    modalMessage.textContent = review.message_review || "";
-    
-    if (review.reply_smk_taruna_bangsa) {
-        modalReply.innerHTML = `<strong>Balasan:</strong><br>${escapeHtml(review.reply_smk_taruna_bangsa)}`;
-        modalReply.style.display = 'block';
-    } else {
-        modalReply.style.display = 'none';
-    }
-    
-    // Show modal dengan display: flex dan kemudian tambah class show
-    modal.style.display = 'flex';
-    // Trigger reflow
-    void modal.offsetWidth;
-    modal.classList.add('show');
-    document.body.style.overflow = 'hidden';
-}
+            // Center first card on mobile after render
+            if (isMobile) {
+                setTimeout(() => {
+                    centerFirstCard();
+                    updateMobileArrows();
+                    updateDots();
+                }, 300);
+            }
+        }
 
-// Close modal
-function closeModal() {
-    modal.classList.remove('show');
-    document.body.style.overflow = 'auto';
-    
-    // Tunggu transisi selesai baru sembunyikan modal
-    setTimeout(() => {
-        modal.style.display = 'none';
-    }, 300);
-}
+        // Create dots indicator for mobile
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            if (!isMobile || reviews.length <= 1) return;
+            
+            for (let i = 0; i < Math.min(reviews.length, 10); i++) { // Max 10 dots
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.addEventListener('click', () => {
+                    scrollToCard(i);
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
 
-// Modal event listeners
-modalClose.addEventListener('click', closeModal);
+        // Update dots based on current position
+        function updateDots() {
+            if (!isMobile || reviews.length <= 1) return;
+            
+            const currentCard = getCurrentCardIndex();
+            const dots = dotsContainer.querySelectorAll('.dot');
+            
+            dots.forEach((dot, index) => {
+                if (index === currentCard) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
 
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeModal();
-    }
-});
+        // Get current centered card index
+        function getCurrentCardIndex() {
+            if (!isMobile) return 0;
+            
+            const cards = slider.querySelectorAll('.card');
+            if (cards.length === 0) return 0;
+            
+            const wrapperWidth = sliderWrapper.offsetWidth;
+            const scrollLeft = sliderWrapper.scrollLeft;
+            const wrapperCenter = scrollLeft + (wrapperWidth / 2);
+            
+            let currentIndex = 0;
+            let minDistance = Infinity;
+            
+            cards.forEach((card, index) => {
+                const cardLeft = card.offsetLeft;
+                const cardWidth = card.offsetWidth;
+                const cardCenter = cardLeft + (cardWidth / 2);
+                const distance = Math.abs(cardCenter - wrapperCenter);
+                
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    currentIndex = index;
+                }
+            });
+            
+            return currentIndex;
+        }
 
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('show')) {
-        closeModal();
-    }
-});
+        // Scroll to specific card on mobile
+        function scrollToCard(index) {
+            if (!isMobile) return;
+            
+            const cards = slider.querySelectorAll('.card');
+            if (!cards[index]) return;
+            
+            const wrapperWidth = sliderWrapper.offsetWidth;
+            const card = cards[index];
+            const cardLeft = card.offsetLeft;
+            const cardWidth = card.offsetWidth;
+            
+            const targetScroll = cardLeft - (wrapperWidth / 2) + (cardWidth / 2);
+            
+            sliderWrapper.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+            
+            updateMobileArrows();
+            updateDots();
+        }
 
-// small helper to avoid XSS when injecting text
-function escapeHtml(s){
-    return (s+"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
-}
+        // Update mobile arrow visibility
+        function updateMobileArrows() {
+            if (!isMobile) return;
+            
+            const currentIndex = getCurrentCardIndex();
+            const totalCards = reviews.length;
+            
+            // Show/hide left arrow
+            if (currentIndex > 0) {
+                mobilePrev.style.display = 'flex';
+                mobilePrev.style.opacity = '0.9';
+            } else {
+                mobilePrev.style.opacity = '0.4';
+            }
+            
+            // Show/hide right arrow
+            if (currentIndex < totalCards - 1) {
+                mobileNext.style.display = 'flex';
+                mobileNext.style.opacity = '0.9';
+            } else {
+                mobileNext.style.opacity = '0.4';
+            }
+        }
 
-/* ---------- SLIDEBAR FUNCTIONS (Desktop Only) ---------- */
-function updateSlidebar() {
-    // Only update if on desktop
-    if (window.innerWidth <= 768) return;
-    
-    const maxIndexValue = maxIndex();
-    const progress = maxIndexValue > 0 ? (sliderIndex / maxIndexValue) * 100 : 0;
-    
-    slidebarProgress.style.width = `${progress}%`;
-    slidebarHandle.style.left = `${progress}%`;
-}
+        // Initialize mobile behavior
+        function initMobileBehavior() {
+            isMobile = window.innerWidth <= 768;
 
-function goToSlideByProgress(progress, instant = false) {
-    // Only work if on desktop
-    if (window.innerWidth <= 768) return;
-    
-    const maxIndexValue = maxIndex();
-    const newIndex = Math.round((progress / 100) * maxIndexValue);
-    
-    if (newIndex !== sliderIndex) {
-        sliderIndex = Math.max(0, Math.min(maxIndexValue, newIndex));
-        
-        if (instant) {
-            updateTransform();
-        } else {
-            updateTransformSmooth();
+            if (isMobile) {
+                // Reset any transforms for mobile
+                slider.style.transform = 'none';
+                slider.style.transition = 'none';
+
+                // Ensure proper scroll behavior
+                sliderWrapper.scrollLeft = 0;
+
+                // Show mobile arrows
+                mobileArrows.style.display = 'block';
+                dotsContainer.style.display = 'flex';
+
+                // Remove any existing scroll listeners
+                sliderWrapper.removeEventListener('scroll', handleMobileScroll);
+                sliderWrapper.removeEventListener('touchend', handleTouchEnd);
+
+                // Add new scroll listeners
+                sliderWrapper.addEventListener('scroll', handleMobileScroll, { passive: true });
+                sliderWrapper.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+                // Add mobile arrow listeners
+                mobilePrev.addEventListener('click', scrollToPrevCard);
+                mobileNext.addEventListener('click', scrollToNextCard);
+
+                // Disable desktop navigation
+                btnPrev.style.display = 'none';
+                btnNext.style.display = 'none';
+                
+                // Ensure arrows are positioned correctly
+                positionMobileArrows();
+            } else {
+                // Hide mobile arrows and dots
+                mobileArrows.style.display = 'none';
+                dotsContainer.style.display = 'none';
+
+                // Enable desktop navigation
+                btnPrev.style.display = 'flex';
+                btnNext.style.display = 'flex';
+
+                // Remove mobile scroll listeners
+                sliderWrapper.removeEventListener('scroll', handleMobileScroll);
+                sliderWrapper.removeEventListener('touchend', handleTouchEnd);
+                mobilePrev.removeEventListener('click', scrollToPrevCard);
+                mobileNext.removeEventListener('click', scrollToNextCard);
+            }
         }
         
-        updateSlidebar();
-    }
-}
+        // Position mobile arrows properly
+        function positionMobileArrows() {
+            if (!isMobile) return;
+            
+            // Get the first card to calculate positioning
+            const cards = slider.querySelectorAll('.card');
+            if (cards.length === 0) return;
+            
+            const firstCard = cards[0];
+            const cardRect = firstCard.getBoundingClientRect();
+            const containerRect = document.querySelector('.slider-container').getBoundingClientRect();
+            
+            // Calculate arrow positions based on card width
+            const cardWidth = cardRect.width;
+            const arrowOffset = cardWidth * 0.05; // 5% of card width
+            
+            mobilePrev.style.left = `-${Math.min(arrowOffset, 20)}px`;
+            mobileNext.style.right = `-${Math.min(arrowOffset, 20)}px`;
+        }
 
-// Real-time update during drag
-function updateSliderDuringDrag(progress) {
-    // Only work if on desktop
-    if (window.innerWidth <= 768) return;
-    
-    const maxIndexValue = maxIndex();
-    const newIndex = Math.round((progress / 100) * maxIndexValue);
-    
-    if (newIndex !== sliderIndex) {
-        sliderIndex = Math.max(0, Math.min(maxIndexValue, newIndex));
-        updateTransform();
-    }
-}
+        // Scroll to previous card on mobile
+        function scrollToPrevCard() {
+            if (!isMobile) return;
+            
+            const currentIndex = getCurrentCardIndex();
+            if (currentIndex > 0) {
+                scrollToCard(currentIndex - 1);
+            }
+        }
 
-// Slidebar click event
-slidebar.addEventListener('click', (e) => {
-    if (isDragging || window.innerWidth <= 768) return;
-    
-    const rect = slidebar.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const progress = (clickX / rect.width) * 100;
-    
-    goToSlideByProgress(progress);
-});
+        // Scroll to next card on mobile
+        function scrollToNextCard() {
+            if (!isMobile) return;
+            
+            const currentIndex = getCurrentCardIndex();
+            const totalCards = reviews.length;
+            if (currentIndex < totalCards - 1) {
+                scrollToCard(currentIndex + 1);
+            }
+        }
 
-// Slidebar drag events
-slidebarHandle.addEventListener('mousedown', (e) => {
-    if (window.innerWidth <= 768) return;
-    
-    isDragging = true;
-    isUpdatingFromSlidebar = true;
-    document.addEventListener('mousemove', handleDrag);
-    document.addEventListener('mouseup', stopDrag);
-    e.preventDefault();
-});
+        // Center the first card on mobile
+        function centerFirstCard() {
+            if (!isMobile) return;
 
-slidebarHandle.addEventListener('touchstart', (e) => {
-    if (window.innerWidth <= 768) return;
-    
-    isDragging = true;
-    isUpdatingFromSlidebar = true;
-    document.addEventListener('touchmove', handleDrag);
-    document.addEventListener('touchend', stopDrag);
-    e.preventDefault();
-}, { passive: false });
+            const cards = slider.querySelectorAll('.card');
+            if (cards.length === 0) return;
 
-function handleDrag(e) {
-    if (!isDragging || window.innerWidth <= 768) return;
-    
-    const rect = slidebar.getBoundingClientRect();
-    let clientX;
-    
-    if (e.type === 'mousemove') {
-        clientX = e.clientX;
-    } else if (e.type === 'touchmove') {
-        clientX = e.touches[0].clientX;
-    }
-    
-    const dragX = Math.max(0, Math.min(rect.width, clientX - rect.left));
-    const progress = (dragX / rect.width) * 100;
-    
-    // Update slidebar visual
-    slidebarProgress.style.width = `${progress}%`;
-    slidebarHandle.style.left = `${progress}%`;
-    
-    // Update slider in real-time during drag
-    updateSliderDuringDrag(progress);
-}
+            const firstCard = cards[0];
+            const cardWidth = firstCard.offsetWidth;
+            const gap = 15;
 
-function stopDrag(e) {
-    if (!isDragging || window.innerWidth <= 768) return;
-    
-    isDragging = false;
-    document.removeEventListener('mousemove', handleDrag);
-    document.removeEventListener('touchmove', handleDrag);
-    document.removeEventListener('mouseup', stopDrag);
-    document.removeEventListener('touchend', stopDrag);
-    
-    const rect = slidebar.getBoundingClientRect();
-    let clientX;
-    
-    if (e.type === 'mouseup') {
-        clientX = e.clientX;
-    } else if (e.type === 'touchend') {
-        clientX = e.changedTouches[0].clientX;
-    }
-    
-    const dragX = Math.max(0, Math.min(rect.width, clientX - rect.left));
-    const progress = (dragX / rect.width) * 100;
-    
-    // Final update to ensure alignment
-    goToSlideByProgress(progress);
-    isUpdatingFromSlidebar = false;
-}
+            // Calculate the position to center the first card
+            const targetScroll = (cardWidth + gap) / 2;
 
-/* ---------- SLIDE FUNCTIONS ---------- */
-function getCardWidth(){
-    const card = slider.querySelector(".card");
-    if (!card) return 320;
-    const style = getComputedStyle(card);
-    const gap = parseInt(getComputedStyle(slider).gap || 20);
-    return card.offsetWidth + gap;
-}
+            // Scroll to center the first card
+            sliderWrapper.scrollLeft = targetScroll;
 
-function visibleCount(){
-    const w = sliderWrapper.offsetWidth;
-    const cw = getCardWidth();
-    return Math.max(1, Math.floor(w / cw));
-}
+            updateMobileArrows();
+            updateDots();
+            positionMobileArrows();
+        }
 
-function maxIndex(){
-    return Math.max(0, reviews.length - visibleCount());
-}
+        // Handle mobile scroll
+        function handleMobileScroll() {
+            if (!isMobile) return;
 
-function updateTransform(){
-    const cw = getCardWidth();
-    const x = -sliderIndex * cw;
-    slider.style.transform = `translateX(${x}px)`;
-}
+            isScrolling = true;
 
-function updateTransformSmooth(){
-    const cw = getCardWidth();
-    const x = -sliderIndex * cw;
-    slider.style.transition = 'transform 0.3s ease';
-    slider.style.transform = `translateX(${x}px)`;
-    
-    // Remove transition after animation completes
-    setTimeout(() => {
-        slider.style.transition = '';
-    }, 300);
-}
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+                snapToNearestCard();
+                updateMobileArrows();
+                updateDots();
+            }, 100);
+        }
 
-function nextSlide(){
-    sliderIndex = Math.min(maxIndex(), sliderIndex + 1);
-    updateTransformSmooth();
-    if (window.innerWidth > 768) {
-        updateSlidebar();
-    }
-}
+        // Handle touch end for immediate snap
+        function handleTouchEnd() {
+            if (!isMobile) return;
 
-function prevSlide(){
-    sliderIndex = Math.max(0, sliderIndex - 1);
-    updateTransformSmooth();
-    if (window.innerWidth > 768) {
-        updateSlidebar();
-    }
-}
+            clearTimeout(scrollTimeout);
+            setTimeout(() => {
+                snapToNearestCard();
+                updateMobileArrows();
+                updateDots();
+            }, 50);
+        }
 
-// hook buttons
-btnNext.addEventListener("click", nextSlide);
-btnPrev.addEventListener("click", prevSlide);
+        // Snap to the nearest card
+        function snapToNearestCard() {
+            if (!isMobile || isScrolling) return;
 
-/* ---------- TOUCH SWIPE SUPPORT FOR MAIN SLIDER ---------- */
-let touchStartX = 0;
-let touchEndX = 0;
+            const cards = slider.querySelectorAll('.card');
+            if (cards.length === 0) return;
 
-sliderWrapper.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
+            const wrapperWidth = sliderWrapper.offsetWidth;
+            const scrollLeft = sliderWrapper.scrollLeft;
+            const wrapperCenter = scrollLeft + (wrapperWidth / 2);
 
-sliderWrapper.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-}, { passive: true });
+            // Find the card that's closest to the center
+            let nearestCard = null;
+            let minDistance = Infinity;
 
-function handleSwipe() {
-    const swipeThreshold = 50; // minimum distance for a swipe
-    
-    if (touchEndX < touchStartX - swipeThreshold) {
-        // Swipe left - next slide
-        nextSlide();
-    }
-    
-    if (touchEndX > touchStartX + swipeThreshold) {
-        // Swipe right - previous slide
-        prevSlide();
-    }
-}
+            cards.forEach((card) => {
+                const cardRect = card.getBoundingClientRect();
+                const wrapperRect = sliderWrapper.getBoundingClientRect();
 
-/* ---------- SHOW/HIDE BUTTONS BASED ON MOUSE DISTANCE ---------- */
-document.addEventListener("mousemove", (e) => {
-    // If buttons hidden via CSS (mobile), skip
-    if (getComputedStyle(btnNext).display === "none") return;
+                // Calculate card center relative to wrapper
+                const cardCenter = cardRect.left - wrapperRect.left + (cardRect.width / 2);
+                const distance = Math.abs(cardCenter - (wrapperWidth / 2));
 
-    // compute distance to button centers
-    const mx = e.clientX, my = e.clientY;
-    const leftRect = btnPrev.getBoundingClientRect();
-    const rightRect = btnNext.getBoundingClientRect();
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    nearestCard = card;
+                }
+            });
 
-    // avoid sudden showing when mouse far above or below slider: check within vertical band of slider +/-100px
-    const sliderRect = sliderWrapper.getBoundingClientRect();
-    if (my < sliderRect.top - 100 || my > sliderRect.bottom + 100) {
-        btnPrev.classList.remove("show");
-        btnNext.classList.remove("show");
-        return;
-    }
+            if (nearestCard) {
+                const cardRect = nearestCard.getBoundingClientRect();
+                const wrapperRect = sliderWrapper.getBoundingClientRect();
+                const cardLeftRelative = cardRect.left - wrapperRect.left;
 
-    const leftCenterX = leftRect.left + leftRect.width/2;
-    const leftCenterY = leftRect.top + leftRect.height/2;
-    const rightCenterX = rightRect.left + rightRect.width/2;
-    const rightCenterY = rightRect.top + rightRect.height/2;
+                // Calculate target scroll position to center this card
+                const targetScroll = scrollLeft + cardLeftRelative - (wrapperWidth / 2) + (cardRect.width / 2);
 
-    const distLeft = Math.hypot(mx - leftCenterX, my - leftCenterY);
-    const distRight = Math.hypot(mx - rightCenterX, my - rightCenterY);
+                // Snap to the card
+                sliderWrapper.scrollTo({
+                    left: targetScroll,
+                    behavior: 'smooth'
+                });
+            }
+        }
 
-    const TRIGGER_DISTANCE = 100; // px
+        // Show navigation buttons on desktop
+        function showNavButtonsOnDesktop() {
+            if (window.innerWidth > 768) {
+                btnPrev.style.display = 'flex';
+                btnNext.style.display = 'flex';
+                mobileArrows.style.display = 'none';
+                dotsContainer.style.display = 'none';
+            } else {
+                btnPrev.style.display = 'none';
+                btnNext.style.display = 'none';
+                mobileArrows.style.display = 'block';
+                dotsContainer.style.display = 'flex';
+            }
+        }
 
-    if (distLeft < TRIGGER_DISTANCE) btnPrev.classList.add("show"); else btnPrev.classList.remove("show");
-    if (distRight < TRIGGER_DISTANCE) btnNext.classList.add("show"); else btnNext.classList.remove("show");
-});
+        // Show full review in modal
+        function showFullReview(index) {
+            const review = reviews[index];
 
-// also hide buttons when mouse leaves slider area completely
-sliderWrapper.addEventListener("mouseleave", () => {
-    btnPrev.classList.remove("show");
-    btnNext.classList.remove("show");
-});
+            modalUsername.textContent = review.username_review || "Anonymous";
+            modalStars.innerHTML = escapeHtml(review.rating_review || "");
+            modalMessage.textContent = review.message_review || "";
 
-/* ---------- RESPONSIVE: recalc on resize ---------- */
-window.addEventListener("resize", () => {
-    // if mobile (native scroll) ensure transform reset
-    if (window.innerWidth <= 768) {
-        slider.style.transform = "none";
-        sliderIndex = 0;
-        // Re-initialize mobile scroll
-        setTimeout(initMobileScroll, 100);
-    } else {
-        updateTransform();
-        updateSlidebar();
-    }
-});
+            if (review.reply_smk_taruna_bangsa) {
+                modalReply.innerHTML = `<strong>Balasan:</strong><br>${escapeHtml(review.reply_smk_taruna_bangsa)}`;
+                modalReply.style.display = 'block';
+            } else {
+                modalReply.style.display = 'none';
+            }
 
-/* ---------- Initialize ---------- */
-loadReviews();
-</script>
+            // Show modal dengan display: flex dan kemudian tambah class show
+            modal.style.display = 'flex';
+            // Trigger reflow
+            void modal.offsetWidth;
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+
+            // Tunggu transisi selesai baru sembunyikan modal
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Modal event listeners
+        modalClose.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
+        });
+
+        // small helper to avoid XSS when injecting text
+        function escapeHtml(s) {
+            return (s + "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+        }
+
+        /* ---------- SLIDE FUNCTIONS ---------- */
+        function getCardWidth() {
+            const card = slider.querySelector(".card");
+            if (!card) return 320;
+            const style = getComputedStyle(card);
+            const gap = parseInt(getComputedStyle(slider).gap || 20);
+            return card.offsetWidth + gap;
+        }
+
+        function visibleCount() {
+            const w = sliderWrapper.offsetWidth;
+            const cw = getCardWidth();
+            return Math.max(1, Math.floor(w / cw));
+        }
+
+        function maxIndex() {
+            return Math.max(0, reviews.length - visibleCount());
+        }
+
+        function updateTransform() {
+            const cw = getCardWidth();
+            const x = -sliderIndex * cw;
+            slider.style.transform = `translateX(${x}px)`;
+        }
+
+        function updateTransformSmooth() {
+            const cw = getCardWidth();
+            const x = -sliderIndex * cw;
+            slider.style.transition = 'transform 0.3s ease';
+            slider.style.transform = `translateX(${x}px)`;
+
+            // Remove transition after animation completes
+            setTimeout(() => {
+                slider.style.transition = '';
+            }, 300);
+        }
+
+        function nextSlide() {
+            if (isMobile) return; // Don't use desktop navigation on mobile
+
+            sliderIndex = Math.min(maxIndex(), sliderIndex + 1);
+            updateTransformSmooth();
+        }
+
+        function prevSlide() {
+            if (isMobile) return; // Don't use desktop navigation on mobile
+
+            sliderIndex = Math.max(0, sliderIndex - 1);
+            updateTransformSmooth();
+        }
+
+        // hook buttons
+        btnNext.addEventListener("click", nextSlide);
+        btnPrev.addEventListener("click", prevSlide);
+
+        /* ---------- TOUCH SWIPE SUPPORT ---------- */
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        sliderWrapper.addEventListener('touchstart', e => {
+            if (!isMobile) return;
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        sliderWrapper.addEventListener('touchend', e => {
+            if (!isMobile) return;
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            if (!isMobile) return;
+
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                const cards = slider.querySelectorAll('.card');
+                if (cards.length === 0) return;
+
+                // Find current centered card
+                const wrapperWidth = sliderWrapper.offsetWidth;
+                const scrollLeft = sliderWrapper.scrollLeft;
+                const wrapperCenter = scrollLeft + (wrapperWidth / 2);
+
+                let currentCardIndex = -1;
+                cards.forEach((card, index) => {
+                    const cardLeft = card.offsetLeft;
+                    const cardWidth = card.offsetWidth;
+                    const cardCenter = cardLeft + (cardWidth / 2);
+
+                    if (Math.abs(cardCenter - wrapperCenter) < cardWidth) {
+                        currentCardIndex = index;
+                    }
+                });
+
+                if (currentCardIndex >= 0) {
+                    let targetIndex;
+
+                    if (diff > 0) {
+                        // Swipe left - go to next card
+                        targetIndex = Math.min(currentCardIndex + 1, cards.length - 1);
+                    } else {
+                        // Swipe right - go to previous card
+                        targetIndex = Math.max(currentCardIndex - 1, 0);
+                    }
+
+                    scrollToCard(targetIndex);
+                }
+            }
+        }
+
+        /* ---------- SHOW/HIDE BUTTONS BASED ON MOUSE DISTANCE ---------- */
+        document.addEventListener("mousemove", (e) => {
+            // If buttons hidden via CSS (mobile), skip
+            if (getComputedStyle(btnNext).display === "none" || isMobile) return;
+
+            // compute distance to button centers
+            const mx = e.clientX,
+                my = e.clientY;
+            const leftRect = btnPrev.getBoundingClientRect();
+            const rightRect = btnNext.getBoundingClientRect();
+
+            // avoid sudden showing when mouse far above or below slider: check within vertical band of slider +/-100px
+            const sliderRect = sliderWrapper.getBoundingClientRect();
+            if (my < sliderRect.top - 100 || my > sliderRect.bottom + 100) {
+                btnPrev.classList.remove("show");
+                btnNext.classList.remove("show");
+                return;
+            }
+
+            const leftCenterX = leftRect.left + leftRect.width / 2;
+            const leftCenterY = leftRect.top + leftRect.height / 2;
+            const rightCenterX = rightRect.left + rightRect.width / 2;
+            const rightCenterY = rightRect.top + rightRect.height / 2;
+
+            const distLeft = Math.hypot(mx - leftCenterX, my - leftCenterY);
+            const distRight = Math.hypot(mx - rightCenterX, my - rightCenterY);
+
+            const TRIGGER_DISTANCE = 100; // px
+
+            if (distLeft < TRIGGER_DISTANCE) btnPrev.classList.add("show");
+            else btnPrev.classList.remove("show");
+            if (distRight < TRIGGER_DISTANCE) btnNext.classList.add("show");
+            else btnNext.classList.remove("show");
+        });
+
+        // also hide buttons when mouse leaves slider area completely
+        sliderWrapper.addEventListener("mouseleave", () => {
+            if (isMobile) return;
+            btnPrev.classList.remove("show");
+            btnNext.classList.remove("show");
+        });
+
+        /* ---------- RESPONSIVE: recalc on resize ---------- */
+        window.addEventListener("resize", () => {
+            isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                // Mobile: use native scroll
+                slider.style.transform = "none";
+                sliderIndex = 0;
+                // Re-initialize mobile scroll
+                setTimeout(() => {
+                    initMobileBehavior();
+                    createDots();
+                    centerFirstCard();
+                    positionMobileArrows();
+                }, 100);
+            } else {
+                // Desktop: use transform
+                updateTransform();
+                // Tampilkan tombol navigasi di desktop
+                showNavButtonsOnDesktop();
+            }
+        });
+
+        /* ---------- Initialize ---------- */
+        loadReviews();
+    </script>
 </body>
+
 </html>
