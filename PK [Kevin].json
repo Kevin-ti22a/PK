@@ -1,7 +1,7 @@
 {
   "PK": [
     {
-      "Day": "1 [Kamis]",
+      "Day": "01 [Kamis]",
       "Date": "13-11-2025",
       "Time": "07:00 - 16:00",
       "Activity": "Installasi Kabel & Proyektor, dan install Ulang Windows 11 pada Intel Nuc beserta MS Office 2019",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "Day": "2 [Jum'at]",
+      "Day": "02 [Jum'at]",
       "Date": "14-11-2025",
       "Time": "07:00 - 17:00",
       "Activity": "Ganti kabel VGA menjadi kabel HDMI pada ruang Lab, Dan Install Ulang PC AIO HP [terjadi kendala Instalasi Driver pada hari Jum'at dan dilanjutkan hari Sabtu]",
@@ -94,7 +94,7 @@
       ]
     },
     {
-      "Day": "3 [Sabtu]",
+      "Day": "03 [Sabtu]",
       "Date": "15-11-2025",
       "Time": "07:00 - 13:00",
       "Activity": "Melanjutkan Install Ulang PC AIO HP hanya beberapa Driver yang bisa saya Install karena kurang kompatible, tapi Installasi berhasil",
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "Day": "4 [Senin]",
+      "Day": "04 [Senin]",
       "Date": "17-11-2025",
       "Time": "07:00 - 16:00",
       "Activity": "Instalasi CCTV UniFi AI 360 di ruang 220 - 227",
@@ -163,7 +163,7 @@
       ]
     },
     {
-      "Day": "5 [Selasa]",
+      "Day": "05 [Selasa]",
       "Date": "18-11-2025",
       "Time": "07:00 - 16:00",
       "Activity": "Merapihkan Kabel CCTV di Ruang IT Atas [belum di lanjutkan karena Alat yang diperlukan belum datang], memasang kabel LAN untuk CCTV pada ruang 301",
@@ -200,7 +200,7 @@
       ]
     },
     {
-      "Day": "6 [Rabu]",
+      "Day": "06 [Rabu]",
       "Date": "19-11-2025",
       "Time": "07:00 - 16:00",
       "Activity": "Instalasi CCTV pada Ruang 301, Mencoba Backup HDD 512 GB (Disk D, F, G) [terindikasi Corrupt Data] ke SSD Mini PC Intel Nuc (Disk E) [Tapi karena data windows sudah corrupt data maka proses backup batal]",
@@ -237,7 +237,7 @@
       ]
     },
     {
-      "Day": "7 [Kamis]",
+      "Day": "07 [Kamis]",
       "Date": "20-11-2025",
       "Time": "07:00 - 16:00",
       "Activity": "Memeriksa Dokumen dan Nota Pengeluaran Divisi IT [karena Datanya sangat penting jadi tidak bisa saya dokumentasi]",
@@ -254,7 +254,7 @@
       ]
     },
     {
-      "Day": "8 [Jum'at]",
+      "Day": "08 [Jum'at]",
       "Date": "21-11-2025",
       "Time": "07:00 - 16:00",
       "Activity": "Membantu mencarikan Platform untuk menampilkan widget Sosial Media [https://elfsight.com] untuk Website SMK Taruna Bangsa, membantu mengisi content untuk website SMK Taruna Bangsa [Halaman Profile, Halaman Ekstrakurikuler, Halaman Vacational Program, Halaman Facilities dan Halaman Contact]",
@@ -305,7 +305,7 @@
       ]
     },
     {
-      "Day": "9 [Sabtu]",
+      "Day": "09 [Sabtu]",
       "Date": "22-11-2025",
       "Time": "07:00 - 12:00",
       "Activity": "Melanjutkan pemrograman Website untuk SMK Taruna Bangsa, merapihkan desain pada website",
@@ -1217,10 +1217,10 @@
       "Day": "31 [Kamis]",
       "Date": "18-12-2025",
       "Time": "07:00 - 16:00",
-      "Activity": "-",
+      "Activity": "Instalasi Driver Printer - mengubah sistem web untuk Praktek Kerja agar bisa print data kegiatan yang sudah di laksanakan",
       "Folder_dokumentasi": "Day 31",
       "Status": "completed",
-      "Note": "-",
+      "Note": "Para Staff sedang print hasil rapot seluruh siswa",
       "Links": [ 
         {
           "title": "",
