@@ -780,78 +780,103 @@
         // ==================== FUNGSI PRINT ====================
         
         function generatePrintHTML(activities, printAll = true) {
-            const now = new Date();
-            const printDate = now.toLocaleDateString('id-ID', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            const printTime = now.toLocaleTimeString('id-ID', {
-                hour: '2-digit',
-                minute: '2-digit'
-            });
+    const now = new Date();
+    const printDate = now.toLocaleDateString('id-ID', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    const printTime = now.toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    
+    let tableHTML = '';
+    activities.forEach((item, index) => {
+        const jenisKegiatan = getJenisKegiatan(item.Date);
+        const mainPhotoUrl = getMainPhotoUrl(item.Media, item.Folder_dokumentasi);
+        
+        tableHTML += `
+            <tr>
+                <td style="border: 1px solid #000; padding: 6px;">${item.Date}</td>
+                <td style="border: 1px solid #000; padding: 6px;">${item.Time}</td>
+                <td style="border: 1px solid #000; padding: 6px;">${jenisKegiatan}</td>
+                <td style="border: 1px solid #000; padding: 6px;">${item.Activity}</td>
+                <td style="border: 1px solid #000; padding: 6px; height: 40px;"></td>
+                <td style="border: 1px solid #000; padding: 6px; text-align: center;">
+                    ${mainPhotoUrl ? `
+                        <img src="${mainPhotoUrl}" 
+                             alt="Foto kegiatan ${item.Date}" 
+                             style="max-width: 120px; max-height: 80px; object-fit: contain; display: block; margin: 0 auto;"
+                             onerror="this.style.display='none'">
+                    ` : '-'}
+                </td>
+            </tr>
+        `;
+    });
+    
+    return `
+        <div style="padding: 20mm; font-family: 'Times New Roman', Times, serif; font-size: 12pt;">
+            <!-- JUDUL (tetap di tengah) -->
+            <div style="text-align: center; margin-bottom: 15mm;">
+                <h1 style="font-size: 16pt; font-weight: bold; margin-bottom: 3mm;">
+                    CATATAN HARIAN KERJA PRAKTIK
+                </h1>
+                <p style="font-size: 10pt; color: #666;">
+                    Dicetak pada: ${printDate}, ${printTime}
+                </p>
+            </div>
             
-            let tableHTML = '';
-            activities.forEach((item, index) => {
-                const jenisKegiatan = getJenisKegiatan(item.Date);
-                const mainPhotoUrl = getMainPhotoUrl(item.Media, item.Folder_dokumentasi);
-                
-                tableHTML += `
-                    <tr>
-                        <td>${item.Date}</td>
-                        <td>${item.Time}</td>
-                        <td>${jenisKegiatan}</td>
-                        <td>${item.Activity}</td>
-                        <td></td>
-                        <td>
-                            ${mainPhotoUrl ? `
-                                <img src="${mainPhotoUrl}" 
-                                     alt="Foto kegiatan ${item.Date}" 
-                                     class="print-photo"
-                                     onerror="this.style.display='none'">
-                            ` : '-'}
-                        </td>
-                    </tr>
-                `;
-            });
-            
-            return `
-                <div class="print-container">
-                    <div class="print-header">
-                        <h1 style="font-size: 24pt; font-weight: bold; margin-bottom: 10px;">CATATAN HARIAN KERJA PRAKTIK</h1>
-                        <div style="margin-bottom: 20px;">
-                            <p><strong>Nama Mahasiswa:</strong> Kevin Mubarak</p>
-                            <p><strong>NPM:</strong> 2022310003</p>
-                            <p><strong>Program Studi:</strong> Teknik Informatika</p>
-                            <p><strong>Bagian:</strong> Divisi IT</p>
-                        </div>
-                        <p style="font-size: 10pt; color: #666;">Dicetak pada: ${printDate}, ${printTime}</p>
-                    </div>
-                    
-                    <table class="print-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 15%">Tanggal</th>
-                                <th style="width: 15%">Waktu</th>
-                                <th style="width: 15%">Jenis Kegiatan</th>
-                                <th style="width: 35%">Kegiatan Kerja Praktik</th>
-                                <th style="width: 10%">Paraf Mentor KP</th>
-                                <th style="width: 10%">Foto Kegiatan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${tableHTML}
-                        </tbody>
-                    </table>
-                    
-                    <div class="print-footer">
-                        <p>Dokumen ini dicetak secara otomatis dari sistem monitoring Praktek Kerja</p>
-                        <p>Kevin Mubarak - Teknik Informatika - 2025</p>
-                    </div>
+            <!-- INFORMASI MAHASISWA DI KIRI -->
+            <div style="margin-bottom: 10mm; text-align: left;">
+                <div style="margin-bottom: 2mm;">
+                    <span style="display: inline-block; width: 150px; font-weight: bold;">Nama Mahasiswa</span>
+                    <span style="display: inline-block; width: 10px; text-align: center;">:</span>
+                    <span>Kevin Mubarak</span>
                 </div>
-            `;
-        }
+                <div style="margin-bottom: 2mm;">
+                    <span style="display: inline-block; width: 150px; font-weight: bold;">NPM</span>
+                    <span style="display: inline-block; width: 10px; text-align: center;">:</span>
+                    <span>2022310003</span>
+                </div>
+                <div style="margin-bottom: 2mm;">
+                    <span style="display: inline-block; width: 150px; font-weight: bold;">Program Studi</span>
+                    <span style="display: inline-block; width: 10px; text-align: center;">:</span>
+                    <span>Teknik Informatika</span>
+                </div>
+                <div style="margin-bottom: 2mm;">
+                    <span style="display: inline-block; width: 150px; font-weight: bold;">Bagian</span>
+                    <span style="display: inline-block; width: 10px; text-align: center;">:</span>
+                    <span>Divisi IT</span>
+                </div>
+            </div>
+            
+            <!-- TABEL -->
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 10pt;">
+                <thead>
+                    <tr style="background-color: #f5f5f5;">
+                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 12%;">Tanggal</th>
+                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 10%;">Waktu</th>
+                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 15%;">Jenis Kegiatan</th>
+                        <th style="border: 1px solid #000; padding: 6px; text-align: left; width: 36%;">Kegiatan Kerja Praktik</th>
+                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 15%;">Paraf Mentor KP</th>
+                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 12%;">Foto Kegiatan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tableHTML}
+                </tbody>
+            </table>
+            
+            <!-- FOOTER -->
+            <div style="text-align: center; margin-top: 20mm; font-size: 9pt; color: #666;">
+                <p>Dokumen ini dicetak secara otomatis dari sistem monitoring Praktek Kerja</p>
+                <p>Kevin Mubarak - Teknik Informatika - 2025</p>
+            </div>
+        </div>
+    `;
+}
         
         function printActivities(activities, printAll = true) {
             const printContainer = document.getElementById('print-container');
