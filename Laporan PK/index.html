@@ -418,8 +418,9 @@
                 font-weight: bold;
             }
             .print-photo {
-                width: 100px;
-                height: auto;
+                max-width: 150px;
+                max-height: 100px;
+                object-fit: contain;
                 display: block;
             }
             .print-footer {
@@ -438,6 +439,15 @@
             justify-content: flex-end;
             margin-bottom: 15px;
             gap: 10px;
+        }
+        
+        /* Foto Preview */
+        .photo-preview {
+            width: 100px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
         }
     </style>
 </head>
@@ -547,6 +557,7 @@
                             <th>Status</th>
                             <th>Jenis Kegiatan</th>
                             <th>Aktivitas</th>
+                            <th>Foto Utama</th>
                             <th>Dokumentasi</th>
                         </tr>
                     </thead>
@@ -683,36 +694,49 @@
             "13-12-2025": "Laporan PK"
         };
         
-        // Data foto dari dokumen Word
-        const fotoMap = {
-            "13-11-2025": "media/image1.jpeg",
-            "14-11-2025": "media/image2.jpeg",
-            "15-11-2025": "media/image3.jpeg",
-            "17-11-2025": "media/image4.jpeg",
-            "18-11-2025": "media/image5.jpeg",
-            "19-11-2025": "media/image6.jpeg",
-            "20-11-2025": "media/image7.jpeg",
-            "21-11-2025": "media/image8.png",
-            "22-11-2025": "media/image9.png",
-            "24-11-2025": "media/image10.jpeg",
-            "25-11-2025": "media/image11.jpeg",
-            "26-11-2025": "media/image12.jpeg",
-            "27-11-2025": "media/image13.jpeg",
-            "28-11-2025": "media/image14.jpeg",
-            "29-11-2025": "media/image15.jpeg",
-            "01-12-2025": "media/image16.jpeg",
-            "02-12-2025": "media/image17.jpeg",
-            "03-12-2025": "media/image18.jpeg",
-            "04-12-2025": "media/image19.jpeg",
-            "05-12-2025": "media/image20.jpeg",
-            "06-12-2025": "media/image21.jpeg",
-            "08-12-2025": "media/image22.jpeg",
-            "09-12-2025": "media/image23.png",
-            "10-12-2025": "media/image24.png",
-            "11-12-2025": "media/image25.jpeg",
-            "12-12-2025": "media/image26.jpeg",
-            "13-12-2025": "media/image27.jpeg"
-        };
+        // Fungsi untuk mendapatkan foto utama (1.jpg, 1.jpeg, 1.png)
+        function getMainPhotoUrl(mediaArray, folderName) {
+            if (!mediaArray || mediaArray.length === 0) {
+                return '';
+            }
+            
+            // Coba cari file dengan nama 1.jpg, 1.jpeg, 1.png
+            const photoExtensions = ['.jpg', '.jpeg', '.png'];
+            
+            // Cek di media array langsung
+            for (const media of mediaArray) {
+                const url = media.url || media.thumbnail || '';
+                if (url) {
+                    // Cek jika URL mengandung '/1.' dengan ekstensi foto
+                    const fileName = url.split('/').pop().toLowerCase();
+                    if (fileName.startsWith('1.') && 
+                        (fileName.endsWith('.jpg') || fileName.endsWith('.jpeg') || fileName.endsWith('.png'))) {
+                        return url;
+                    }
+                }
+            }
+            
+            // Jika tidak ditemukan, coba buat URL berdasarkan pola
+            const baseUrl = "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/";
+            
+            // Coba format Day X (hilangkan [hari])
+            let cleanFolderName = folderName;
+            if (folderName.includes('[')) {
+                cleanFolderName = folderName.split('[')[0].trim();
+            }
+            
+            // Coba semua ekstensi
+            for (const ext of photoExtensions) {
+                const testUrl = `${baseUrl}${cleanFolderName}/1${ext}`;
+                
+                // Coba fetch untuk memvalidasi (optional)
+                // Untuk sekarang, return URL yang dibangun
+                return testUrl;
+            }
+            
+            // Jika masih tidak ada, ambil foto pertama
+            return mediaArray[0].url || mediaArray[0].thumbnail || '';
+        }
         
         // ==================== FUNGSI UTILITAS ====================
         
@@ -753,10 +777,6 @@
             return jenisKegiatanMap[date] || "Kegiatan IT";
         }
         
-        function getFotoPath(date) {
-            return fotoMap[date] || "";
-        }
-        
         // ==================== FUNGSI PRINT ====================
         
         function generatePrintHTML(activities, printAll = true) {
@@ -775,7 +795,7 @@
             let tableHTML = '';
             activities.forEach((item, index) => {
                 const jenisKegiatan = getJenisKegiatan(item.Date);
-                const fotoPath = getFotoPath(item.Date);
+                const mainPhotoUrl = getMainPhotoUrl(item.Media, item.Folder_dokumentasi);
                 
                 tableHTML += `
                     <tr>
@@ -785,7 +805,12 @@
                         <td>${item.Activity}</td>
                         <td></td>
                         <td>
-                            ${fotoPath ? `<img src="${fotoPath}" alt="Foto kegiatan ${item.Date}" class="print-photo">` : '-'}
+                            ${mainPhotoUrl ? `
+                                <img src="${mainPhotoUrl}" 
+                                     alt="Foto kegiatan ${item.Date}" 
+                                     class="print-photo"
+                                     onerror="this.style.display='none'">
+                            ` : '-'}
                         </td>
                     </tr>
                 `;
@@ -942,6 +967,25 @@
                                 `;
                             }
                             return data;
+                        }
+                    },
+                    {
+                        data: null,
+                        render: function(data, type, row) {
+                            const mainPhotoUrl = getMainPhotoUrl(data.Media, data.Folder_dokumentasi);
+                            if (!mainPhotoUrl) {
+                                return '<span class="text-gray-500">-</span>';
+                            }
+                            
+                            return `
+                                <div class="flex flex-col items-center">
+                                    <img src="${mainPhotoUrl}" 
+                                         alt="Foto utama ${data.Day}" 
+                                         class="photo-preview mb-1"
+                                         onerror="this.style.display='none'">
+                                    <span class="text-xs text-gray-500">Foto 1</span>
+                                </div>
+                            `;
                         }
                     },
                     { 
@@ -1160,6 +1204,7 @@
             const statusText = getStatusText(item.Status);
             const statusIcon = getStatusIcon(item.Status);
             const jenisKegiatan = getJenisKegiatan(item.Date);
+            const mainPhotoUrl = getMainPhotoUrl(item.Media, item.Folder_dokumentasi);
             
             let noteHTML = '';
             if (item.Note && item.Note.trim() !== '' && item.Note !== 'undefined') {
@@ -1212,15 +1257,32 @@
                 mediaHTML = `
                     <div class="mt-6">
                         <h4 class="font-semibold text-gray-700 mb-3">🖼️ Dokumentasi (${item.Media.length} files)</h4>
+                        <div class="mb-4">
+                            <h5 class="font-medium text-gray-600 mb-2">📸 Foto Utama:</h5>
+                            ${mainPhotoUrl ? `
+                                <img src="${mainPhotoUrl}" 
+                                     alt="Foto utama ${item.Day}" 
+                                     class="rounded-lg shadow-md w-full max-w-md"
+                                     onerror="this.style.display='none'">
+                            ` : '<p class="text-gray-500">Tidak ada foto utama (1.jpg/jpeg/png)</p>'}
+                        </div>
+                        <h5 class="font-medium text-gray-600 mb-2">📚 Semua Media:</h5>
                         <div class="media-gallery">
                             ${item.Media.map((media, index) => {
                                 const fileType = media.type || (media.url.match(/\.(mp4|webm|ogg|mkv|avi|mov)$/i) ? 'video' : 'image');
+                                const isMainPhoto = media.url === mainPhotoUrl;
                                 return `
-                                    <div class="media-item" onclick="openModal(${JSON.stringify(item.Media).replace(/"/g, '&quot;')}, ${index})">
+                                    <div class="media-item ${isMainPhoto ? 'ring-2 ring-primary' : ''}" 
+                                         onclick="openModal(${JSON.stringify(item.Media).replace(/"/g, '&quot;')}, ${index})">
                                         <div class="protected-image w-full h-full" 
                                              style="background-image: url('${media.thumbnail || media.url}')">
                                         </div>
                                         <span class="file-type-badge">${fileType === 'video' ? 'VIDEO' : 'IMG'}</span>
+                                        ${isMainPhoto ? `
+                                            <div class="absolute top-1 left-1 bg-primary text-white text-xs px-2 py-1 rounded">
+                                                Utama
+                                            </div>
+                                        ` : ''}
                                         ${fileType === 'video' ? `
                                             <div class="play-icon">
                                                 <i class="fas fa-play"></i>
