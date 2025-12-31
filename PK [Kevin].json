@@ -1364,8 +1364,8 @@
       "Media": [
         {
           "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/1.png",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/1.png"
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/1.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/1.jpg"
         },
         {
           "type": "image",
@@ -1376,31 +1376,6 @@
           "type": "image",
           "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/3.jpg",
           "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/3.jpg"
-        },
-        {
-          "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/4.jpg",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/4.jpg"
-        },
-        {
-          "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/5.jpg",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/5.jpg"
-        },
-        {
-          "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/6.jpg",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/6.jpg"
-        },
-        {
-          "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/7.jpg",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/7.jpg"
-        },
-        {
-          "type": "image",
-          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/8.jpg",
-          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 35/8.jpg"
         }
       ]
     },
@@ -1408,7 +1383,7 @@
     {
       "Day": "36 [Rabu]",
       "Date": "31-12-2025",
-      "Time": "07:15 - 16:00",
+      "Time": "07:45 - 16:00",
       "Activity": "-",
       "Folder_dokumentasi": "Day 36",
       "Status": "completed",
