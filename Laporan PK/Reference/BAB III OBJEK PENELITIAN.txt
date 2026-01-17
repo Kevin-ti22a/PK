@@ -1,0 +1,88 @@
+BAB III OBJEK PENELITIAN
+3.1 Sejarah Singkat dan Kegiatan Bisnis
+SMK Taruna Bangsa didirikan oleh Yayasan Pendidikan Nasional Taruna Bangsa sebagai respons konkret terhadap tantangan pendidikan nasional dan krisis multidimensional di Indonesia. Yayasan ini mengidentifikasi adanya pergeseran fungsi pendidikan yang semestinya membentuk karakter dan intelektual menjadi sekadar transfer ilmu dan orientasi bisnis. Berdiri dengan visi menghasilkan lulusan yang menguasai teknologi pada masanya dan berakhlak mulia, SMK Taruna Bangsa Kelompok Teknologi dan Industri hadir untuk menjawab tantangan globalisasi dan pasar bebas.
+
+Kegiatan bisnis utama sekolah adalah menyelenggarakan pendidikan menengah kejuruan berbasis teknologi dengan empat program keahlian: Teknik Elektronika Audio Video, Teknik Instalasi Listrik, Teknik Mekanik Otomotif, dan Rekayasa Perangkat Lunak (RPL). Selain kegiatan pendidikan formal, sekolah telah mengembangkan Unit Produksi sebagai teaching factory yang berfungsi ganda: sebagai sarana praktik nyata bagi siswa dan sebagai sumber pendapatan alternatif untuk mendukung pengembangan fasilitas teknologi sekolah. Unit ini menghasilkan produk/jasa yang dipasarkan kepada masyarakat dan industri, sejalan dengan misi sekolah untuk menciptakan kemandirian finansial.
+
+
+3.2 Struktur Organisasi Perusahaan
+Struktur organisasi SMK Taruna Bangsa bersifat fungsional-hierarkis dengan penekanan khusus pada teknologi informasi dan hubungan industri. Struktur ini dapat dibagi menjadi lima tingkat utama:
+
+Tingkat 1: Penentu Kebijakan Strategis
+Yayasan Pendidikan Nasional Taruna Bangsa: Pemilik dan penanggung jawab tertinggi yang menetapkan visi-misi dasar.
+Majelis Sekolah: Dewan penasihat dan pengawas yang memberikan masukan strategis.
+
+Tingkat 2: Pimpinan Operasional Strategis
+Divisi IT: Menempati posisi setara dengan Kepala Sekolah, menunjukkan komitmen sekolah terhadap transformasi digital sebagai tulang punggung operasional.
+Kepala Sekolah: Pemimpin operasional harian yang bertanggung jawab kepada Yayasan dan berkoordinasi dengan Dikbud Kota Bekasi.
+
+Tingkat 3: Manajemen Menengah (Kepala Bidang)
+Wakil Kepala Sekolah: Koordinator utama antar-bidang.
+Kepala Unit Produksi: Memimpin unit bisnis/teaching factory.
+Kabid. Hubungan Industri: Mengelola kerja sama dengan dunia usaha/industri.
+Kabid. Kurikulum: Bertanggung jawab atas kualitas akademik.
+Kabid. Kesiswaan: Membina karakter dan kegiatan non-akademik.
+Kepala Tata Usaha: Memimpin administrasi dan keuangan.
+
+Tingkat 4: Pelaksana Teknis dan Akademik
+Koordinator & Kepala Program (Kaprodi): Memimpin program keahlian spesifik (termasuk Kaprodi RPL).
+Guru Produktif, Adaptif, Normatif: Pelaksana langsung pembelajaran.
+Staf Administrasi: Pelaksana tugas administratif spesifik.
+Pembina Ekstrakurikuler: Pelatih kegiatan khusus siswa.
+
+Tingkat 5: Penerima Layanan dan Output
+OSIS: Perwakilan resmi siswa.
+Siswa-Siswa: Penerima utama layanan pendidikan dan output akhir sekolah.
+Struktur ini dirancang untuk mendukung link and match dengan industri sekaligus memperkuat penguasaan teknologi, dengan Divisi IT dan Program Keahlian RPL sebagai inovasi terbaru.
+
+3.3 Wewenang dan Tanggung Jawab
+Untuk menjamin pelaksanaan fungsi organisasi secara efektif dan mencapai tujuan institusional, setiap elemen dalam struktur organisasi SMK Taruna Bangsa memiliki pembagian wewenang dan tanggung jawab yang jelas. Pembagian ini didasarkan pada prinsip akuntabilitas, spesialisasi fungsi, dan keselarasan dengan visi-misi sekolah. Berikut adalah penjelasan rinci mengenai distribusi wewenang dan tanggung jawab pada unit-unit kunci, dengan fokus khusus pada Divisi IT sebagai objek penelitian.
+
+A. Divisi IT (Sebagai Objek Penelitian Utama)
+Sebagai unit strategis yang setara dengan Kepala Sekolah, Divisi IT memiliki wewenang dan tanggung jawab khusus:
+
+Perencanaan Strategis Teknologi:
+Menyusun roadmap transformasi digital sekolah.
+Menetapkan standar dan kebijakan keamanan informasi.
+
+Pengelolaan Infrastruktur Inti:
+Merancang, mengimplementasikan, dan memelihara seluruh infrastruktur IT (jaringan, server, data center).
+Menjamin ketersediaan sistem pendukung pembelajaran 24/7.
+
+Pengembangan Sistem Terintegrasi:
+Mengembangkan dan mengelola sistem informasi terpadu (akademik, keuangan, inventaris).
+Melakukan integrasi sistem dengan dunia industri mitra.
+
+Dukungan Teknis dan Inovasi:
+Memberikan solusi teknis untuk program keahlian, khususnya Rekayasa Perangkat Lunak.
+Mengimplementasikan teknologi terbaru untuk mendukung teaching factory.
+
+B. Kaprodi Rekayasa Perangkat Lunak (RPL)
+Sebagai program keahlian baru, Kaprodi RPL memiliki peran khusus:
+
+Pengembangan Kurikulum Teknis:
+Menyesuaikan kurikulum dengan kebutuhan industri software development.
+Mengintegrasikan praktikum dengan proyek Divisi IT.
+
+Manajemen Pembelajaran Spesifik:
+Memastikan penguasaan tools dan bahasa pemrograman terkini.
+Mengkoordinasikan project-based learning dengan unit produksi.
+
+Hubungan dengan Industri TI:
+Menjalin kemitraan dengan perusahaan software/startup.
+Menyelenggarakan sertifikasi kompetensi bidang IT.
+
+C. Posisi Peneliti dalam Struktur
+Peneliti ditempatkan di Divisi IT dengan fokus pada pengembangan sistem yang mendukung program Rekayasa Perangkat Lunak. Tanggung jawab spesifik meliputi:
+
+Analisis Kebutuhan Sistem:
+Menganalisis kebutuhan sistem informasi untuk program RPL.
+Memetakan alur data antara Divisi IT dengan program keahlian.
+
+Pengembangan Prototipe:
+Mengembangkan prototype aplikasi pendukung pembelajaran RPL.
+Mengimplementasikan sistem manajemen proyek untuk teaching factory.
+
+Evaluasi dan Dokumentasi:
+Mengevaluasi efektivitas sistem yang dikembangkan.
+Mendokumentasikan proses pengembangan sebagai bahan pembelajaran.
