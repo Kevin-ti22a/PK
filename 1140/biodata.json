@@ -1,0 +1,61 @@
+{
+  "biodata": {
+    "npm": "2022310003",
+    "nama_lengkap": "Kevin Mubarak",
+    "tanggal_lahir": "Jakarta, 29 Mei 2003",
+    "alamat_lengkap": "PUP Sektor V blok M1 No.55 RT.007/RW.028 Kecamatan Babelan, kelurahan Bahagia, Kabupaten Bekasi, Jawa Barat",
+    
+    "pendidikan_formal": [
+      {
+        "jenjang": "SD",
+        "nama_sekolah": "SDN 02 pagi di Bekasi",
+        "tahun_lulus": "1988"
+      },
+      {
+        "jenjang": "SMP",
+        "nama_sekolah": "SMPN 153 di Bekasi",
+        "tahun_lulus": "1991"
+      },
+      {
+        "jenjang": "SMA",
+        "nama_sekolah": "SMA 32 di Bekasi",
+        "tahun_lulus": "1994"
+      }
+    ],
+    
+    "pendidikan_nonformal": [
+      {
+        "jenis": "Kursus bahasa Inggris",
+        "lembaga": "Lembaga Bahasa LIA (LB-LIA)",
+        "tahun_lulus": "1994"
+      },
+      {
+        "jenis": "Kursus komputer Paket Operator Terpadu",
+        "keterangan": "Microsoft Office XP",
+        "tahun_lulus": "2002"
+      },
+      {
+        "jenis": "Kursus Database Administrator",
+        "lembaga": "Microsoft",
+        "tahun_lulus": "2003"
+      }
+    ],
+    
+    "pengalaman_organisasi": [
+      {
+        "jabatan": "Ketua Remaja Masjid Al – Barkah",
+        "lokasi": "Bekasi – Timur",
+        "periode": "1993 s.d tahun 1995"
+      },
+      {
+        "jabatan": "Ketua PPS Betako Merpati Putih",
+        "lokasi": "Kolat RS. Pelni Pertamburan",
+        "periode": "1990 s.d sekarang"
+      }
+    ],
+    
+    "foto_url": "https://your-image-url.com/foto-3x4.jpg",
+    "tanggal_pembuatan": "Bekasi, 22 September 2025",
+    "ttd_nama": "Dimas Bayu Segara"
+  }
+}
