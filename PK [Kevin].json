@@ -1784,6 +1784,64 @@
           "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 42/8.jpg"
         }
       ]
+    },
+
+    {
+      "Day": "43 [Rabu]",
+      "Date": "21-1-2026",
+      "Time": "07:15 - 16:00",
+      "Activity": "Merevisi Bab 1, ternyata salah perbaikan di revisi sebelumnya",
+      "Folder_dokumentasi": "Day 43",
+      "Status": "completed",
+      "Note": "-",
+      "Links": [ 
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/1.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/1.png"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/2.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/2.png"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/6.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/7.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/7.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/8.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 43/8.jpg"
+        }
+      ]
     }
 
 
