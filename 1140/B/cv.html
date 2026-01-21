@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cetak Daftar Riwayat Hidup - Kevin Mubarak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Times+New+Roman&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .print-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            /* margin-bottom: 30px; */
+            /* border-bottom: 3px double #333; */
+            padding-bottom: 20px;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            /* text-decoration: underline; */
+            /* margin-bottom: 10px; */
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            /* font-weight: bold; */
+            border: 2px solid #333;
+            /* padding: 10px 20px; */
+            display: inline-block;
+            /* margin-top: 10px; */
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 15px 0 10px 20px;
+        }
+        
+        .info-table {
+            width: 100%;
+            margin: 10px 0 20px 0;
+        }
+        
+        .info-table td {
+            padding: 8px 5px;
+            vertical-align: top;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            width: 150px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0 20px 0;
+            font-size: 14px;
+        }
+        
+        .data-table th {
+            background-color: #f2f2f2;
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .data-table td {
+            border: 1px solid #333;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .photo-section {
+            text-align: center;
+            margin-top: 40px;
+            float: right;
+            width: 200px;
+        }
+        
+        .photo-box {
+            width: 120px;
+            height: 160px;
+            border: 2px solid #333;
+            margin: 0 auto 10px auto;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .photo-placeholder {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .signature-section {
+            margin-top: 100px;
+            text-align: right;
+            clear: both;
+        }
+        
+        .signature-line {
+            border-top: 1px solid #333;
+            width: 200px;
+            margin: 40px auto 5px auto;
+            padding-top: 10px;
+            display: inline-block;
+        }
+        
+        .no-print {
+            display: block;
+        }
+        
+        /* ===== LOADING STYLES ===== */
+        #loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        #error {
+            display: none;
+            color: #DC2626;
+            padding: 20px;
+            background: #FEE2E2;
+            border-radius: 8px;
+            margin: 20px 0;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4F46E5;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            
+            .print-container {
+                max-width: 100%;
+                padding: 20mm;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            /* HIDDEN ELEMENTS DURING PRINT */
+            .no-print,
+            #loading,
+            #error {
+                display: none !important;
+            }
+            
+            @page {
+                margin: 20mm;
+            }
+        }
+        
+        .btn-print {
+            background: #4F46E5;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+            margin: 20px auto;
+        }
+        
+        .btn-print:hover {
+            background: #4338CA;
+        }
+        
+        .action-buttons {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .title-section h1 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4F46E5;
+            margin: 0;
+        }
+        
+        .title-section p {
+            color: #666;
+            margin: 5px 0 0 0;
+            font-size: 14px;
+        }
+        
+        .data-loaded {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header dengan Tombol Aksi -->
+    <div class="no-print">
+        <div class="action-buttons">
+            <div class="title-section">
+                <h1><i class="fas fa-file-alt mr-2"></i>Daftar Riwayat Hidup</h1>
+                <p>Data akan diambil dari biodata.json</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="window.location.href='index.html'" class="btn-print" style="background: #6B7280;">
+                    <i class="fas fa-arrow-left"></i> Kembali
+                </button>
+                <button onclick="printDocument()" class="btn-print">
+                    <i class="fas fa-print"></i> Cetak Dokumen
+                </button>
+                <button onclick="reloadData()" class="btn-print" style="background: #10B981;">
+                    <i class="fas fa-sync-alt"></i> Muat Ulang Data
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading Indicator -->
+    <div id="loading">
+        <div class="spinner"></div>
+        <p>Memuat data biodata...</p>
+        <p style="font-size: 12px; color: #666; margin-top: 10px;">
+            Mengambil data dari <code>biodata.json</code>
+        </p>
+    </div>
+    
+    <!-- Error Message -->
+    <div id="error">
+        <i class="fas fa-exclamation-triangle mr-2"></i>
+        <span id="errorMessage">Terjadi kesalahan saat memuat data.</span>
+        <div style="margin-top: 10px;">
+            <button onclick="useDefaultData()" class="btn-print" style="background: #DC2626; padding: 8px 16px; font-size: 14px;">
+                Gunakan Data Default
+            </button>
+        </div>
+    </div>
+    
+    <!-- Print Container -->
+    <div id="printContainer" class="print-container">
+        <!-- Data akan dimuat di sini oleh JavaScript -->
+    </div>
+
+    <script>
+        // ==================== KONFIGURASI ====================
+        const BIODATA_URL = 'biodata.json';
+        let biodata = null;
+        
+        // Default data jika JSON tidak ditemukan
+        const DEFAULT_BIODATA = {
+            npm: "2022330071",
+            nama_lengkap: "Dimas Bayu Sagara",
+            tanggal_lahir: "Bekasi, 07 Januari 2005",
+            alamat_lengkap: "Jl. Harapan Baru I / 58 Rt. 010/003 Bekasi Timur",
+            pendidikan_formal: [
+                { 
+                    jenjang: "SD", 
+                    nama_sekolah: "SDN 02 pagi di Bekasi", 
+                    tahun_lulus: "1988" 
+                },
+                { 
+                    jenjang: "SMP", 
+                    nama_sekolah: "SMPN 153 di Bekasi", 
+                    tahun_lulus: "1991" 
+                },
+                { 
+                    jenjang: "SMA", 
+                    nama_sekolah: "SMA 32 di Bekasi", 
+                    tahun_lulus: "1994" 
+                }
+            ],
+            pendidikan_nonformal: [
+                { 
+                    jenis: "Kursus bahasa Inggris", 
+                    lembaga: "Lembaga Bahasa LIA (LB-LIA)", 
+                    tahun_lulus: "1994" 
+                },
+                { 
+                    jenis: "Kursus komputer Paket Operator Terpadu", 
+                    keterangan: "Microsoft Office XP", 
+                    tahun_lulus: "2002" 
+                },
+                { 
+                    jenis: "Kursus Database Administrator", 
+                    lembaga: "Microsoft", 
+                    tahun_lulus: "2003" 
+                }
+            ],
+            pengalaman_organisasi: [
+                { 
+                    jabatan: "Ketua Remaja Masjid Al – Barkah", 
+                    lokasi: "Bekasi – Timur", 
+                    periode: "1993 s.d tahun 1995" 
+                },
+                { 
+                    jabatan: "Ketua PPS Betako Merpati Putih", 
+                    lokasi: "Kolat RS. Pelni Pertamburan", 
+                    periode: "1990 s.d sekarang" 
+                }
+            ],
+            foto_url: "",
+            tanggal_pembuatan: "Bekasi, 22 September 2025",
+            ttd_nama: "Dimas Bayu Segara"
+        };
+        
+        // DOM Elements
+        const printContainer = document.getElementById('printContainer');
+        const loadingElement = document.getElementById('loading');
+        const errorElement = document.getElementById('error');
+        const errorMessageElement = document.getElementById('errorMessage');
+        
+        // ==================== FUNGSI UTILITAS ====================
+        
+        function showLoading() {
+            if (loadingElement) loadingElement.style.display = 'block';
+            if (errorElement) errorElement.style.display = 'none';
+        }
+        
+        function hideLoading() {
+            if (loadingElement) loadingElement.style.display = 'none';
+        }
+        
+        function showError(message) {
+            if (errorMessageElement) errorMessageElement.textContent = message;
+            if (errorElement) errorElement.style.display = 'block';
+            hideLoading();
+        }
+        
+        // ==================== FUNGSI LOAD DATA ====================
+        
+        async function loadBiodata() {
+            console.log('Memuat data dari:', BIODATA_URL);
+            showLoading();
+            
+            try {
+                // Coba fetch data dari JSON
+                const response = await fetch(BIODATA_URL);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                console.log('Data berhasil dimuat:', data);
+                
+                if (!data || !data.biodata) {
+                    throw new Error('Format JSON tidak valid. Pastikan file memiliki properti "biodata"');
+                }
+                
+                biodata = data.biodata;
+                return biodata;
+                
+            } catch (error) {
+                console.error('Error loading biodata:', error);
+                throw error;
+            }
+        }
+        
+        function useDefaultData() {
+            console.log('Menggunakan data default');
+            biodata = DEFAULT_BIODATA;
+            renderBiodataHTML();
+            hideLoading();
+            errorElement.style.display = 'none';
+        }
+        
+        // ==================== FUNGSI RENDER HTML ====================
+        
+        function generateBiodataHTML() {
+            if (!biodata) {
+                return '<div class="error">Data tidak tersedia</div>';
+            }
+            
+            // Format pendidikan formal
+            let pendidikanFormalHTML = '';
+            if (biodata.pendidikan_formal && biodata.pendidikan_formal.length > 0) {
+                pendidikanFormalHTML = biodata.pendidikan_formal.map((item, index) => `
+                    <tr>
+                        <td style="text-align: center;">${index + 1}</td>
+                        <td>${item.nama_sekolah || ''}</td>
+                        <td style="text-align: center;">${item.tahun_lulus || ''}</td>
+                    </tr>
+                `).join('');
+            } else {
+                pendidikanFormalHTML = '<tr><td colspan="3" style="text-align: center;">Tidak ada data</td></tr>';
+            }
+            
+            // Format pendidikan non-formal
+            let pendidikanNonFormalHTML = '';
+            if (biodata.pendidikan_nonformal && biodata.pendidikan_nonformal.length > 0) {
+                pendidikanNonFormalHTML = biodata.pendidikan_nonformal.map((item, index) => `
+                    <tr>
+                        <td style="text-align: center;">${index + 1}</td>
+                        <td>
+                            ${item.jenis || ''}
+                            ${item.keterangan ? ` (${item.keterangan})` : ''}
+                            ${item.lembaga ? `<br><em>${item.lembaga}</em>` : ''}
+                        </td>
+                        <td style="text-align: center;">${item.tahun_lulus || ''}</td>
+                    </tr>
+                `).join('');
+            } else {
+                pendidikanNonFormalHTML = '<tr><td colspan="3" style="text-align: center;">Tidak ada data</td></tr>';
+            }
+            
+            // Format pengalaman organisasi
+            let pengalamanHTML = '';
+            if (biodata.pengalaman_organisasi && biodata.pengalaman_organisasi.length > 0) {
+                pengalamanHTML = biodata.pengalaman_organisasi.map((item, index) => `
+                    <tr>
+                        <td style="text-align: center;">${index + 1}</td>
+                        <td>
+                            ${item.jabatan || ''}
+                            ${item.lokasi ? `<br><em>${item.lokasi}</em>` : ''}
+                        </td>
+                        <td style="text-align: center;">${item.periode || ''}</td>
+                    </tr>
+                `).join('');
+            } else {
+                pengalamanHTML = '<tr><td colspan="3" style="text-align: center;">Tidak ada data</td></tr>';
+            }
+            
+            return `
+                <!-- Header -->
+                <div class="header">
+                    <div class="title">DAFTAR RIWAYAT HIDUP</div>
+                    <div class="subtitle">FORMULIR BIODATA</div>
+                </div>
+                
+                <!-- Section I: Biodata Mahasiswa -->
+                <div class="section">
+                    <div class="section-title">I. Biodata Mahasiswa</div>
+                    <table class="info-table">
+                        <tr>
+                            <td class="info-label">NPM</td>
+                            <td>:</td>
+                            <td>${biodata.npm || '-'}</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Nama Lengkap</td>
+                            <td>:</td>
+                            <td>${biodata.nama_lengkap || '-'}</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Tanggal Lahir</td>
+                            <td>:</td>
+                            <td>${biodata.tanggal_lahir || '-'}</td>
+                        </tr>
+                        <tr>
+                            <td class="info-label">Alamat Lengkap</td>
+                            <td>:</td>
+                            <td>${biodata.alamat_lengkap || '-'}</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Section II: Pendidikan Formal -->
+                <div class="section">
+                    <div class="section-title">II. Pendidikan Formal</div>
+                    
+                    <div class="section-subtitle">A. Formal</div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th width="10%">No</th>
+                                <th width="60%">Nama Sekolah / Institusi</th>
+                                <th width="30%">Tahun Lulus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${pendidikanFormalHTML}
+                        </tbody>
+                    </table>
+                    
+                    <div class="section-subtitle">B. Tidak Formal</div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th width="10%">No</th>
+                                <th width="60%">Jenis Kursus / Pelatihan</th>
+                                <th width="30%">Tahun Lulus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${pendidikanNonFormalHTML}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Section III: Pengalaman Organisasi -->
+                <div class="section">
+                    <div class="section-title">III. Riwayat Pengalaman berorganisasi / pekerjaan</div>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th width="10%">No</th>
+                                <th width="50%">Jabatan / Pekerjaan</th>
+                                <th width="40%">Periode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${pengalamanHTML}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Photo and Signature Section -->
+                <div style="clear: both;">
+                    <div class="photo-section">
+                        <div style="font-weight: bold; margin-bottom: 10px;">Pas Photo</div>
+                        <div class="photo-box">
+                            ${biodata.foto_url && biodata.foto_url.trim() !== '' ? 
+                                `<img src="${biodata.foto_url}" alt="Foto 3x4" 
+                                    onerror="this.onerror=null; this.style.display='none'; 
+                                    this.parentElement.innerHTML='<div class=\"photo-placeholder\">[Foto 3x4]</div>';" />` :
+                                `<div class="photo-placeholder">[Foto 3x4]</div>`
+                            }
+                        </div>
+                        <div style="font-size: 12px; color: #666;">Ukuran: 3x4 cm</div>
+                    </div>
+                    
+                    <div class="signature-section">
+                        <div style="margin-bottom: 40px; font-style: italic;">
+                            ${biodata.tanggal_pembuatan || ''}
+                        </div>
+                        <div class="signature-line">
+                            ${biodata.ttd_nama || ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderBiodataHTML() {
+            const html = generateBiodataHTML();
+            printContainer.innerHTML = html;
+            printContainer.classList.add('data-loaded');
+        }
+        
+        async function renderBiodata() {
+            try {
+                console.log('Memulai render biodata...');
+                await loadBiodata();
+                renderBiodataHTML();
+                hideLoading();
+                console.log('Render biodata berhasil');
+                
+                // Preload foto jika ada
+                if (biodata.foto_url && biodata.foto_url.trim() !== '') {
+                    const img = new Image();
+                    img.src = biodata.foto_url;
+                    img.onerror = () => console.warn('Foto tidak dapat dimuat');
+                }
+                
+            } catch (error) {
+                console.error('Gagal render biodata:', error);
+                showError(`Gagal memuat data: ${error.message}. Periksa file biodata.json`);
+            }
+        }
+        
+        // ==================== FUNGSI PRINT ====================
+        
+        function printDocument() {
+            if (!biodata) {
+                alert('Data belum dimuat. Silakan klik "Muat Ulang Data" terlebih dahulu.');
+                return;
+            }
+            
+            console.log('Memulai proses print...');
+            
+            // Sembunyikan elemen yang tidak perlu dicetak
+            const noPrintElements = document.querySelectorAll('.no-print, #loading, #error');
+            const originalDisplays = [];
+            
+            noPrintElements.forEach(el => {
+                originalDisplays.push(el.style.display);
+                el.style.display = 'none';
+            });
+            
+            // Tunggu sebentar untuk memastikan DOM sudah update
+            setTimeout(() => {
+                window.print();
+                
+                // Kembalikan tampilan setelah print
+                setTimeout(() => {
+                    noPrintElements.forEach((el, index) => {
+                        el.style.display = originalDisplays[index];
+                    });
+                    console.log('Proses print selesai');
+                }, 500);
+                
+            }, 100);
+        }
+        
+        // ==================== INISIALISASI ====================
+        
+        async function init() {
+            console.log('Inisialisasi halaman CV...');
+            await renderBiodata();
+            
+            // Tambahkan event listener untuk keyboard shortcut
+            document.addEventListener('keydown', function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                    e.preventDefault();
+                    printDocument();
+                }
+            });
+            
+            // Auto-hide loading setelah 10 detik (fallback)
+            setTimeout(() => {
+                hideLoading();
+            }, 10000);
+        }
+        
+        // Export fungsi ke global scope
+        window.printDocument = printDocument;
+        window.reloadData = init;
+        window.useDefaultData = useDefaultData;
+        
+        // Jalankan inisialisasi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
