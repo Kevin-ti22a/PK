@@ -1,68 +1,68 @@
 {
   "bimbingan_kp": [
-    {
-      "pertemuan": 1,
-      "hari_tanggal": "Senin, 10 November 2025",
-      "waktu": "10:00 - 11:30 WIB",
-      "pembahasan": "Pembahasan proposal kerja praktek dan penentuan tempat KP",
-      "solusi": "Disetujui untuk melakukan KP di SMK Taruna Bangsa, menentukan jadwal dan pembimbing lapangan",
-      "paraf_mahasiswa": "✓",
-      "paraf_pembimbing": "✓"
-    },
-    {
-      "pertemuan": 2,
-      "hari_tanggal": "Rabu, 19 November 2025",
-      "waktu": "13:00 - 14:30 WIB",
-      "pembahasan": "Review progress minggu pertama: instalasi OS dan perangkat lab",
-      "solusi": "Memberikan arahan untuk dokumentasi yang lebih detail dan pembuatan laporan harian",
-      "paraf_mahasiswa": "✓",
-      "paraf_pembimbing": "✓"
-    },
-    {
-      "pertemuan": 3,
-      "hari_tanggal": "Senin, 24 November 2025",
-      "waktu": "09:00 - 10:30 WIB",
-      "pembahasan": "Pembahasan progress website development dan masalah teknis yang dihadapi",
-      "solusi": "Memberikan referensi sumber belajar dan teknik troubleshooting untuk masalah coding",
-      "paraf_mahasiswa": "✓",
-      "paraf_pembimbing": "✓"
-    },
-    {
-      "pertemuan": 4,
-      "hari_tanggal": "Kamis, 4 Desember 2025",
-      "waktu": "14:00 - 15:30 WIB",
-      "pembahasan": "Review progress instalasi CCTV dan jaringan, serta administrasi IT",
-      "solusi": "Memberikan panduan standar keamanan jaringan dan dokumentasi aset IT",
-      "paraf_mahasiswa": "✓",
-      "paraf_pembimbing": "✓"
-    },
-    {
-      "pertemuan": 5,
-      "hari_tanggal": "Selasa, 16 Desember 2025",
-      "waktu": "10:00 - 11:30 WIB",
-      "pembahasan": "Pembahasan laporan akhir dan persiapan presentasi",
-      "solusi": "Memberikan format standar laporan dan struktur presentasi yang efektif",
-      "paraf_mahasiswa": "✓",
-      "paraf_pembimbing": "✓"
-    },
-    {
-      "pertemuan": 6,
-      "hari_tanggal": "Senin, 22 Desember 2025",
-      "waktu": "13:00 - 14:30 WIB",
-      "pembahasan": "Final review laporan dan pengecekan kelengkapan dokumen",
-      "solusi": "Melakukan proofreading dan memberikan saran perbaikan akhir",
-      "paraf_mahasiswa": "✓",
-      "paraf_pembimbing": "✓"
-    },
-    {
-      "pertemuan": 7,
-      "hari_tanggal": "Rabu, 7 Januari 2026",
-      "waktu": "09:30 - 11:00 WIB",
-      "pembahasan": "Persiapan sidang KP dan simulasi presentasi",
-      "solusi": "Memberikan feedback presentasi dan tips menjawab pertanyaan penguji",
-      "paraf_mahasiswa": "✓",
-      "paraf_pembimbing": "✓"
-    }
+            {
+                "pertemuan": 1,
+                "hari_tanggal": "Sabtu, 29 November 2025",
+                "waktu": "21:00 - 22:00 WIB",
+                "pembahasan": "Judul Laporan KP",
+                "solusi": "Judul KP tidak Boleh mencantumkan Solusi, tapi harus mencantumkan Analisa yang di lakukan di tempat Magang",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 2,
+                "hari_tanggal": "Selasa, 16 Desember 2025",
+                "waktu": "08::01 - 09:56 WIB",
+                "pembahasan": "Periksa hasil Bab 1 hingga bab 2",
+                "solusi": "masih ada kesalahan pada Format Penulisan Laporan KP",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 2,
+                "hari_tanggal": "Rabu, 19 November 2025",
+                "waktu": "13:00 - 14:30 WIB",
+                "pembahasan": "Review progress minggu pertama: instalasi OS dan perangkat lab",
+                "solusi": "Memberikan arahan untuk dokumentasi yang lebih detail dan pembuatan laporan harian",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 3,
+                "hari_tanggal": "Senin, 24 November 2025",
+                "waktu": "09:00 - 10:30 WIB",
+                "pembahasan": "Pembahasan progress website development dan masalah teknis yang dihadapi",
+                "solusi": "Memberikan referensi sumber belajar dan teknik troubleshooting untuk masalah coding",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 4,
+                "hari_tanggal": "Kamis, 4 Desember 2025",
+                "waktu": "14:00 - 15:30 WIB",
+                "pembahasan": "Review progress instalasi CCTV dan jaringan, serta administrasi IT",
+                "solusi": "Memberikan panduan standar keamanan jaringan dan dokumentasi aset IT",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 5,
+                "hari_tanggal": "Selasa, 16 Desember 2025",
+                "waktu": "10:00 - 11:30 WIB",
+                "pembahasan": "Pembahasan laporan akhir dan persiapan presentasi",
+                "solusi": "Memberikan format standar laporan dan struktur presentasi yang efektif",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 6,
+                "hari_tanggal": "Senin, 22 Desember 2025",
+                "waktu": "13:00 - 14:30 WIB",
+                "pembahasan": "Final review laporan dan pengecekan kelengkapan dokumen",
+                "solusi": "Melakukan proofreading dan memberikan saran perbaikan akhir",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            }
   ],
   "data_mahasiswa": {
     "nama": "Kevin Mubarak",
