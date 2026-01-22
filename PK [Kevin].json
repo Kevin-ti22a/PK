@@ -1900,6 +1900,64 @@
           "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 44/8.jpg"
         }
       ]
+    },
+
+    {
+      "Day": "45 [Jum'at]",
+      "Date": "23-1-2026",
+      "Time": "07:15 - 16:00",
+      "Activity": "Membersihkan Peralatan Pasca Banjir",
+      "Folder_dokumentasi": "Day 45",
+      "Status": "completed",
+      "Note": "-",
+      "Links": [ 
+        {
+          "title": "",
+          "url": ""
+        }
+      ],
+      "Media": [
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/1.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/1.png"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/2.png",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/2.png"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/3.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/3.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/4.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/4.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/5.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/5.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/6.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/6.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/7.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/7.jpg"
+        },
+        {
+          "type": "image",
+          "url": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/8.jpg",
+          "thumbnail": "https://pk-kevin-mubarak-2022310003.netlify.app/dokumentasi/Day 45/8.jpg"
+        }
+      ]
     }
 
 
