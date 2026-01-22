@@ -11,11 +11,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Times+New+Roman&display=swap');
         
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 20px;
-        }
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    color: #000;
+}
         
         .print-container {
             max-width: 800px;
@@ -277,8 +276,10 @@
     <div class="no-print">
         <div class="action-buttons">
             <div class="title-section">
-                <h1><i class="fas fa-file-alt mr-2"></i>Daftar Riwayat Hidup</h1>
-                <p>Data akan diambil dari biodata.json</p>
+                <div style="text-align:center; font-weight:bold; margin-bottom:20px;">
+    DAFTAR RIWAYAT HIDUP
+</div>
+      
             </div>
             <div style="display: flex; gap: 10px;">
                 <button onclick="window.location.href='index.html'" class="btn-print" style="background: #6B7280;">
@@ -502,39 +503,39 @@
                 <!-- Header -->
                 <div class="header">
                     <div class="title">DAFTAR RIWAYAT HIDUP</div>
-                    <div class="subtitle">FORMULIR BIODATA</div>
+                    
                 </div>
                 
                 <!-- Section I: Biodata Mahasiswa -->
-                <div class="section">
-                    <div class="section-title">I. Biodata Mahasiswa</div>
-                    <table class="info-table">
+                <div>
+                    <div><b> I. Biodata Mahasiswa</b></div>
+                    <table>
                         <tr>
-                            <td class="info-label">NPM</td>
+                            <td collspan="3">NPM</td>
                             <td>:</td>
                             <td>${biodata.npm || '-'}</td>
                         </tr>
                         <tr>
-                            <td class="info-label">Nama Lengkap</td>
+                            <td>Nama Lengkap</td>
                             <td>:</td>
                             <td>${biodata.nama_lengkap || '-'}</td>
                         </tr>
                         <tr>
-                            <td class="info-label">Tanggal Lahir</td>
+                            <td>Tanggal Lahir</td>
                             <td>:</td>
                             <td>${biodata.tanggal_lahir || '-'}</td>
                         </tr>
                         <tr>
-                            <td class="info-label">Alamat Lengkap</td>
+                            <td>Alamat Lengkap</td>
                             <td>:</td>
                             <td>${biodata.alamat_lengkap || '-'}</td>
                         </tr>
                     </table>
                 </div>
-                
+                <br>
                 <!-- Section II: Pendidikan Formal -->
                 <div class="section">
-                    <div class="section-title">II. Pendidikan Formal</div>
+                    <div><b>II. Pendidikan Formal</b></div>
                     
                     <div class="section-subtitle">A. Formal</div>
                     <table class="data-table">

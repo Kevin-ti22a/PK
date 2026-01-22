@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Bimbingan Kerja Praktek - Kevin Mubarak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF',
+                        accent: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 70%;
+            width: 5px;
+            background-color: #3B82F6;
+            border-radius: 5px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3B82F6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* DataTables Custom Styling */
+        .dataTables_wrapper {
+            margin-top: 20px;
+        }
+        
+        .dataTables_length select {
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 6px 12px;
+            background-color: white;
+        }
+        
+        .dataTables_filter input {
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 6px 12px;
+            background-color: white;
+        }
+        
+        .dataTables_info {
+            color: #6b7280;
+            padding-top: 10px;
+        }
+        
+        .dataTables_paginate .paginate_button {
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 6px 12px;
+            margin-left: 2px;
+            margin-right: 2px;
+            color: #3B82F6;
+        }
+        
+        .dataTables_paginate .paginate_button.current {
+            background: #3B82F6;
+            color: white;
+            border-color: #3B82F6;
+        }
+        
+        .dataTables_paginate .paginate_button:hover {
+            background: #e5e7eb;
+            border-color: #d1d5db;
+        }
+        
+        table.dataTable {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        table.dataTable thead th {
+            border-bottom: 2px solid #e5e7eb;
+            background-color: #f9fafb;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        table.dataTable tbody td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+        
+        table.dataTable tbody tr:hover {
+            background-color: #f3f4f6;
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #print-container, #print-container * {
+                visibility: visible;
+            }
+            #print-container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            
+            .print-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+                border: 1px solid #000;
+            }
+            
+            .print-table th, .print-table td {
+                border: 1px solid #000;
+                padding: 8px;
+                text-align: left;
+                vertical-align: top;
+            }
+            
+            .print-table th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        /* Print Button */
+        .print-button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+        
+        /* Loading Watermark */
+        .loading-watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Signature styles */
+        .signature-line {
+            width: 300px;
+            border-bottom: 1px solid #000;
+            display: inline-block;
+            margin-top: 40px;
+        }
+        
+        /* Print container */
+        #print-container {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    
+    <!-- Loading dengan Watermark -->
+    <div id="loadingWatermark" class="loading-watermark">
+        <div class="loading-spinner"></div>
+        <p class="text-lg text-gray-700 font-medium">Memuat data Laporan Bimbingan...</p>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-10 no-print">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-primary">Laporan Bimbingan KP - Kevin Mubarak</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="hover:text-primary transition">Home</a></li>
+                    <li><a href="#bimbingan-data" class="hover:text-primary transition">Data Bimbingan</a></li>
+                    <li><a href="#print-section" class="hover:text-primary transition">Cetak Laporan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold text-dark mb-4">Laporan Bimbingan Kerja Praktek</h2>
+                <p class="text-xl text-gray-600 mb-6">Data Bimbingan Mahasiswa dengan Pembimbing</p>
+                <div class="flex space-x-4">
+                    <button id="printAllButton" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition">
+                        <i class="fas fa-print mr-2"></i> Cetak Laporan Lengkap
+                    </button>
+                    <a href="data-bimbingan.json" download class="border border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition">
+                        <i class="fas fa-download mr-2"></i> Download Data JSON
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 h-64 rounded-full overflow-hidden shadow-xl border-4 border-white relative">
+                    <img src="https://kevin-mubarak-2022310003.netlify.app/Kevin_Mubarak_-_S1_Teknik_Informatika_(2)-min%20(1).jpg" 
+                         alt="Kevin Mubarak" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Bimbingan Section -->
+    <section id="bimbingan-data" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 section-title">DATA BIMBINGAN KERJA PRAKTEK</h2>
+            
+            <!-- Print Button -->
+            <div class="print-button-container">
+                <button id="printBimbinganButton" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center gap-2">
+                    <i class="fas fa-print"></i> Cetak Laporan Bimbingan
+                </button>
+            </div>
+            
+            <!-- DataTables Container -->
+            <div class="mt-4">
+                <table id="bimbinganTable" class="display w-full">
+                    <thead>
+                        <tr>
+                            <th>Pertemuan Ke-</th>
+                            <th>Hari/Tanggal</th>
+                            <th>Waktu</th>
+                            <th>Pembahasan</th>
+                            <th>Solusi</th>
+                            <th>Paraf Pembimbing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Kevin Mubarak. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Laporan Bimbingan Kerja Praktek</p>
+        </div>
+    </footer>
+
+    <!-- Print Container (hidden until print) -->
+    <div id="print-container" style="display: none;"></div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/2.3.5/js/dataTables.min.js"></script>
+    
+    <script>
+        // ==================== DATA SAMPLE ====================
+        const bimbinganData = [
+            {
+                "pertemuan": 1,
+                "hari_tanggal": "Senin, 10 November 2025",
+                "waktu": "10:00 - 11:30 WIB",
+                "pembahasan": "Pembahasan proposal kerja praktek dan penentuan tempat KP",
+                "solusi": "Disetujui untuk melakukan KP di SMK Taruna Bangsa, menentukan jadwal dan pembimbing lapangan",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 2,
+                "hari_tanggal": "Rabu, 19 November 2025",
+                "waktu": "13:00 - 14:30 WIB",
+                "pembahasan": "Review progress minggu pertama: instalasi OS dan perangkat lab",
+                "solusi": "Memberikan arahan untuk dokumentasi yang lebih detail dan pembuatan laporan harian",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 3,
+                "hari_tanggal": "Senin, 24 November 2025",
+                "waktu": "09:00 - 10:30 WIB",
+                "pembahasan": "Pembahasan progress website development dan masalah teknis yang dihadapi",
+                "solusi": "Memberikan referensi sumber belajar dan teknik troubleshooting untuk masalah coding",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 4,
+                "hari_tanggal": "Kamis, 4 Desember 2025",
+                "waktu": "14:00 - 15:30 WIB",
+                "pembahasan": "Review progress instalasi CCTV dan jaringan, serta administrasi IT",
+                "solusi": "Memberikan panduan standar keamanan jaringan dan dokumentasi aset IT",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 5,
+                "hari_tanggal": "Selasa, 16 Desember 2025",
+                "waktu": "10:00 - 11:30 WIB",
+                "pembahasan": "Pembahasan laporan akhir dan persiapan presentasi",
+                "solusi": "Memberikan format standar laporan dan struktur presentasi yang efektif",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            },
+            {
+                "pertemuan": 6,
+                "hari_tanggal": "Senin, 22 Desember 2025",
+                "waktu": "13:00 - 14:30 WIB",
+                "pembahasan": "Final review laporan dan pengecekan kelengkapan dokumen",
+                "solusi": "Melakukan proofreading dan memberikan saran perbaikan akhir",
+                "paraf_mahasiswa": "",
+                "paraf_pembimbing": ""
+            }
+        ];
+
+        // ==================== FUNGSI PRINT ====================
+        
+        function generateBimbinganPrintHTML(data) {
+            const now = new Date();
+            const printDate = now.toLocaleDateString('id-ID', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            let tableHTML = '';
+            data.forEach((item, index) => {
+                tableHTML += `
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 8px; text-align: center; width: 8%;">${item.pertemuan}</td>
+                        <td style="border: 1px solid #000; padding: 8px; width: 15%;">${item.hari_tanggal}</td>
+                        <td style="border: 1px solid #000; padding: 8px; width: 10%;">${item.waktu}</td>
+                        <td style="border: 1px solid #000; padding: 8px; width: 22%;">${item.pembahasan}</td>
+                        <td style="border: 1px solid #000; padding: 8px; width: 20%;">${item.solusi}</td>
+                        <td style="border: 1px solid #000; padding: 8px; text-align: center; width: 10%;">
+                            ${item.paraf_pembimbing === '✓' ? '✓' : ''}
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            return `
+                <div style="padding: 20mm; font-family: 'Times New Roman', Times, serif; font-size: 12pt;">
+                    <!-- JUDUL UTAMA -->
+                    <div style="text-align: center; margin-bottom: 10mm;">
+                        <h1 style="font-size: 16pt; font-weight: bold; margin-bottom: 2mm;">
+                            BIMBINGAN LAPORAN KERJA PRAKTEK
+                        </h1>
+                    </div>
+                    
+                    <!-- DATA MAHASISWA -->
+                    <div style="margin-bottom: 10mm;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td style="width: 30%; padding: 2mm 0;"><strong>Nama Mahasiswa</strong></td>
+                                <td style="width: 5%;">:</td>
+                                <td>Kevin Mubarak</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2mm 0;"><strong>NPM</strong></td>
+                                <td>:</td>
+                                <td>2022310003</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2mm 0;"><strong>Program Studi</strong></td>
+                                <td>:</td>
+                                <td>Teknik Informatika</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2mm 0;"><strong>Bagian</strong></td>
+                                <td>:</td>
+                                <td>Divisi IT</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- TABEL BIMBINGAN -->
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 10pt;">
+                        <thead>
+                            <tr style="background-color: #f5f5f5;">
+                                <th style="border: 1px solid #000; padding: 8px; text-align: center;">Pertemuan Ke-</th>
+                                <th style="border: 1px solid #000; padding: 8px; text-align: center;">Hari/Tanggal</th>
+                                <th style="border: 1px solid #000; padding: 8px; text-align: center;">Waktu</th>
+                                <th style="border: 1px solid #000; padding: 8px; text-align: center;">Pembahasan</th>
+                                <th style="border: 1px solid #000; padding: 8px; text-align: center;">Solusi</th>
+                                <th style="border: 1px solid #000; padding: 8px; text-align: center;">Paraf Pembimbing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableHTML}
+                        </tbody>
+                    </table>
+                    
+                    <!-- TANDA TANGAN -->
+                    <div style="margin-top: 20mm; width: 100%;">
+                        <div style="float: right; text-align: center; width: 50%;">
+                            <p>Kabupaten Bekasi, ${printDate}</p>
+                            <p style="margin-top: 15mm;">Dosen Pembimbing,</p>
+                            
+                            <div style="margin-top: 25mm;">
+                                <p style="font-weight: bold;">Dr. Ir. Saludin Muis, M.Kom</p>
+                                <p>NIDN. 1234567890</p>
+                            </div>
+                            
+                        </div>
+                        
+                        <div style="float: left; text-align: center; width: 50%;">
+                            <p style="margin-top: 15mm;">Mengetahui,</p>
+                            <p>Ketua Program Studi</p>
+                            <p>Teknik Informatika</p>
+                            
+                            <div style="margin-top: 25mm;">
+                                <p style="font-weight: bold;">[Nama Ketua Prodi]</p>
+                                <p>NIDN. [Nomor NIDN]</p>
+                            </div>
+                        </div>
+                        
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function printBimbinganReport() {
+            const printContainer = document.getElementById('print-container');
+            printContainer.innerHTML = generateBimbinganPrintHTML(bimbinganData);
+            printContainer.style.display = 'block';
+            
+            // Tunggu sebentar untuk memastikan DOM sudah dirender
+            setTimeout(() => {
+                window.print();
+                
+                // Kembalikan ke keadaan semula setelah print
+                setTimeout(() => {
+                    printContainer.style.display = 'none';
+                    printContainer.innerHTML = '';
+                }, 100);
+            }, 500);
+        }
+        
+        // ==================== INISIALISASI DATA TABLES ====================
+        
+        $(document).ready(function() {
+            // Inisialisasi DataTable untuk bimbingan
+            const bimbinganTable = $('#bimbinganTable').DataTable({
+                data: bimbinganData,
+                columns: [
+                    { 
+                        data: 'pertemuan',
+                        render: function(data) {
+                            return `<span class="font-bold">${data}</span>`;
+                        }
+                    },
+                    { 
+                        data: 'hari_tanggal',
+                        render: function(data) {
+                            return `<span class="text-gray-700">${data}</span>`;
+                        }
+                    },
+                    { 
+                        data: 'waktu',
+                        render: function(data) {
+                            return `<span class="text-gray-600">${data}</span>`;
+                        }
+                    },
+                    { 
+                        data: 'pembahasan',
+                        render: function(data, type) {
+                            if (type === 'display') {
+                                const truncated = data.length > 100 ? data.substring(0, 100) + '...' : data;
+                                return `<div class="max-w-md">${truncated}</div>`;
+                            }
+                            return data;
+                        }
+                    },
+                    { 
+                        data: 'solusi',
+                        render: function(data, type) {
+                            if (type === 'display') {
+                                const truncated = data.length > 100 ? data.substring(0, 100) + '...' : data;
+                                return `<div class="max-w-md">${truncated}</div>`;
+                            }
+                            return data;
+                        }
+                    },
+                    { 
+                        data: 'paraf_pembimbing',
+                        render: function(data) {
+                            if (data === '✓') {
+                                return `<span class="text-green-600 font-bold text-xl">✓</span>`;
+                            }
+                            return data || '-';
+                        }
+                    }
+                ],
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/2.3.5/i18n/id.json'
+                },
+                responsive: true,
+                pageLength: 10,
+                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Semua"]],
+                order: [[0, 'asc']],
+                initComplete: function() {
+                    // Sembunyikan loading screen
+                    const loadingWatermark = document.getElementById('loadingWatermark');
+                    if (loadingWatermark) {
+                        setTimeout(() => {
+                            loadingWatermark.style.opacity = '0';
+                            setTimeout(() => {
+                                loadingWatermark.style.display = 'none';
+                            }, 300);
+                        }, 500);
+                    }
+                }
+            });
+            
+            // Event listener untuk tombol print
+            $('#printBimbinganButton').on('click', printBimbinganReport);
+            $('#printAllButton').on('click', printBimbinganReport);
+            
+            // Custom styling untuk DataTables
+            $('.dataTables_length select').addClass('border-gray-300 focus:border-primary focus:ring-primary');
+            $('.dataTables_filter input').addClass('border-gray-300 focus:border-primary focus:ring-primary');
+            
+            // Smooth scroll untuk anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
