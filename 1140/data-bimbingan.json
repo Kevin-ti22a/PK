@@ -1,69 +1,4 @@
 {
-  "bimbingan_kp": [
-            {
-                "pertemuan": 1,
-                "hari_tanggal": "Sabtu, 29 November 2025",
-                "waktu": "21:00 - 22:00 WIB",
-                "pembahasan": "Judul Laporan KP",
-                "solusi": "Judul KP tidak Boleh mencantumkan Solusi, tapi harus mencantumkan Analisa yang di lakukan di tempat Magang",
-                "paraf_mahasiswa": "",
-                "paraf_pembimbing": ""
-            },
-            {
-                "pertemuan": 2,
-                "hari_tanggal": "Selasa, 16 Desember 2025",
-                "waktu": "08::01 - 09:56 WIB",
-                "pembahasan": "Periksa hasil Bab 1 hingga bab 2",
-                "solusi": "masih ada kesalahan pada Format Penulisan Laporan KP",
-                "paraf_mahasiswa": "",
-                "paraf_pembimbing": ""
-            },
-            {
-                "pertemuan": 2,
-                "hari_tanggal": "Rabu, 19 November 2025",
-                "waktu": "13:00 - 14:30 WIB",
-                "pembahasan": "Review progress minggu pertama: instalasi OS dan perangkat lab",
-                "solusi": "Memberikan arahan untuk dokumentasi yang lebih detail dan pembuatan laporan harian",
-                "paraf_mahasiswa": "",
-                "paraf_pembimbing": ""
-            },
-            {
-                "pertemuan": 3,
-                "hari_tanggal": "Senin, 24 November 2025",
-                "waktu": "09:00 - 10:30 WIB",
-                "pembahasan": "Pembahasan progress website development dan masalah teknis yang dihadapi",
-                "solusi": "Memberikan referensi sumber belajar dan teknik troubleshooting untuk masalah coding",
-                "paraf_mahasiswa": "",
-                "paraf_pembimbing": ""
-            },
-            {
-                "pertemuan": 4,
-                "hari_tanggal": "Kamis, 4 Desember 2025",
-                "waktu": "14:00 - 15:30 WIB",
-                "pembahasan": "Review progress instalasi CCTV dan jaringan, serta administrasi IT",
-                "solusi": "Memberikan panduan standar keamanan jaringan dan dokumentasi aset IT",
-                "paraf_mahasiswa": "",
-                "paraf_pembimbing": ""
-            },
-            {
-                "pertemuan": 5,
-                "hari_tanggal": "Selasa, 16 Desember 2025",
-                "waktu": "10:00 - 11:30 WIB",
-                "pembahasan": "Pembahasan laporan akhir dan persiapan presentasi",
-                "solusi": "Memberikan format standar laporan dan struktur presentasi yang efektif",
-                "paraf_mahasiswa": "",
-                "paraf_pembimbing": ""
-            },
-            {
-                "pertemuan": 6,
-                "hari_tanggal": "Senin, 22 Desember 2025",
-                "waktu": "13:00 - 14:30 WIB",
-                "pembahasan": "Final review laporan dan pengecekan kelengkapan dokumen",
-                "solusi": "Melakukan proofreading dan memberikan saran perbaikan akhir",
-                "paraf_mahasiswa": "",
-                "paraf_pembimbing": ""
-            }
-  ],
   "data_mahasiswa": {
     "nama": "Kevin Mubarak",
     "npm": "2022310003",
@@ -72,11 +7,66 @@
     "tempat_kp": "SMK Taruna Bangsa",
     "periode": "November 2025 - Januari 2026"
   },
-  "dosen_pembimbing": [
-   
+  "dosen_pembimbing": {
+    "nama": "Dr. Ir. Saludin Muis, M.Kom",
+    "nidn": "-"
+  },
+  "bimbingan_kp": [
     {
-      "nama": "Dr. Ir. Saludin Muis, M.Kom",
-      "nidn": "-"
+      "pertemuan": 1,
+      "hari_tanggal": "Sabtu, 29 November 2025",
+      "waktu": "21:00 - 22:00 WIB",
+      "pembahasan": "Judul Laporan KP1",
+      "solusi": "Judul KP tidak boleh mencantumkan Solusi, tapi harus mencantumkan Analisa yang dilakukan di tempat Magang",
+      "paraf_pembimbing": ""
+    },
+    {
+      "pertemuan": 2,
+      "hari_tanggal": "Selasa, 16 Desember 2025",
+      "waktu": "08:01 - 09:56 WIB",
+      "pembahasan": "Periksa hasil Bab 1 hingga bab 2",
+      "solusi": "Masih ada kesalahan pada Format Penulisan Laporan KP",
+      "paraf_pembimbing": ""
+    },
+    {
+      "pertemuan": 3,
+      "hari_tanggal": "Rabu, 19 November 2025",
+      "waktu": "13:00 - 14:30 WIB",
+      "pembahasan": "Review progress minggu pertama: instalasi OS dan perangkat lab",
+      "solusi": "Memberikan arahan untuk dokumentasi yang lebih detail dan pembuatan laporan harian",
+      "paraf_pembimbing": ""
+    },
+    {
+      "pertemuan": 4,
+      "hari_tanggal": "Senin, 24 November 2025",
+      "waktu": "09:00 - 10:30 WIB",
+      "pembahasan": "Pembahasan progress website development dan masalah teknis yang dihadapi",
+      "solusi": "Memberikan referensi sumber belajar dan teknik troubleshooting untuk masalah coding",
+      "paraf_pembimbing": ""
+    },
+    {
+      "pertemuan": 5,
+      "hari_tanggal": "Kamis, 4 Desember 2025",
+      "waktu": "14:00 - 15:30 WIB",
+      "pembahasan": "Review progress instalasi CCTV dan jaringan, serta administrasi IT",
+      "solusi": "Memberikan panduan standar keamanan jaringan dan dokumentasi aset IT",
+      "paraf_pembimbing": ""
+    },
+    {
+      "pertemuan": 6,
+      "hari_tanggal": "Selasa, 16 Desember 2025",
+      "waktu": "10:00 - 11:30 WIB",
+      "pembahasan": "Pembahasan laporan akhir dan persiapan presentasi",
+      "solusi": "Memberikan format standar laporan dan struktur presentasi yang efektif",
+      "paraf_pembimbing": ""
+    },
+    {
+      "pertemuan": 7,
+      "hari_tanggal": "Senin, 22 Desember 2025",
+      "waktu": "13:00 - 14:30 WIB",
+      "pembahasan": "Final review laporan dan pengecekan kelengkapan dokumen",
+      "solusi": "Melakukan proofreading dan memberikan saran perbaikan akhir",
+      "paraf_pembimbing": ""
     }
   ]
 }
