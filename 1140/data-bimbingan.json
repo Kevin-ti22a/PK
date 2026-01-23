@@ -23,49 +23,33 @@
     {
       "pertemuan": 2,
       "hari_tanggal": "Selasa, 16 Desember 2025",
-      "waktu": "08:01 - 09:56 WIB",
-      "pembahasan": "Periksa hasil Bab 1 hingga bab 2",
-      "solusi": "Masih ada kesalahan pada Format Penulisan Laporan KP",
+      "waktu": "10:07 - 12:27 WIB",
+      "pembahasan": "Bimbingan Laporan Bab 1 hingga bab 2",
+      "solusi": "Masih ada sedikit kesalahan pada Format Penulisan Laporan KP bab 1 dan untuk Bab 3 saya buat ulang karena salah panduan",
       "paraf_pembimbing": ""
     },
     {
       "pertemuan": 3,
-      "hari_tanggal": "Rabu, 19 November 2025",
-      "waktu": "13:00 - 14:30 WIB",
-      "pembahasan": "Review progress minggu pertama: instalasi OS dan perangkat lab",
-      "solusi": "Memberikan arahan untuk dokumentasi yang lebih detail dan pembuatan laporan harian",
+      "hari_tanggal": "Kamis, 15 Januari 2026",
+      "waktu": "10:07 - 12:27 WIB",
+      "pembahasan": "Bimbingan Laporan Bab 1 hingga bab 3",
+      "solusi": "Masih ada sedikit kesalahan pada Format Penulisan Laporan KP bab 1 dan untuk Bab 3 saya buat ulang karena salah panduan",
       "paraf_pembimbing": ""
     },
     {
       "pertemuan": 4,
-      "hari_tanggal": "Senin, 24 November 2025",
-      "waktu": "09:00 - 10:30 WIB",
-      "pembahasan": "Pembahasan progress website development dan masalah teknis yang dihadapi",
-      "solusi": "Memberikan referensi sumber belajar dan teknik troubleshooting untuk masalah coding",
+      "hari_tanggal": "Selasa, 20 Januari 2026",
+      "waktu": "12:12 - 23:14 WIB",
+      "pembahasan": "Bimbingan Laporan Bab 1 hingga bab 3",
+      "solusi": "Bab 1 masih ada revisi, karena saya salah save File Laporan",
       "paraf_pembimbing": ""
     },
     {
       "pertemuan": 5,
-      "hari_tanggal": "Kamis, 4 Desember 2025",
-      "waktu": "14:00 - 15:30 WIB",
-      "pembahasan": "Review progress instalasi CCTV dan jaringan, serta administrasi IT",
-      "solusi": "Memberikan panduan standar keamanan jaringan dan dokumentasi aset IT",
-      "paraf_pembimbing": ""
-    },
-    {
-      "pertemuan": 6,
-      "hari_tanggal": "Selasa, 16 Desember 2025",
-      "waktu": "10:00 - 11:30 WIB",
-      "pembahasan": "Pembahasan laporan akhir dan persiapan presentasi",
-      "solusi": "Memberikan format standar laporan dan struktur presentasi yang efektif",
-      "paraf_pembimbing": ""
-    },
-    {
-      "pertemuan": 7,
-      "hari_tanggal": "Senin, 22 Desember 2025",
-      "waktu": "13:00 - 14:30 WIB",
-      "pembahasan": "Final review laporan dan pengecekan kelengkapan dokumen",
-      "solusi": "Melakukan proofreading dan memberikan saran perbaikan akhir",
+      "hari_tanggal": "Jum'at, 23 Januari 2026",
+      "waktu": "09:00 - 10:30 WIB",
+      "pembahasan": "Bimbingan Laporan Bab 1 hingga bab 5",
+      "solusi": "-",
       "paraf_pembimbing": ""
     }
   ]
