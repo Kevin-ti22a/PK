@@ -1,0 +1,51 @@
+BAB II
+LANDASAN TEORI
+
+Bab ini membahas landasan teori dan penelitian terdahulu yang menjadi dasar konseptual pelaksanaan Kerja Praktik. Pembahasan difokuskan pada konsep layanan akademik, analisis kebutuhan informasi, teknologi informasi, serta kajian penelitian terdahulu yang relevan dengan topik pengembangan layanan informasi akademik berbasis web dan chatbot.
+
+2.1 Layanan Akademik
+
+Layanan akademik merupakan seluruh bentuk pelayanan yang berkaitan dengan proses pendidikan, mulai dari penyediaan informasi pembelajaran, pengelolaan administrasi akademik, hingga dukungan terhadap kegiatan belajar mengajar. Layanan akademik berperan penting dalam menjamin kelancaran proses pendidikan serta pencapaian tujuan pembelajaran. Layanan ini mencakup aspek administrasi, informasi akademik, dan dukungan terhadap aktivitas belajar peserta didik. Konsep dan peran layanan akademik dijelaskan sebagai elemen utama dalam sistem pendidikan formal modern (Media Indonesia, 2024). Sumber: [https://mediaindonesia.com/humaniora/807768/akademik-adalah-pengertian-dan-peran-pentingnya-dalam-pendidikan](https://mediaindonesia.com/humaniora/807768/akademik-adalah-pengertian-dan-peran-pentingnya-dalam-pendidikan)
+
+2.2 Analisis Kebutuhan Informasi
+
+Analisis kebutuhan informasi merupakan proses untuk memahami dan menguraikan suatu permasalahan guna menentukan jenis informasi yang dibutuhkan, cara memperoleh informasi, serta bagaimana informasi tersebut digunakan. Analisis membantu proses pengambilan keputusan dengan cara memecah permasalahan menjadi bagian-bagian yang lebih sederhana dan terstruktur. Pemahaman analisis menjadi dasar penting dalam perancangan sistem informasi dan layanan akademik (Universitas Medan Area, 2023). Sumber: [https://uma.ac.id/berita/penjelasan-tentang-apa-itu-analisis](https://uma.ac.id/berita/penjelasan-tentang-apa-itu-analisis)
+
+2.3 Teknologi Informasi dalam Layanan Akademik
+
+Teknologi informasi dan sistem informasi merupakan dua konsep yang saling berkaitan namun memiliki perbedaan fungsi. Teknologi informasi berfokus pada perangkat keras, perangkat lunak, dan infrastruktur jaringan, sedangkan sistem informasi menitikberatkan pada pemanfaatan teknologi tersebut untuk mendukung proses bisnis dan pengambilan keputusan. Dalam layanan akademik, teknologi informasi digunakan untuk mengelola data, mempercepat penyampaian informasi, dan meningkatkan efisiensi layanan pendidikan (Telkom University Jakarta, 2022). Sumber: [https://jakarta.telkomuniversity.ac.id/perbedaan-teknologi-informasi-dan-sistem-informasi/](https://jakarta.telkomuniversity.ac.id/perbedaan-teknologi-informasi-dan-sistem-informasi/)
+
+2.4 Sistem Informasi Akademik
+
+Sistem informasi akademik adalah sistem terintegrasi yang digunakan untuk mengelola data akademik, seperti data peserta didik, jadwal pembelajaran, nilai, dan administrasi pendidikan lainnya. Sistem ini membantu institusi pendidikan dalam meningkatkan efektivitas pengelolaan data serta mendukung layanan akademik yang lebih terstruktur dan transparan. Sistem informasi akademik memanfaatkan teknologi informasi sebagai sarana utama pengolahan dan distribusi informasi (Sun Life Indonesia, 2023). Sumber: [https://www.sunlife.co.id/id/life-moments/educating-my-child/peberdaan-sma-dan-smk/](https://www.sunlife.co.id/id/life-moments/educating-my-child/peberdaan-sma-dan-smk/)
+
+2.5 Chatbot dalam Layanan Informasi
+
+Chatbot merupakan aplikasi berbasis perangkat lunak yang dirancang untuk berinteraksi dengan pengguna melalui percakapan berbasis teks atau suara dengan memanfaatkan pemrosesan bahasa alami. Dalam konteks layanan informasi, chatbot digunakan untuk menjawab pertanyaan rutin, menyediakan informasi secara otomatis, serta meningkatkan efisiensi pelayanan dengan mengurangi ketergantungan pada interaksi manual. Penggunaan chatbot memungkinkan layanan informasi tersedia selama dua puluh empat jam dan mampu merespon kebutuhan pengguna secara cepat dan konsisten. Pemanfaatan chatbot dalam berbagai sektor, termasuk pendidikan, terbukti membantu peningkatan kualitas layanan informasi dan pengalaman pengguna (Adamopoulou dan Moussiades, 2022). Sumber: https://www.sciencedirect.com/science/article/pii/S2666920X22000327
+
+2.6 Penelitian Terdahulu
+Subbab ini memuat ringkasan hasil penelitian terdahulu yang relevan sebagai dasar pembanding dan pendukung konseptual dalam pelaksanaan Kerja Praktik.
+
+2.6.1 Chatbot Layanan Informasi Akademik Berbasis Web
+
+Penelitian oleh Pérez-Sanagustín et al. (2023) membahas pemanfaatan chatbot berbasis web dalam layanan informasi pendidikan untuk mendukung kebutuhan informasi akademik pengguna. Hasil penelitian menunjukkan bahwa chatbot mampu meningkatkan aksesibilitas informasi, mempercepat respon terhadap pertanyaan pengguna, serta mengurangi beban layanan manual. Studi ini menyimpulkan bahwa chatbot berbasis web efektif digunakan sebagai media pendukung layanan informasi akademik yang bersifat informatif dan berulang. Sumber: https://www.mdpi.com/2227-9709/10/3/58
+
+2.6.2 Digitalisasi Layanan Akademik melalui Sistem e-Rapor
+
+Sani dan Utamajaya (2025) melakukan systematic literature review terhadap penerapan sistem e-rapor berbasis web dalam layanan pendidikan. Hasil penelitian menunjukkan bahwa digitalisasi layanan akademik mampu meningkatkan efisiensi administrasi dan transparansi informasi, meskipun masih menghadapi tantangan pada aspek infrastruktur dan kesiapan sumber daya manusia. Sumber: [https://jurnal.alimspublishing.co.id/index.php/JITI/article/view/1014](https://jurnal.alimspublishing.co.id/index.php/JITI/article/view/1014)
+
+2.6.3 Sistem Informasi Akademik Berbasis Web di Sekolah
+
+Penelitian yang dilakukan pada SD Negeri Kedungmulyo membahas perancangan sistem informasi akademik berbasis web untuk meningkatkan efisiensi pengelolaan data akademik. Hasil validasi menunjukkan bahwa sistem yang dikembangkan layak digunakan dan mampu mendukung layanan akademik secara lebih terstruktur dan efektif. Sumber: [https://jiip.stkipyapisdompu.ac.id/jiip/index.php/JIIP/article/view/8152](https://jiip.stkipyapisdompu.ac.id/jiip/index.php/JIIP/article/view/8152)
+
+2.6.4 Integrasi Chatbot pada Sistem Layanan Informasi Akademik
+
+Wahyuwono et al. (2025) mengembangkan sistem layanan informasi akademik yang dilengkapi fitur chatbot berbasis Dialogflow. Hasil penelitian menunjukkan bahwa chatbot mampu memberikan respon interaktif dan membantu pengguna memperoleh informasi akademik dengan cepat. Penelitian ini menegaskan peran chatbot dalam meningkatkan kualitas layanan informasi akademik berbasis web. Sumber: [https://jurnal.ubhinus.ac.id/elang/article/view/1159](https://jurnal.ubhinus.ac.id/elang/article/view/1159)
+
+2.6.5 Chatbot Akademik Berbasis Natural Language Processing
+
+Al-Ayyubi et al. (2025) mengembangkan chatbot akademik berbasis Natural Language Processing dengan memanfaatkan model IndoBERT dan integrasi API GraphQL. Hasil pengujian menunjukkan tingkat akurasi pemahaman intent di atas 90 persen, yang menunjukkan bahwa chatbot mampu memahami kebutuhan informasi pengguna secara efektif dan akurat. Sumber: [https://jptam.org/index.php/jptam/article/view/31214](https://jptam.org/index.php/jptam/article/view/31214)
+
+2.7 Keterkaitan Penelitian Terdahulu dengan Kerja Praktik
+
+Berdasarkan lima penelitian terdahulu tersebut, dapat disimpulkan bahwa pemanfaatan teknologi informasi berbasis web dan chatbot terbukti mampu meningkatkan efisiensi layanan informasi akademik, mempercepat akses informasi, serta meningkatkan kualitas interaksi antara pengguna dan sistem. Penelitian-penelitian tersebut menjadi referensi pendukung dalam pelaksanaan Kerja Praktik di SMK Taruna Bangsa, khususnya dalam memahami konsep layanan informasi akademik berbasis web dan chatbot. Hasil penelitian terdahulu ini digunakan sebagai dasar konseptual dan pembanding, bukan sebagai objek analisis utama penelitian.
