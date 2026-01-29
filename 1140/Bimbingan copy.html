@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Bimbingan Kerja Praktek - Kevin Mubarak</title>
+    
+    <!-- Gunakan Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 70%;
+            width: 5px;
+            background-color: #3B82F6;
+            border-radius: 5px;
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #print-container, #print-container * {
+                visibility: visible;
+            }
+            #print-container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+            
+            .print-page {
+                page-break-after: always;
+            }
+            
+            .print-page:last-child {
+                page-break-after: auto;
+            }
+        }
+        
+        .print-button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+        
+        #print-container {
+            display: none;
+        }
+        
+        /* Card styles for info */
+        .info-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .info-card p {
+            margin-bottom: 5px;
+        }
+        
+        /* Logo styles */
+        .logo-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-small {
+            height: 40px;
+            width: auto;
+        }
+        
+        .logo-hero {
+            width: 35%;
+            max-width: 250px;
+            height: auto;
+            margin: 0 auto 20px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Preview styling */
+        .preview-active #print-container {
+            display: block !important;
+            position: relative;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border: 1px solid #ddd;
+        }
+        
+        .preview-active .print-page {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            background: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-10 no-print">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="logo-header">
+                <img src="LOGO_BIU.png" alt="Logo BIU" class="logo-small">
+                <h1 class="text-xl font-bold text-blue-600">Laporan Bimbingan KP - Kevin Mubarak</h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
+                    <li><a href="#info" class="hover:text-blue-600 transition">Info Mahasiswa</a></li>
+                    <li><a href="#bimbingan-data" class="hover:text-blue-600 transition">Data Bimbingan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section dengan Logo -->
+    <section id="home" class="pt-24 pb-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4 hero-content">
+            <!-- Logo dengan ukuran 35% -->
+            <img src="LOGO_BIU.png" alt="Logo BIU" class="logo-hero">
+            
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Laporan Bimbingan Kerja Praktek</h2>
+            <p class="text-xl text-gray-600 mb-6">SMK Taruna Bangsa | November 2025 - Januari 2026</p>
+            <div class="flex flex-wrap gap-4">
+                <button id="printAllButton" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+                    <i class="fas fa-print mr-2"></i> Cetak Laporan Lengkap
+                </button>
+                <button id="previewButton" class="border border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-medium hover:bg-purple-600 hover:text-white transition">
+                    <i class="fas fa-eye mr-2"></i> Preview Print
+                </button>
+                <button id="downloadJsonButton" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition">
+                    <i class="fas fa-download mr-2"></i> Download Data JSON
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Mahasiswa Section -->
+    <section id="info" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 section-title">INFORMASI MAHASISWA</h2>
+            
+            <!-- Info Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8" id="infoCards">
+                <!-- Data akan diisi oleh JavaScript -->
+            </div>
+            
+            <!-- Dosen Pembimbing -->
+            <div class="info-card" id="dosenInfo">
+                <!-- Data akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Bimbingan Section -->
+    <section id="bimbingan-data" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 section-title">DATA BIMBINGAN KERJA PRAKTEK</h2>
+            
+            <!-- Print Button -->
+            <div class="print-button-container">
+                <button id="printBimbinganButton" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition flex items-center gap-2">
+                    <i class="fas fa-print"></i> Cetak Laporan Bimbingan
+                </button>
+                <button id="closePreviewButton" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition flex items-center gap-2" style="display: none;">
+                    <i class="fas fa-times"></i> Tutup Preview
+                </button>
+            </div>
+            
+            <!-- DataTables Container -->
+            <div class="mt-4 bg-white rounded-lg shadow-lg p-4">
+                <table id="bimbinganTable" class="display w-full">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="px-4 py-3">Pertemuan Ke-</th>
+                            <th class="px-4 py-3">Hari/Tanggal</th>
+                            <th class="px-4 py-3">Waktu</th>
+                            <th class="px-4 py-3">Pembahasan</th>
+                            <th class="px-4 py-3">Solusi/Tindakan</th>
+                            <th class="px-4 py-3">Paraf Pembimbing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 no-print">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Kevin Mubarak. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Laporan Bimbingan Kerja Praktek - SMK Taruna Bangsa</p>
+            <p class="text-sm text-gray-400 mt-1" id="lastUpdated">Data terakhir diperbarui: -</p>
+        </div>
+    </footer>
+
+    <!-- Print Container (hidden until print) -->
+    <div id="print-container" style="display: none;"></div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/2.3.5/js/dataTables.min.js"></script>
+    
+    <script>
+        // ==================== KONFIGURASI ====================
+        const JSON_URL = 'https://raw.githubusercontent.com/Kevin-ti22a/PK/refs/heads/main/1140/data-bimbingan.json';
+        
+        // ==================== VARIABEL GLOBAL ====================
+        let jsonData = null;
+        let bimbinganTable = null;
+        
+        // ==================== SAMPLE DATA ====================
+        const sampleData = {
+            "data_mahasiswa": {
+                "nama": "Kevin Mubarak",
+                "npm": "12345678",
+                "program_studi": "Teknik Informatika",
+                "tempat_kp": "SMK Taruna Bangsa",
+                "bagian": "Guru Pembimbing & IT Support",
+                "periode": "November 2025 - Januari 2026"
+            },
+            "dosen_pembimbing": {
+                "nama": "Dr. John Doe, S.T., M.T.",
+                "nidn": "1234567890"
+            },
+            "bimbingan_kp": [
+                {
+                    "pertemuan": "1",
+                    "hari_tanggal": "Senin, 17 November 2025",
+                    "waktu": "10:00 - 11:30 WIB",
+                    "pembahasan": "Pengenalan lingkungan kerja, perkenalan dengan staff, dan penjelasan job desk sebagai IT Support",
+                    "solusi": "Mengikuti arahan pembimbing lapangan, memahami struktur organisasi, dan mempelajari tugas-tugas IT Support",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                },
+                {
+                    "pertemuan": "2",
+                    "hari_tanggal": "Kamis, 20 November 2025",
+                    "waktu": "13:00 - 14:30 WIB",
+                    "pembahasan": "Instalasi software dan troubleshooting komputer lab",
+                    "solusi": "Melakukan instalasi Windows 10 dan software pendidikan, memperbaiki 5 unit komputer yang bermasalah",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                },
+                {
+                    "pertemuan": "3",
+                    "hari_tanggal": "Senin, 24 November 2025",
+                    "waktu": "09:30 - 11:00 WIB",
+                    "pembahasan": "Maintenance jaringan WiFi sekolah",
+                    "solusi": "Reset router, optimize channel WiFi, dan install repeater di area yang sinyal lemah",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                },
+                {
+                    "pertemuan": "4",
+                    "hari_tanggal": "Jumat, 28 November 2025",
+                    "waktu": "14:00 - 15:30 WIB",
+                    "pembahasan": "Pembuatan website sederhana untuk absensi siswa",
+                    "solusi": "Menggunakan HTML, CSS, JavaScript dan PHP untuk membuat sistem absensi online",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                },
+                {
+                    "pertemuan": "5",
+                    "hari_tanggal": "Selasa, 2 Desember 2025",
+                    "waktu": "10:30 - 12:00 WIB",
+                    "pembahasan": "Pelatihan dasar troubleshooting untuk guru",
+                    "solusi": "Membuat panduan troubleshooting sederhana dan memberikan pelatihan kepada 15 guru",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                },
+                {
+                    "pertemuan": "6",
+                    "hari_tanggal": "Senin, 8 Desember 2025",
+                    "waktu": "13:30 - 15:00 WIB",
+                    "pembahasan": "Backup data server sekolah",
+                    "solusi": "Melakukan backup data akademik ke external storage dan cloud storage",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                },
+                {
+                    "pertemuan": "7",
+                    "hari_tanggal": "Kamis, 11 Desember 2025",
+                    "waktu": "09:00 - 10:30 WIB",
+                    "pembahasan": "Optimasi database siswa",
+                    "solusi": "Cleaning data, remove duplicate entries, dan optimize query performance",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                },
+                {
+                    "pertemuan": "8",
+                    "hari_tanggal": "Selasa, 16 Desember 2025",
+                    "waktu": "14:00 - 15:30 WIB",
+                    "pembahasan": "Instalasi CCTV baru di lab komputer",
+                    "solusi": "Install 4 unit CCTV dengan DVR system dan setup remote monitoring",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                },
+                {
+                    "pertemuan": "9",
+                    "hari_tanggal": "Jumat, 19 Desember 2025",
+                    "waktu": "10:00 - 11:30 WIB",
+                    "pembahasan": "Maintenance printer dan scanner",
+                    "solusi": "Service 8 unit printer, replace toner, dan calibrate scanner",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                },
+                {
+                    "pertemuan": "10",
+                    "hari_tanggal": "Rabu, 24 Desember 2025",
+                    "waktu": "13:00 - 14:30 WIB",
+                    "pembahasan": "Finalisasi laporan dan evaluasi KP",
+                    "solusi": "Menyusun laporan akhir, dokumentasi kegiatan, dan presentasi hasil KP",
+                    "paraf_mahasiswa": "✓",
+                    "paraf_pembimbing": "✓"
+                }
+            ]
+        };
+        
+        // ==================== FUNGSI LOAD DATA ====================
+        async function loadDataFromGitHub() {
+            try {
+                console.log('Mengambil data dari GitHub:', JSON_URL);
+                
+                const timestamp = new Date().getTime();
+                const urlWithCacheBust = `${JSON_URL}?t=${timestamp}`;
+                
+                const response = await fetch(urlWithCacheBust);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('Data berhasil diambil:', data);
+                
+                if (!data || !data.bimbingan_kp || !Array.isArray(data.bimbingan_kp)) {
+                    throw new Error('Format data JSON tidak valid');
+                }
+                
+                return data;
+                
+            } catch (error) {
+                console.error('Error loading data from GitHub, using sample data:', error);
+                return sampleData;
+            }
+        }
+        
+        // ==================== FUNGSI TAMPILKAN INFO MAHASISWA ====================
+        function displayMahasiswaInfo(data) {
+            const infoCards = document.getElementById('infoCards');
+            const dosenInfo = document.getElementById('dosenInfo');
+            
+            if (data.data_mahasiswa) {
+                const mahasiswa = data.data_mahasiswa;
+                infoCards.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">Data Mahasiswa</h3>
+                        <div class="space-y-3">
+                            <p><span class="font-semibold">Nama:</span> ${mahasiswa.nama}</p>
+                            <p><span class="font-semibold">NPM:</span> ${mahasiswa.npm}</p>
+                            <p><span class="font-semibold">Program Studi:</span> ${mahasiswa.program_studi}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">Info Kerja Praktek</h3>
+                        <div class="space-y-3">
+                            <p><span class="font-semibold">Tempat KP:</span> ${mahasiswa.tempat_kp}</p>
+                            <p><span class="font-semibold">Bagian/Divisi:</span> ${mahasiswa.bagian}</p>
+                            <p><span class="font-semibold">Periode:</span> ${mahasiswa.periode}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            if (data.dosen_pembimbing) {
+                const dosen = data.dosen_pembimbing;
+                dosenInfo.innerHTML = `
+                    <h3 class="text-xl font-bold mb-4">Dosen Pembimbing</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p><span class="font-semibold">Nama:</span> ${dosen.nama}</p>
+                            <p><span class="font-semibold">NIDN:</span> ${dosen.nidn}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Update last updated time
+            const lastUpdated = document.getElementById('lastUpdated');
+            const now = new Date();
+            lastUpdated.textContent = `Data terakhir diperbarui: ${now.toLocaleDateString('id-ID', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            })} ${now.toLocaleTimeString('id-ID')}`;
+        }
+        
+        // ==================== FUNGSI INISIALISASI DATATABLE ====================
+        function initializeDataTable(data) {
+            // Hancurkan DataTable jika sudah ada
+            if ($.fn.DataTable.isDataTable('#bimbinganTable')) {
+                $('#bimbinganTable').DataTable().destroy();
+                $('#bimbinganTable tbody').empty();
+            }
+            
+            // Inisialisasi DataTable baru
+            bimbinganTable = $('#bimbinganTable').DataTable({
+                data: data.bimbingan_kp,
+                columns: [
+                    { 
+                        data: 'pertemuan',
+                        render: function(data) {
+                            return `<span class="font-bold text-blue-600">${data}</span>`;
+                        },
+                        className: 'text-center'
+                    },
+                    { 
+                        data: 'hari_tanggal',
+                        render: function(data) {
+                            return `<span class="text-gray-700">${data}</span>`;
+                        }
+                    },
+                    { 
+                        data: 'waktu',
+                        render: function(data) {
+                            return `<span class="text-gray-600 bg-blue-50 px-3 py-1 rounded-full text-sm">${data}</span>`;
+                        }
+                    },
+                    { 
+                        data: 'pembahasan',
+                        render: function(data, type, row) {
+                            return `<div class="text-gray-800 max-w-xs">${data}</div>`;
+                        }
+                    },
+                    { 
+                        data: 'solusi',
+                        render: function(data, type, row) {
+                            return `<div class="text-gray-800 max-w-xs">${data}</div>`;
+                        }
+                    },
+                    { 
+                        data: 'paraf_pembimbing',
+                        render: function(data) {
+                            if (data && data.trim() !== '') {
+                                return `<span class="text-green-600 font-bold text-xl" title="Sudah diparaf">✓</span>`;
+                            }
+                            return `<span class="text-gray-400" title="Belum diparaf">-</span>`;
+                        },
+                        className: 'text-center'
+                    }
+                ],
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/2.3.5/i18n/id.json'
+                },
+                responsive: true,
+                pageLength: 10,
+                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Semua"]],
+                order: [[0, 'asc']],
+                initComplete: function() {
+                    console.log('DataTable initialization complete');
+                }
+            });
+        }
+        
+        // ==================== FUNGSI GENERATE PRINT HTML ====================
+        function generatePrintHTML(data) {
+            const now = new Date();
+            
+            // Bagi data bimbingan menjadi chunk/chunk 5 item per halaman
+            const itemsPerPage = 5;
+            const bimbinganChunks = [];
+            
+            for (let i = 0; i < data.bimbingan_kp.length; i += itemsPerPage) {
+                bimbinganChunks.push(data.bimbingan_kp.slice(i, i + itemsPerPage));
+            }
+            
+            let allPagesHTML = '';
+            
+            // Buat halaman untuk setiap chunk
+            bimbinganChunks.forEach((chunk, pageIndex) => {
+                let tableHTML = '';
+                
+                // Mulai nomor urut untuk halaman ini
+                const startNumber = pageIndex * itemsPerPage + 1;
+                
+                chunk.forEach((item, indexInPage) => {
+                    const itemNumber = startNumber + indexInPage;
+                    
+                    tableHTML += `
+                        <tr>
+                            <td style="border: 1px solid #000; padding: 8px; text-align: center;">${itemNumber}</td>
+                            <td style="border: 1px solid #000; padding: 8px;">${item.hari_tanggal}<br>${item.waktu}</td>
+                            <td style="border: 1px solid #000; padding: 8px;">${item.pembahasan}</td>
+                            <td style="border: 1px solid #000; padding: 8px;">${item.solusi}</td>
+                            <td style="border: 1px solid #000; padding: 8px; text-align: center;">${item.paraf_mahasiswa && item.paraf_mahasiswa.trim() !== '' ? '✓' : ''}</td>
+                            <td style="border: 1px solid #000; padding: 8px; text-align: center;">${item.paraf_pembimbing && item.paraf_pembimbing.trim() !== '' ? '✓' : ''}</td>
+                        </tr>
+                    `;
+                });
+                
+                // Header setiap halaman - FORMAT SEBELUMNYA
+                const pageHeaderHTML = `
+                    <!-- Logo di pojok kiri atas -->
+                    <div style="position: absolute; top: 10mm; left: 10mm;">
+                        <img src="LOGO_BIU.png" alt="Logo BIU" style="width: 25%; max-width: 80mm; height: auto;">
+                    </div>
+                    
+                    <!-- Judul di tengah -->
+                    <div style="text-align: center; margin-top: 10mm; margin-bottom: 10mm;">
+                        <h1 style="font-size: 16pt; font-weight: bold; margin: 0;">
+                            BIMBINGAN LAPORAN KERJA PRAKTEK
+                        </h1>
+                    </div>
+                    
+                    <!-- DATA MAHASISWA -->
+                    <div style="margin-bottom: 5mm;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 11pt;">
+                            <tr>
+                                <td style="width: 25%;"><strong>Nama Mahasiswa</strong></td>
+                                <td style="width: 2%;">:</td>
+                                <td>${data.data_mahasiswa.nama}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NPM</strong></td>
+                                <td>:</td>
+                                <td>${data.data_mahasiswa.npm}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Program Studi</strong></td>
+                                <td>:</td>
+                                <td>${data.data_mahasiswa.program_studi}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bagian/Divisi</strong></td>
+                                <td>:</td>
+                                <td>${data.data_mahasiswa.bagian}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- DATA DOSEN -->
+                    <div style="margin-bottom: 5mm;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 11pt;">
+                            <tr>
+                                <td style="width: 25%;"><strong>Dosen Pembimbing</strong></td>
+                                <td style="width: 2%;">:</td>
+                                <td>${data.dosen_pembimbing.nama}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NIDN</strong></td>
+                                <td>:</td>
+                                <td>${data.dosen_pembimbing.nidn}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- INFO HALAMAN -->
+                    <div style="text-align: right; margin-bottom: 5mm; font-size: 10pt;">
+                        Halaman ${pageIndex + 1} dari ${bimbinganChunks.length}
+                    </div>
+                `;
+                
+                // Footer dengan tanda tangan (hanya di halaman terakhir)
+                let footerHTML = '';
+                if (pageIndex === bimbinganChunks.length - 1) {
+                    footerHTML = `
+                        <!-- TANDA TANGAN -->
+                        <div style="margin-top: 20mm; width: 100%;">
+                            <div style="float: right; text-align: center; width: 50%;">
+                                <p>Dosen Pembimbing,</p>
+                                
+                                <div style="margin-top: 33mm;">
+                                    <p style="font-weight: bold;">
+                                        ${data.dosen_pembimbing.nama}
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div style="float: left; text-align: left; width: 50%;">
+                                <p>Mengetahui,</p>
+                                <p>Ketua Program Studi</p>
+                                <p>Teknik Informatika</p>
+                                
+                                <div style="margin-top: 20mm;">
+                                    <p style="font-weight: bold;"> Rully Pramudita, S.T., M.Kom </p>
+                                </div>
+                            </div>
+                            
+                            <div style="clear: both;"></div>
+                        </div>
+                    `;
+                }
+                
+                // Gabungkan semua bagian untuk halaman ini
+                const pageHTML = `
+                    <div class="print-page" style="padding: 20mm; font-family: 'Times New Roman', Times, serif; font-size: 12pt; position: relative;">
+                        ${pageHeaderHTML}
+                        
+                        <!-- TABEL BIMBINGAN -->
+                        <div style="margin-bottom: 5mm;">
+                            <table style="width: 100%; border-collapse: collapse; border: 1px solid #000; font-size: 10pt;">
+                                <thead>
+                                    <tr style="background-color: #f5f5f5;">
+                                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 8%;">Pertemuan Ke-</th>
+                                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 15%;">Hari/Tanggal/Waktu</th>
+                                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 30%;">Pembahasan</th>
+                                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 25%;">Solusi</th>
+                                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 10%;">Paraf Mahasiswa</th>
+                                        <th style="border: 1px solid #000; padding: 6px; text-align: center; width: 10%;">Paraf Pembimbing</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${tableHTML}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        ${footerHTML}
+                    </div>
+                `;
+                
+                allPagesHTML += pageHTML;
+            });
+            
+            return allPagesHTML;
+        }
+        
+        // ==================== FUNGSI PRINT ====================
+        function printReport() {
+            if (!jsonData) {
+                alert('Data belum dimuat. Silakan refresh halaman terlebih dahulu.');
+                return;
+            }
+            
+            const printContainer = document.getElementById('print-container');
+            printContainer.innerHTML = generatePrintHTML(jsonData);
+            printContainer.style.display = 'block';
+            
+            // Tunggu sebentar untuk memastikan semua gambar siap
+            setTimeout(() => {
+                // Preload logo untuk memastikan muncul saat print
+                const logo = new Image();
+                logo.src = 'LOGO_BIU.png';
+                logo.onload = function() {
+                    window.print();
+                    setTimeout(() => {
+                        printContainer.style.display = 'none';
+                        printContainer.innerHTML = '';
+                        document.body.classList.remove('preview-active');
+                        document.getElementById('closePreviewButton').style.display = 'none';
+                    }, 100);
+                };
+                logo.onerror = function() {
+                    // Jika logo gagal load, tetap print
+                    window.print();
+                    setTimeout(() => {
+                        printContainer.style.display = 'none';
+                        printContainer.innerHTML = '';
+                        document.body.classList.remove('preview-active');
+                        document.getElementById('closePreviewButton').style.display = 'none';
+                    }, 100);
+                };
+            }, 500);
+        }
+        
+        // ==================== FUNGSI PREVIEW PRINT ====================
+        function previewPrint() {
+            if (!jsonData) {
+                alert('Data belum dimuat. Silakan refresh halaman terlebih dahulu.');
+                return;
+            }
+            
+            const printContainer = document.getElementById('print-container');
+            printContainer.innerHTML = generatePrintHTML(jsonData);
+            
+            // Tampilkan preview
+            document.body.classList.add('preview-active');
+            printContainer.style.display = 'block';
+            
+            // Tampilkan tombol tutup preview
+            document.getElementById('closePreviewButton').style.display = 'flex';
+            
+            // Scroll ke preview
+            setTimeout(() => {
+                printContainer.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+            
+            // Preload logo untuk preview
+            const logo = new Image();
+            logo.src = 'LOGO_BIU.png';
+        }
+        
+        // ==================== FUNGSI TUTUP PREVIEW ====================
+        function closePreview() {
+            document.body.classList.remove('preview-active');
+            document.getElementById('print-container').style.display = 'none';
+            document.getElementById('closePreviewButton').style.display = 'none';
+        }
+        
+        // ==================== FUNGSI DOWNLOAD JSON ====================
+        function downloadJSON() {
+            if (!jsonData) {
+                alert('Data belum dimuat.');
+                return;
+            }
+            
+            const dataStr = JSON.stringify(jsonData, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', 'data-bimbingan-kp.json');
+            linkElement.click();
+        }
+        
+        // ==================== FUNGSI LOAD DATA ====================
+        async function loadData() {
+            try {
+                // Load data dari GitHub
+                const data = await loadDataFromGitHub();
+                jsonData = data;
+                
+                // Tampilkan data
+                displayMahasiswaInfo(data);
+                initializeDataTable(data);
+                
+                console.log('Data berhasil dimuat:', data);
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                // Gunakan sample data sebagai fallback
+                jsonData = sampleData;
+                displayMahasiswaInfo(sampleData);
+                initializeDataTable(sampleData);
+            }
+        }
+        
+        // ==================== INISIALISASI APLIKASI ====================
+        $(document).ready(function() {
+            console.log('Document ready, memulai inisialisasi...');
+            
+            // Event listener untuk tombol
+            $('#printBimbinganButton').on('click', printReport);
+            $('#printAllButton').on('click', printReport);
+            $('#previewButton').on('click', previewPrint);
+            $('#closePreviewButton').on('click', closePreview);
+            $('#downloadJsonButton').on('click', downloadJSON);
+            
+            // Smooth scroll untuk anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Load data saat pertama kali
+            loadData();
+            
+            // Preload logo saat halaman dimuat
+            const logo = new Image();
+            logo.src = 'LOGO_BIU.png';
+        });
+    </script>
+</body>
+</html>
