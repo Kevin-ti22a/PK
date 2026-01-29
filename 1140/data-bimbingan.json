@@ -49,7 +49,31 @@
       "hari_tanggal": "Jum'at, 23 Januari 2026",
       "waktu": "09:00 - 10:30 WIB",
       "pembahasan": "Bimbingan Laporan Bab 1 hingga bab 5",
-      "solusi": "-",
+      "solusi": "pada Bab 2 masih ada kesalahan Penulisan, dan referensi belum tepat",
+      "paraf_pembimbing": ""
+    },
+    {
+      "pertemuan": 6,
+      "hari_tanggal": "Minggu, 25 Januari 2026",
+      "waktu": "17:50 - 21:23 WIB",
+      "pembahasan": "Bimbingan Laporan Bab 2",
+      "solusi": "pada Bab 2 masih ada kesalahan Penulisan, dan referensi belum tepat",
+      "paraf_pembimbing": ""
+    },
+    {
+      "pertemuan": 7,
+      "hari_tanggal": "Senin, 26 Januari 2026",
+      "waktu": "17:50 - 21:23 WIB",
+      "pembahasan": "Bimbingan Laporan Bab 2",
+      "solusi": "pada Bab 2 Pada bagian Referensi, Harus 1 kutipan 1 Referensi tidak Boleh Di Pecah 1 Referensi untuk 2 atau lebih dari 3 kutipan",
+      "paraf_pembimbing": ""
+    },
+    {
+      "pertemuan": 8,
+      "hari_tanggal": "Selasa, 27 Januari 2026",
+      "waktu": "17:50 - 21:23 WIB",
+      "pembahasan": "Bimbingan Laporan bab 2",
+      "solusi": "Laporan sudah Benar, hanya tinggal merapihkan sedikit Nomor Halaman dan membuat Lembar Persetujuan",
       "paraf_pembimbing": ""
     }
   ]
